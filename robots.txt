@@ -1,0 +1,9 @@
+# User-agent: * ka matlab hai ye rules sabhi search bots ke liye hain
+User-agent: *
+Allow: /
+
+# Un pages ko block karein jo aap search me nahi dikhana chahte (Optional)
+# Disallow: /vyomarc-secret-panel-Mk78Mah/
+
+# Sitemap ka full link search engine ko dena zaroori hai
+Sitemap: https://vyomarctech.com/sitemap.xml

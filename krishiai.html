@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Krishi-AI | Smart Farming — Coming Soon</title>
+  <meta name="description" content="Krishi-AI uses soil & weather parameters to predict high-yield crops. Join the waitlist for early access." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0f0d;
+      --card: #111917;
+      --text: #e8f5e9;
+      --muted: #a5b4ae;
+      --accent: #00e676;
+      --accent-2: #14ffec;
+      --border: #1f2d28;
+      --shadow: 0 10px 30px rgba(0, 230, 118, 0.15);
+      --error: #ff5252;
+    }
+    [data-theme="light"] {
+      --bg: #f4fbf6;
+      --card: #ffffff;
+      --text: #0b2e21;
+      --muted: #4b5b53;
+      --accent: #00c853;
+      --accent-2: #00bfa5;
+      --border: #dbe9e2;
+      --shadow: 0 10px 30px rgba(0, 200, 83, 0.15);
+      --error: #d32f2f;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background-image: 
+        radial-gradient(circle at 20% 20%, rgba(0, 230, 118, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(20, 255, 236, 0.06) 0%, transparent 40%);
+      transition: background 0.3s, color 0.3s;
+    }
+    .container {
+      width: 100%;
+      max-width: 640px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 48px 32px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .container::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(45deg, var(--accent), var(--accent-2));
+      filter: blur(80px);
+      opacity: 0.2;
+      z-index: 0;
+    }
+    .content { position: relative; z-index: 1; }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+    }
+    .logo-badge {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      background: rgba(0, 230, 118, 0.1);
+      border: 1px solid rgba(0, 230, 118, 0.3);
+      color: var(--accent);
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+    .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.logo-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+.logo-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(32px, 5vw, 44px);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    h1 span {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      font-size: 16px;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .feature {
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.02);
+    }
+    .feature i { font-size: 20px; margin-bottom: 8px; display: block; }
+    .feature h3 { font-size: 14px; margin-bottom: 4px; }
+    .feature p { font-size: 13px; margin: 0; line-height: 1.5; }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 32px 0 16px;
+    }
+    .form-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .form-group {
+      flex: 1;
+      min-width: 200px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    label {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    input, textarea {
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border 0.2s;
+      resize: vertical;
+    }
+    input:focus, textarea:focus { border-color: var(--accent); }
+    textarea { min-height: 90px; }
+    button {
+      padding: 14px 24px;
+      border-radius: 12px;
+      border: none;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #003c1f;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+      align-self: flex-start;
+    }
+    button:hover:not(:disabled) { 
+      transform: translateY(-2px); 
+      box-shadow: 0 8px 20px rgba(0, 230, 118, 0.3); 
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+  margin-bottom: 24px;
+}
+.back-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(0, 230, 118, 0.05);
+  transform: translateX(-2px);
+}
+.back-btn svg {
+  transition: transform 0.2s;
+}
+.back-btn:hover svg {
+  transform: translateX(-2px);
+}
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--card);
+      border: 1px solid var(--accent);
+      color: var(--text);
+      padding: 12px 20px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transition: all 0.4s;
+      z-index: 100;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .toast.error { border-color: var(--error); }
+    @media (max-width: 480px) {
+      .container { padding: 32px 20px; }
+      .form-row { flex-direction: column; }
+      button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="logo">
+        <img src="vlogo.png" alt="Vyomarc Logo" class="logo-img">
+        <span class="logo-text">VYOMARC</span>
+      </div>
+      
+      <div class="badge">COMING SOON</div>
+      <h1><span>Krishi-AI</span> — Grow Smarter</h1>
+      <p>An intelligent system that analyzes soil health, weather patterns, and crop data to recommend the highest-yield crops for your farmland. Built for Indian farmers, powered by AI.</p>
+
+      <div class="features">
+        <div class="feature">
+          <i>🌦️</i>
+          <h3>Weather-Aware</h3>
+          <p>Real-time climate data for accurate predictions</p>
+        </div>
+        <div class="feature">
+          <i>🧪</i>
+          <h3>Soil Analysis</h3>
+          <p>pH, NPK & moisture based recommendations</p>
+        </div>
+        <div class="feature">
+          <i>📈</i>
+          <h3>Yield Forecast</h3>
+          <p>Predict profitability before you sow</p>
+        </div>
+      </div>
+
+      <!-- Formspree Form Integrated -->
+      <form id="waitlist-form" action="https://formspree.io/f/mqewwjlp" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Your email</label>
+            <input type="email" name="email" id="email" placeholder="you@example.com" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">What are you most excited about? (Optional)</label>
+          <textarea name="message" id="message" placeholder="I want to increase my wheat yield..."></textarea>
+        </div>
+        <button type="submit" id="submit-btn">Join Waitlist</button>
+      </form>
+
+      <div class="meta">     
+        <span>Launching Q4 2026 · Made in India by VYOMARC for India</span>
+        <button class="theme-toggle" id="theme-toggle">Toggle Theme</button>
+      </div>
+    </div>
+    <a href="https://vyomarctech.com/" class="back-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Back to VYOMARC
+    </a>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  
+
+
+
+  <script>
+    // Theme Toggle
+    const toggle = document.getElementById('theme-toggle');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const currentTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
+    
+    if (currentTheme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    
+    toggle.addEventListener('click', () => {
+      const theme = document.documentElement.getAttribute('data-theme');
+      if (theme === 'light') {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
+    // Formspree AJAX Submit
+    const form = document.getElementById('waitlist-form');
+    const toast = document.getElementById('toast');
+    const submitBtn = document.getElementById('submit-btn');
+    
+    function showToast(message, isError = false) {
+      toast.textContent = message;
+      toast.classList.toggle('error', isError);
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 4000);
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      
+      const formData = new FormData(form);
+      
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+        
+        if (response.ok) {
+          form.reset();
+          showToast('Added to waitlist! We will notify you at launch.');
+        } else {
+          const data = await response.json();
+          if (data.errors) {
+            showToast(data.errors.map(error => error.message).join(', '), true);
+          } else {
+            showToast('Oops! Something went wrong. Try again.', true);
+          }
+        }
+      } catch (error) {
+        showToast('Network error. Please check connection.', true);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Join Waitlist';
+      }
+    });
+
+    // Subtle entrance animation
+    document.querySelector('.container').animate([
+      { opacity: 0, transform: 'translateY(20px)' },
+      { opacity: 1, transform: 'translateY(0)' }
+    ], {
+      duration: 600,
+      easing: 'cubic-bezier(0.22, 1, 0.36, 1)'
+    });
+  </script>
+</body>
+</html>

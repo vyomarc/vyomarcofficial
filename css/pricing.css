@@ -1,0 +1,561 @@
+/* ---------- RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fafcff;
+  color: #111827;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, .nav-logo-text {
+  font-family: 'Poppins', 'Inter', sans-serif;
+}
+
+/* ---------- FADE-IN ANIMATION (whole page) ---------- */
+.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- CONTAINER ---------- */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- NAVIGATION (Desktop & Mobile) ---------- */
+nav {
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03), 0 1px 6px rgba(0,0,0,0.02);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #eef2f6;
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 0.5rem;
+}
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+.nav-logo-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #0b2c4a 0%, #1f4e79 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.menu-toggle {
+  display: none;
+  font-size: 1.6rem;
+  color: #0b2c4a;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+.nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #1e2a3a;
+  transition: 0.2s;
+}
+.nav-links a:hover, .nav-links a.active {
+  color: #00a8ff;
+}
+.buy-coffee-btn img {
+  height: 42px;
+  border-radius: 20px;
+  border: 2px solid #3e2e21;
+  transition: 0.2s;
+}
+.buy-coffee-btn:hover img {
+  transform: scale(1.02);
+}
+
+/* ---------- RESPONSIVE NAVBAR (Mobile) ---------- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-top: 1px solid #eef2f6;
+    z-index: 999;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .nav-links a {
+    width: 100%;
+    padding: 8px 0;
+  }
+  .buy-coffee-btn img {
+    height: 36px;
+  }
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero-pricing {
+  background: linear-gradient(135deg, #0e2243 0%, #073b69 100%);
+  color: #ffffff;
+  padding: 80px 0 60px;
+  text-align: center;
+}
+.hero-pricing h1 {
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  margin-bottom: 16px;
+}
+.hero-pricing p {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ---------- SECTION TITLES ---------- */
+.section-title {
+  font-size: clamp(1.8rem, 5vw, 2.2rem);
+  font-weight: 700;
+  color: #0b2c4a;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.section-sub {
+  text-align: center;
+  color: #4a5b6e;
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+
+/* ---------- PRICING CARDS (3 plans) ---------- */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin: 40px 0;
+}
+.pricing-card {
+  background: white;
+  border-radius: 32px;
+  padding: 32px 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: 0.25s;
+  border: 1px solid #eef2f6;
+  text-align: center;
+}
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+}
+.recommended {
+  border-top: 5px solid #00a8ff;
+  position: relative;
+}
+.recommended-badge {
+  background: #00a8ff;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 40px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+.price {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0b2c4a;
+  margin: 16px 0;
+}
+.features-list {
+  list-style: none;
+  margin: 24px 0;
+  text-align: left;
+}
+.features-list li {
+  padding: 8px 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.features-list i {
+  color: #00a8ff;
+  width: 20px;
+}
+
+/* ---------- SPECIALIZED GRID (School & Restaurant) ---------- */
+.special-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+.special-card {
+  background: white;
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: 0.2s;
+}
+.special-card:hover {
+  transform: translateY(-4px);
+}
+.special-price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0b2c4a;
+  margin: 16px 0;
+}
+
+/* ---------- SERVICE CARDS (3‑card grid) ---------- */
+.service-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+.service-card-enhanced {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 28px 20px;
+  transition: all 0.3s ease;
+  border: 1px solid #eef2f6;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+  text-align: center;
+}
+.service-card-enhanced:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px -12px rgba(0,0,0,0.12);
+  border-color: #00a8ff20;
+}
+.service-card-enhanced i {
+  font-size: 2.5rem;
+  color: #0b2c4a;
+  margin-bottom: 16px;
+}
+.service-card-enhanced h3 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #0b2c4a;
+}
+.service-list {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+  text-align: left;
+}
+.service-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px dashed #eef2f6;
+}
+.service-list li:last-child {
+  border-bottom: none;
+}
+.service-name {
+  font-weight: 500;
+  color: #1e2a3a;
+}
+.service-price {
+  font-weight: 700;
+  color: #0b2c4a;
+  background: #f0f7ff;
+  padding: 4px 12px;
+  border-radius: 40px;
+  font-size: 0.85rem;
+}
+
+/* ---------- BUTTONS (global) ---------- */
+.btn-price {
+  background: #0b2c4a;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 40px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  transition: 0.2s;
+  margin-top: 16px;
+}
+.btn-price:hover {
+  background: #1f4e79;
+  transform: scale(0.98);
+}
+
+/* ---------- WHY CHOOSE US (card hover) ---------- */
+.why-choose-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 28px;
+  margin: 48px 0 20px;
+}
+.why-card-hover {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 28px 20px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  border: 1px solid #eef2f6;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+.why-card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 30px -12px rgba(0, 168, 255, 0.15);
+  border-color: rgba(0, 168, 255, 0.3);
+}
+.why-card-hover i {
+  font-size: 2.5rem;
+  color: #0b2c4a;
+  margin-bottom: 18px;
+  transition: transform 0.2s;
+  display: inline-block;
+}
+.why-card-hover:hover i {
+  transform: scale(1.08);
+  color: #00a8ff;
+}
+.why-card-hover h3 {
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+  color: #0b2c4a;
+  font-weight: 700;
+}
+.why-card-hover p {
+  font-size: 0.9rem;
+  color: #4a5b6e;
+  line-height: 1.4;
+}
+
+/* ---------- FOMO & CTA ---------- */
+.fomo {
+  background: #fff7e5;
+  border-left: 6px solid #ff9800;
+  padding: 30px;
+  border-radius: 32px;
+  text-align: center;
+  margin: 40px 0;
+}
+.cta-box {
+  background: linear-gradient(135deg, #0b2c4a, #1f4e79);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  border-radius: 48px;
+}
+
+/* ---------- FAQ ---------- */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+.faq-item {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+/* ---------- MODAL (Quote Popup) - FIXED & WORKING ---------- */
+/* ---------- MODAL (FINAL FIXED) ---------- */
+
+.quote-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 10000;
+  backdrop-filter: blur(4px);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.quote-modal.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.quote-modal-content {
+  background: white;
+  max-width: 450px;
+  width: 90%;
+  padding: 32px 24px;
+  border-radius: 36px;
+  text-align: center;
+  box-shadow: 0 30px 40px rgba(0,0,0,0.2);
+  position: relative;
+  margin: 0;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.quote-modal.active .quote-modal-content {
+  transform: translateY(0);
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.close-modal {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #aaa;
+  transition: 0.2s;
+}
+.close-modal:hover {
+  color: #0b2c4a;
+}
+.modal-contact {
+  background: #f9fafe;
+  padding: 16px;
+  border-radius: 24px;
+  margin: 20px 0;
+}
+.close-modal-btn {
+  background: #0b2c4a;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 40px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #f9fafb;
+  border-top: 1px solid #e5e9f0;
+  padding: 48px 0 24px;
+  margin-top: 40px;
+}
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.footer-col {
+  flex: 1;
+  min-width: 150px;
+}
+.footer-col .logo-foot {
+  font-size: 1.7rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #0b2c4a, #1f4e79);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+.footer-col p, .footer-col a {
+  color: #4b5563;
+  text-decoration: none;
+  display: block;
+  margin: 8px 0;
+  font-size: 0.9rem;
+}
+.footer-col a:hover {
+  color: #00a8ff;
+}
+.social-icons a {
+  display: inline-block;
+  margin-right: 16px;
+  font-size: 1.3rem;
+  color: #1f4e79;
+}
+.copyright {
+  text-align: center;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 28px;
+  color: #6c757d;
+  font-size: 0.85rem;
+}
+
+/* ---------- RESPONSIVE FINE-TUNING ---------- */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+  .service-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .service-price {
+    align-self: flex-start;
+  }
+  .why-choose-grid {
+    gap: 20px;
+  }
+  .why-card-hover {
+    padding: 20px 12px;
+  }
+  .hero-pricing {
+    padding: 50px 0 40px;
+  }
+}
+@media (max-width: 480px) {
+  .pricing-card, .special-card, .service-card-enhanced {
+    padding: 20px 16px;
+  }
+  .price {
+    font-size: 2rem;
+  }
+}

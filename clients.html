@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Our Clients | VYOMARC Technologies</title>
+  <meta name="description" content="VYOMARC partners with forward-thinking brands. See our trusted clients including S7, Joom, Lazada, Binance, Alibaba Group, and more.">
+  <meta name="keywords" content="clients, partners, brands, VYOMARC, digital transformation, trusted companies">
+  <meta name="author" content="VYOMARC Technologies">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Our Clients | VYOMARC Technologies">
+  <meta property="og:description" content="Forward-thinking brands trust VYOMARC for scalable software and digital products.">
+  <meta property="og:image" content="https://vyomarctech.com/og-image.webp">
+  <meta property="og:url" content="https://vyomarctech.com/clients.html">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Our Clients | VYOMARC Technologies">
+  <meta name="twitter:description" content="Trusted by innovative brands worldwide.">
+  
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Clients Page CSS (same theme as homepage) -->
+  <link rel="stylesheet" href="clients.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="vlogo.png" alt="VYOMARC Logo" class="logo-img">
+      <span class="nav-logo-text">VYOMARC</span>
+    </a>
+    <div class="menu-toggle" id="mobile-menu">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#products">Products</a>
+      <a href="index.html#work">Work</a>
+      <a href="about.html">About</a>
+      <a href="contactus.html">Contact</a>
+      <a href="clients.html" class="active"> Our Clients</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="blog.html">Blog</a>
+      
+      <a href="https://getmechai.vercel.app/link.html?vpa=mrsaurabh009@ybl&nm=VYOMARC&amt=29" class="buy-coffee-btn"><img src="https://i.ibb.co/Xkdj83y/image-2.png" alt="Buy me a chai"></a>
+    </div>
+  </div>
+</nav>
+
+<main class="fade-in">
+  <!-- Hero Section -->
+  <section class="clients-hero">
+    <div class="container">
+      <h1>Our Clients</h1>
+      <p>Forward-thinking brands trust VYOMARC to drive scalable growth and engagement. We partner with companies, businesses & local stores ready to embrace the future of digital marketing.</p>
+    </div>
+  </section>
+
+  <!-- Clients Grid -->
+  <div class="container">
+    <div class="clients-grid" id="clientsGrid">
+      <!-- Client cards will be injected via JavaScript (or you can hardcode) -->
+    </div>
+  </div>
+
+  <!-- Optional CTA Section (same as homepage style) -->
+  <div class="container">
+    <div class="cta-section">
+      <h2>Become Our Next Success Story</h2>
+      <p>Join the list of innovative brands that trust VYOMARC.</p>
+      <a href="contactus.html" class="btn-primary">Let's Talk</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <span class="logo-foot">VYOMARC</span>
+        <p>Building scalable software, websites & digital products.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Links</h4>
+        <a href="index.html#home">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#products">Products</a>
+        <a href="index.html#work">Portfolio</a>
+        <a href="clients.html">Clients</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p><i class="fas fa-envelope"></i> vyomarctechnologies@gmail.com</p>
+        <p><i class="fas fa-phone-alt"></i> +91 825 270 2699</p>
+        <p><i class="fas fa-map-marker-alt"></i> Patna, Bihar</p>
+      </div>
+      <div class="footer-col">
+        <h4>Social</h4>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/company/vyomarc-technologies/"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/vyomarc"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/vyomarc.tech"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">© 2026 VYOMARC Technologies — All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  // ---------- Client Data (easily add/remove clients here) ----------
+  const clients = [
+    { name: "The Supreme God", logo: "clients/om.webp" },
+    { name: "Vyntro Fashion", logo: "clients/vyntro.webp" },
+    { name: "J.M.S Education Group", logo: "clients/jms.webp" },
+    { name: "Arya Publications", logo: "clients/arya.webp" }
+ 
+    // ----- add new clients ----//
+    // ----- add new clients ----//
+    // ----- add new clients ----//
+    // ----- add new clients ----//
+    // ----- add new clients ----//
+  ];
+
+  // Render clients grid
+  function renderClients() {
+    const grid = document.getElementById('clientsGrid');
+    if (!grid) return;
+    
+    grid.innerHTML = clients.map(client => `
+      <div class="client-card">
+        <div class="client-logo-wrapper">
+          <img src="${client.logo}" alt="${client.name} logo" class="client-logo" onerror="this.src='https://placehold.co/200x100?text=Logo+Not+Found'">
+        </div>
+        <h3 class="client-name">${client.name}</h3>
+      </div>
+    `).join('');
+  }
+
+  // ---------- Mobile Menu Toggle ----------
+  function initMobileMenu() {
+    const mobileBtn = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+    if (mobileBtn && navLinks) {
+      mobileBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        const icon = mobileBtn.querySelector('i');
+        if (icon) {
+          icon.classList.toggle('fa-bars');
+          icon.classList.toggle('fa-times');
+        }
+      });
+      // Close menu when clicking a link
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+          const icon = mobileBtn.querySelector('i');
+          if (icon) {
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-times');
+          }
+        });
+      });
+    }
+  }
+
+  // Initialize
+  document.addEventListener('DOMContentLoaded', () => {
+    renderClients();
+    initMobileMenu();
+  });
+</script>
+</body>
+</html>
