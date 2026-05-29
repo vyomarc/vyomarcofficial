@@ -102,26 +102,6 @@ nav {
 .nav-links a:hover {
   color: #00a8ff;
 }
-.buy-coffee-btn {
-  background: #0b2c4a;
-  color: white !important;
-  padding: 8px 18px;
-  border-radius: 40px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  transition: all 0.2s;
-  border: 1px solid #1f4e79;
-  display: inline-block;
-}
-
-/* Adjust chai button inside navbar */
-.buy-coffee-btn img {
-  display: block;
-  transition: transform 0.2s;
-}
-.buy-coffee-btn:hover img {
-  transform: scale(1.02);
-}
 
 /* =========================================
    GLOBAL BUTTONS
@@ -211,7 +191,7 @@ nav {
 }
 
 /* =========================================
-   [NEW] ENTERPRISE HOMEPAGE DESIGN 
+   ENTERPRISE HOMEPAGE DESIGN 
    ========================================= */
 .bg-light {
   background-color: #f8fafc;
@@ -228,7 +208,7 @@ nav {
 .enterprise-hero {
   position: relative;
   padding: 160px 0 140px;
-  background: #040d1a url('../images/vyomarc-hero-image.jpeg') center/cover no-repeat;
+  background: #040d1af3 url('../images/vyomarc-hero-image.jpeg') center/cover no-repeat;
   overflow: hidden;
 }
 .hero-bg-overlay {
@@ -278,8 +258,6 @@ nav {
   margin-left: auto;
   margin-right: auto;
 }
-
-/* Enterprise Hero Buttons */
 .hero-btn-primary {
   background: #ffffff;
   color: #040d1a;
@@ -329,7 +307,6 @@ nav {
   flex-wrap: wrap;
 }
 
-/* Enterprise Solutions Grid */
 .enterprise-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -477,7 +454,7 @@ section {
   background: white;
   border: 1px solid #e2e8f0;
   border-radius: 20px;
-  overflow: hidden; /* Stops content from spilling out */
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
@@ -488,8 +465,8 @@ section {
 .portfolio-img {
   background: #f4f7fb;
   width: 100%;
-  height: 240px; /* FIXED HEIGHT: Stops image from expanding */
-  overflow: hidden; /* FIXED OVERFLOW */
+  height: 240px;
+  overflow: hidden;
   position: relative;
   display: flex;
   align-items: center;
@@ -498,12 +475,12 @@ section {
 .portfolio-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Keeps aspect ratio clean */
+  object-fit: cover;
   display: block;
   transition: transform 0.5s ease;
 }
 .portfolio-card:hover .portfolio-img img {
-  transform: scale(1.05); /* Smooth hover zoom effect */
+  transform: scale(1.05);
 }
 .portfolio-info {
   padding: 24px;
@@ -542,7 +519,7 @@ section {
 }
 
 /* =========================================
-   TESTIMONIALS (COMPLETELY FIXED SPACING)
+   TESTIMONIALS
    ========================================= */
 .testimonial-grid {
   display: grid;
@@ -562,7 +539,7 @@ section {
 .testi-role {
   font-size: 0.85rem;
   color: #64748b;
-  margin-top: 4px; /* FIXED: Removed the negative margin */
+  margin-top: 4px;
   margin-bottom: 12px;
 }
 .testi-link {
@@ -654,7 +631,7 @@ footer {
 }
 
 /* =========================================
-   ABOUT SECTION
+   NEW ABOUT PAGE ENHANCEMENTS
    ========================================= */
 .about-content {
   max-width: 1000px;
@@ -696,6 +673,241 @@ footer {
   font-weight: 800;
   color: #0b2c4a;
 }
+
+/* Big Founder Card Styles */
+.founder-card {
+  display: flex;
+  flex-direction: row;
+  gap: 48px;
+  align-items: center;
+  background: #ffffff;
+  padding: 48px;
+  border-radius: 32px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eef2f6;
+  margin: 40px auto;
+  max-width: 1000px;
+}
+.founder-img-wrapper {
+  flex-shrink: 0;
+}
+.founder-img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #f4f7fb;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+.founder-info h4 {
+  font-size: 2rem;
+  color: #0b2c4a;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+.founder-role {
+  color: #00a8ff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  display: inline-block;
+  background: #eef8ff;
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+.founder-info p {
+  color: #4b5563;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+/* Tech DNA Grid */
+.tech-pill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 40px;
+}
+.tech-pill {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #0b2c4a;
+  padding: 14px 28px;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tech-pill i {
+  color: #00a8ff;
+  font-size: 1.2rem;
+}
+.tech-pill:hover {
+  background: #0b2c4a;
+  color: #ffffff;
+  border-color: #0b2c4a;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Knowledge Banner CTA */
+.knowledge-banner {
+  background: linear-gradient(135deg, #040d1a, #0b2c4a);
+  border-radius: 32px;
+  padding: 64px 32px;
+  text-align: center;
+  color: #ffffff;
+  margin: 60px auto 0;
+  box-shadow: 0 20px 40px rgba(4, 13, 26, 0.15);
+  max-width: 1000px;
+}
+.knowledge-banner i {
+  font-size: 3rem;
+  color: #38bdf8;
+  margin-bottom: 24px;
+}
+.knowledge-banner h3 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+.knowledge-banner p {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  max-width: 650px;
+  margin: 0 auto 32px;
+  line-height: 1.6;
+}
+.knowledge-banner .btn-primary {
+  background: #38bdf8;
+  color: #040d1a;
+  font-size: 1.1rem;
+  padding: 14px 32px;
+}
+.knowledge-banner .btn-primary:hover {
+  background: #ffffff;
+}
+
+/* =========================================
+   ADDITIONAL ENHANCEMENTS
+   ========================================= */
+.outcome-text {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+.tech-tag {
+  background: #eef2ff;
+  color: #1f4e79;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid #d0dcf5;
+}
+.case-study-link {
+  display: inline-block;
+  color: #00a8ff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.case-study-link:hover {
+  color: #0b2c4a;
+  text-decoration: underline;
+}
+.case-study-link i {
+  font-size: 0.8rem;
+  margin-left: 4px;
+}
+
+/* Team Card Styles */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+.team-card {
+  text-align: center;
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 24px;
+  border: 1px solid #eef2f6;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  transition: transform 0.3s;
+}
+.team-card:hover {
+  transform: translateY(-5px);
+}
+.team-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 16px;
+  border: 4px solid #eef2ff;
+}
+.team-card h4 {
+  color: #0b2c4a;
+  margin-bottom: 4px;
+  font-size: 1.2rem;
+}
+.team-card .role {
+  color: #00a8ff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+.team-card .expertise {
+  color: #4b5563;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.team-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 16px;
+  border: 3px solid #f8fafc;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease;
+}
+.team-card:hover .team-img {
+  transform: scale(1.1);
+  border-color: #00a8ff;
+}
+.team-social {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed #e2e8f0;
+}
+.team-social a {
+  color: #64748b;
+  font-size: 1.1rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+.team-social a.linkedin:hover { color: #0077b5; transform: translateY(-3px); }
+.team-social a.twitter:hover { color: #000000; transform: translateY(-3px); }
+.team-social a.instagram:hover { color: #e1306c; transform: translateY(-3px); }
 
 /* ============================================
    FULLY RESPONSIVE MEDIA QUERIES
@@ -758,7 +970,7 @@ footer {
     font-size: 1.8rem;
   }
 
-  /* About */
+  /* About Updates */
   .about-grid {
     flex-direction: column;
   }
@@ -767,6 +979,21 @@ footer {
   }
   .about-stats {
     width: 100%;
+  }
+  
+  /* Founder Card Responsive */
+  .founder-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 24px;
+    gap: 24px;
+  }
+  .founder-img {
+    width: 160px;
+    height: 160px;
+  }
+  .team-social {
+    justify-content: center !important;
   }
 
   /* CTA */
@@ -840,137 +1067,4 @@ a,
 .close-btn,
 .product-badge {
   touch-action: manipulation;
-}
-
-/* =========================================
-   ADDITIONAL ENHANCEMENTS
-   ========================================= */
-.outcome-text {
-  font-size: 0.9rem;
-  color: #4b5563;
-  margin-top: 8px;
-  line-height: 1.5;
-}
-.tech-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 16px 0;
-}
-.tech-tag {
-  background: #eef2ff;
-  color: #1f4e79;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 20px;
-  border: 1px solid #d0dcf5;
-}
-.case-study-link {
-  display: inline-block;
-  color: #00a8ff;
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.case-study-link:hover {
-  color: #0b2c4a;
-  text-decoration: underline;
-}
-.case-study-link i {
-  font-size: 0.8rem;
-  margin-left: 4px;
-}
-
-/* Team Card Styles for about.html */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-.team-card {
-  text-align: center;
-  background: #fff;
-  padding: 30px 20px;
-  border-radius: 24px;
-  border: 1px solid #eef2f6;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-  transition: transform 0.3s;
-}
-.team-card:hover {
-  transform: translateY(-5px);
-}
-.team-photo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 0 auto 16px;
-  border: 4px solid #eef2ff;
-}
-.team-card h4 {
-  color: #0b2c4a;
-  margin-bottom: 4px;
-  font-size: 1.2rem;
-}
-.team-card .role {
-  color: #00a8ff;
-  font-weight: 600;
-  font-size: 0.9rem;
-  margin-bottom: 12px;
-}
-.team-card .expertise {
-  color: #4b5563;
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-/* =========================================
-   TEAM IMAGES & HOVER EFFECTS
-   ========================================= */
-.team-img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 0 auto 16px;
-  border: 3px solid #f8fafc;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease;
-}
-.team-card:hover .team-img {
-  transform: scale(1.1);
-  border-color: #00a8ff;
-}
-  
-/* =========================================
-   TEAM SOCIAL ICONS
-   ========================================= */
-.team-social {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px dashed #e2e8f0;
-}
-.team-social a {
-  color: #64748b;
-  font-size: 1.1rem;
-  transition: color 0.3s ease, transform 0.2s ease;
-  display: inline-block;
-}
-.team-social a.linkedin:hover { 
-  color: #0077b5;
-  transform: translateY(-3px); 
-}
-.team-social a.twitter:hover { 
-  color: #000000; 
-  transform: translateY(-3px); 
-}
-.team-social a.instagram:hover { 
-  color: #e1306c; 
-  transform: translateY(-3px);
 }

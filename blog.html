@@ -1,378 +1,430 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>VYOMARC Blog | Insights & Articles</title>
-        
-          <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Blogs | VYOMARC Technologies">
-  <meta property="og:description" content="Forward-thinking brands trust VYOMARC for scalable software and digital products.">
-  <meta property="og:image" content="https://vyomarctech.com/og-image.webp">
-  <meta property="og:url" content="https://vyomarctech.com/blog.html">
-  <meta property="og:type" content="website">
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="blogs | VYOMARC Technologies">
-  <meta name="twitter:description" content="Trusted by innovative brands worldwide.">
-        <!-- Google Fonts with fallback and crossorigin -->
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VYOMARC Blog | Insights & Articles</title>
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Blogs | VYOMARC Technologies" />
+    <meta
+      property="og:description"
+      content="Forward-thinking brands trust VYOMARC for scalable software and digital products."
+    />
+    <meta property="og:image" content="https://vyomarctech.com/og-image.webp" />
+    <meta property="og:url" content="https://vyomarctech.com/blog.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="blogs | VYOMARC Technologies" />
+    <meta
+      name="twitter:description"
+      content="Trusted by innovative brands worldwide."
+    />
+    <!-- Google Fonts with fallback and crossorigin -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
 
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-  <style>
-/* Fade-in animation for the whole page */
-.fade-in {
-  animation: fadeIn 0.6s ease forwards;
-}
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
+    <style>
+      /* Fade-in animation for the whole page */
+      .fade-in {
+        animation: fadeIn 0.6s ease forwards;
+      }
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-/* Blog hero section – responsive background & text */
-.blog-hero {
-  background: linear-gradient(135deg, #0e2243 0%, #073b69 100%);
-  color: #ffffff;
-  padding: clamp(40px, 8vw, 60px) 0;
-  text-align: center;
-  margin-bottom: clamp(24px, 5vw, 40px);
-}
-.blog-hero h1 {
-  font-size: clamp(1.8rem, 6vw, 2.8rem);
-  margin-bottom: 12px;
-  padding: 0 16px;
-}
-.blog-hero p {
-  font-size: clamp(1rem, 3vw, 1.2rem);
-  padding: 0 16px;
-}
+      /* Blog hero section – responsive background & text */
+      .blog-hero {
+        background: linear-gradient(135deg, #0e2243 0%, #073b69 100%);
+        color: #ffffff;
+        padding: clamp(40px, 8vw, 60px) 0;
+        text-align: center;
+        margin-bottom: clamp(24px, 5vw, 40px);
+      }
+      .blog-hero h1 {
+        font-size: clamp(1.8rem, 6vw, 2.8rem);
+        margin-bottom: 12px;
+        padding: 0 16px;
+      }
+      .blog-hero p {
+        font-size: clamp(1rem, 3vw, 1.2rem);
+        padding: 0 16px;
+      }
 
-/* Blog cards grid – responsive columns */
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: clamp(20px, 4vw, 32px);
-  margin: clamp(24px, 5vw, 40px) 0;
-}
+      /* Blog cards grid – responsive columns */
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: clamp(20px, 4vw, 32px);
+        margin: clamp(24px, 5vw, 40px) 0;
+      }
 
-/* Blog card – hover & touch friendly */
-.blog-card {
-  background: white;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
-  transition: transform 0.2s, box-shadow 0.2s;
-  border: 1px solid #eef2f6;
-}
-.blog-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
-}
-.blog-thumb {
-  width: 100%;
-  height: clamp(160px, 30vw, 200px);
-  object-fit: cover;
-  background: #eef2ff;
-}
-.blog-content {
-  padding: clamp(16px, 4vw, 24px);
-}
-.blog-title {
-  font-size: clamp(1.2rem, 4vw, 1.4rem);
-  margin-bottom: 12px;
-  color: #0b2c4a;
-  line-height: 1.3;
-}
-.blog-preview {
-  color: #4b5563;
-  margin-bottom: 20px;
-  line-height: 1.5;
-  font-size: clamp(0.85rem, 2.5vw, 0.95rem);
-}
-.read-more-btn {
-  background: transparent;
-  border: 1.5px solid #0b2c4a;
-  color: #0b2c4a;
-  padding: 8px 20px;
-  border-radius: 40px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.2s;
-  font-size: clamp(0.8rem, 2vw, 0.9rem);
-  width: 100%;
-  max-width: 200px;
-  margin-top: 8px;
-}
-.read-more-btn:hover {
-  background: #0b2c4a;
-  color: white;
-}
+      /* Blog card – hover & touch friendly */
+      .blog-card {
+        background: white;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        border: 1px solid #eef2f6;
+      }
+      .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+      }
+      .blog-thumb {
+        width: 100%;
+        height: clamp(160px, 30vw, 200px);
+        object-fit: cover;
+        background: #eef2ff;
+      }
+      .blog-content {
+        padding: clamp(16px, 4vw, 24px);
+      }
+      .blog-title {
+        font-size: clamp(1.2rem, 4vw, 1.4rem);
+        margin-bottom: 12px;
+        color: #0b2c4a;
+        line-height: 1.3;
+      }
+      .blog-preview {
+        color: #4b5563;
+        margin-bottom: 20px;
+        line-height: 1.5;
+        font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+      }
+      .read-more-btn {
+        background: transparent;
+        border: 1.5px solid #0b2c4a;
+        color: #0b2c4a;
+        padding: 8px 20px;
+        border-radius: 40px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.2s;
+        font-size: clamp(0.8rem, 2vw, 0.9rem);
+        width: 100%;
+        max-width: 200px;
+        margin-top: 8px;
+      }
+      .read-more-btn:hover {
+        background: #0b2c4a;
+        color: white;
+      }
 
-.empty-state {
-  text-align: center;
-  padding: clamp(40px, 10vw, 60px) 20px;
-  background: #f9fafb;
-  border-radius: 32px;
-  color: #5a6e7c;
-  font-size: clamp(0.9rem, 3vw, 1rem);
-}
+      .empty-state {
+        text-align: center;
+        padding: clamp(40px, 10vw, 60px) 20px;
+        background: #f9fafb;
+        border-radius: 32px;
+        color: #5a6e7c;
+        font-size: clamp(0.9rem, 3vw, 1rem);
+      }
 
-/* Article Modal – fully responsive */
-.article-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10000;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s, visibility 0.2s;
-  padding: 16px;
-}
-.article-modal.active {
-  opacity: 1;
-  visibility: visible;
-}
-.modal-content {
-  background: white;
-  max-width: 800px;
-  width: 100%;
-  max-height: 90vh;
-  overflow-y: auto;
-  border-radius: 28px;
-  padding: clamp(20px, 5vw, 32px);
-  position: relative;
-  margin: auto;
-  box-shadow: 0 30px 40px rgba(0,0,0,0.2);
-}
-.modal-close {
-  position: absolute;
-  top: 16px;
-  right: 20px;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: #666;
-  transition: 0.2s;
-  background: white;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-.modal-close:hover {
-  color: #0b2c4a;
-  background: #f0f0f0;
-}
-.modal-thumb {
-  width: 100%;
-  max-height: 250px;
-  object-fit: cover;
-  border-radius: 20px;
-  margin: 20px 0;
-}
-/* Modal content typography */
-.modal-content h2 {
-  font-size: clamp(1.4rem, 5vw, 1.8rem);
-  margin-bottom: 16px;
-  padding-right: 30px;
-}
-.modal-content p {
-  font-size: clamp(0.9rem, 3vw, 1rem);
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
+      /* Article Modal – fully responsive */
+      .article-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.2s,
+          visibility 0.2s;
+        padding: 16px;
+      }
+      .article-modal.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .modal-content {
+        background: white;
+        max-width: 800px;
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+        border-radius: 28px;
+        padding: clamp(20px, 5vw, 32px);
+        position: relative;
+        margin: auto;
+        box-shadow: 0 30px 40px rgba(0, 0, 0, 0.2);
+      }
+      .modal-close {
+        position: absolute;
+        top: 16px;
+        right: 20px;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #666;
+        transition: 0.2s;
+        background: white;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+      }
+      .modal-close:hover {
+        color: #0b2c4a;
+        background: #f0f0f0;
+      }
+      .modal-thumb {
+        width: 100%;
+        max-height: 250px;
+        object-fit: cover;
+        border-radius: 20px;
+        margin: 20px 0;
+      }
+      /* Modal content typography */
+      .modal-content h2 {
+        font-size: clamp(1.4rem, 5vw, 1.8rem);
+        margin-bottom: 16px;
+        padding-right: 30px;
+      }
+      .modal-content p {
+        font-size: clamp(0.9rem, 3vw, 1rem);
+        line-height: 1.6;
+        margin-bottom: 16px;
+      }
 
-/* ============================================
+      /* ============================================
    RESPONSIVE BREAKPOINTS (fine‑tuned)
    ============================================ */
-@media (max-width: 768px) {
-  .blog-hero {
-    margin-bottom: 24px;
-  }
-  .blog-grid {
-    gap: 20px;
-  }
-  .blog-content {
-    padding: 20px;
-  }
-  .read-more-btn {
-    max-width: 100%;
-  }
-  .modal-content {
-    padding: 20px;
-    width: 95%;
-  }
-  .modal-thumb {
-    max-height: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  .blog-hero h1 {
-    font-size: 1.8rem;
-  }
-  .blog-hero p {
-    font-size: 0.9rem;
-  }
-  .blog-card {
-    border-radius: 20px;
-  }
-  .blog-thumb {
-    height: 160px;
-  }
-  .blog-title {
-    font-size: 1.2rem;
-  }
-  .blog-preview {
-    font-size: 0.85rem;
-  }
-  .read-more-btn {
-    padding: 8px 16px;
-    font-size: 0.8rem;
-  }
-  .modal-close {
-    top: 12px;
-    right: 12px;
-    font-size: 1.5rem;
-  }
-}
-
-/* Landscape orientation on small devices */
-@media (max-width: 768px) and (orientation: landscape) {
-  .blog-hero {
-    padding: 30px 0;
-  }
-  .blog-thumb {
-    height: 140px;
-  }
-  .modal-content {
-    max-height: 85vh;
-  }
-}
-
-/* Touch devices – remove hover effects on tap */
-@media (hover: none) {
-  .blog-card:hover {
-    transform: none;
-  }
-  .read-more-btn:hover {
-    background: transparent;
-    color: #0b2c4a;
-  }
-}
-  </style>
-</head>
-<body>
-  <nav>
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">
-        <img src="vlogo.png" alt="VYOMARC Logo" class="logo-img">
-        <span class="nav-logo-text">VYOMARC</span>
-      </a>
-      <div class="menu-toggle" id="mobile-menu">
-        <i class="fas fa-bars"></i>
-      </div>
-      <div class="nav-links" id="nav-links">
-        <a href="index.html#home">Home</a>
-        <a href="index.html#enterprise">Enterprise</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#products">Products</a>
-        <a href="index.html#work">Work</a>
-        <a href="about.html">About</a>
-        <a href="contactus.html">Contact</a>
-        <a href="clients.html" class="active">Our Clients</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="blog.html" style="color:#00a8ff;">Blog</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Main content with fade-in class -->
-  <main class="fade-in">
-    <section class="blog-hero">
-      <div class="container">
-        <h1>Articles & Blogs</h1>
-        <p>Insights on software, AI, and digital innovation</p>
-      </div>
-    </section>
-
-    <div class="container">
-      <div id="blog-list" class="blog-grid">
-        <div class="empty-state">Loading articles...</div>
-      </div>
-    </div>
-  </main>
-
-  <!-- Full Article Modal -->
-  <div id="articleModal" class="article-modal">
-    <div class="modal-content">
-      <span class="modal-close">&times;</span>
-      <h2 id="modalTitle"></h2>
-      <img id="modalThumb" class="modal-thumb" alt="thumbnail">
-      <div id="modalFullContent"></div>
-    </div>
-  </div>
-
-  <footer id="contact">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col"><span class="logo-foot">VYOMARC</span><p>Building scalable software, websites & digital products.</p></div>
-        <div class="footer-col"><h4>Links</h4><a href="index.html#home">Home</a><a href="index.html#services">Services</a><a href="index.html#products">Products</a><a href="index.html#work">Portfolio</a><a href="about.html">About</a></div>
-        <div class="footer-col"><h4>Contact</h4><p><i class="fas fa-envelope"></i> vyomarctechnologies@gmail.com</p><p><i class="fas fa-phone-alt"></i> +91 825 270 2699</p><p><i class="fas fa-map-marker-alt"></i> Patna, Bihar</p></div>
-        <div class="footer-col"><h4>Social</h4><div class="social-icons"><a href="https://www.linkedin.com/company/vyomarc-technologies/"><i class="fab fa-linkedin"></i></a><a href="https://x.com/vyomarc"><i class="fab fa-twitter"></i></a><a href="https://www.instagram.com/vyomarc.tech"><i class="fab fa-instagram"></i></a></div></div>
-      </div>
-      <div class="copyright">© 2026 VYOMARC Technologies — All rights reserved.</div>
-    </div>
-  </footer>
-
-  <script>
-
-const firebaseConfig = {
-  apiKey: "AIzaSyBtn2HmtV-ku5XkQauF-v56cLIu23DvgkU",
-  authDomain: "vyomarc-blog.firebaseapp.com",
-  projectId: "vyomarc-blog",
-  storageBucket: "vyomarc-blog.firebasestorage.app",
-  messagingSenderId: "124236032657",
-  appId: "1:124236032657:web:7515f9af9687f6d0782d30",
-  measurementId: "G-98YQQYEZR4"
-    };
-    
-    // Initialize Firebase
-    if (!firebase.apps.length) {
-      firebase.initializeApp(firebaseConfig);
-    }
-    const db = firebase.firestore();
-
-    let globalPosts = [];
-
-    // Load and display posts from Cloud
-    async function loadPosts() {
-      const container = document.getElementById('blog-list');
-      
-      try {
-        const snapshot = await db.collection("vyomarc_posts").orderBy("date", "desc").get();
-        globalPosts = [];
-        snapshot.forEach(doc => {
-          globalPosts.push({ id: doc.id, ...doc.data() });
-        });
-
-        if (!globalPosts.length) {
-          container.innerHTML = '<div class="empty-state">✨ No articles yet. Check back soon!</div>';
-          return;
+      @media (max-width: 768px) {
+        .blog-hero {
+          margin-bottom: 24px;
         }
+        .blog-grid {
+          gap: 20px;
+        }
+        .blog-content {
+          padding: 20px;
+        }
+        .read-more-btn {
+          max-width: 100%;
+        }
+        .modal-content {
+          padding: 20px;
+          width: 95%;
+        }
+        .modal-thumb {
+          max-height: 200px;
+        }
+      }
 
-        container.innerHTML = globalPosts.map(post => `
+      @media (max-width: 480px) {
+        .blog-hero h1 {
+          font-size: 1.8rem;
+        }
+        .blog-hero p {
+          font-size: 0.9rem;
+        }
+        .blog-card {
+          border-radius: 20px;
+        }
+        .blog-thumb {
+          height: 160px;
+        }
+        .blog-title {
+          font-size: 1.2rem;
+        }
+        .blog-preview {
+          font-size: 0.85rem;
+        }
+        .read-more-btn {
+          padding: 8px 16px;
+          font-size: 0.8rem;
+        }
+        .modal-close {
+          top: 12px;
+          right: 12px;
+          font-size: 1.5rem;
+        }
+      }
+
+      /* Landscape orientation on small devices */
+      @media (max-width: 768px) and (orientation: landscape) {
+        .blog-hero {
+          padding: 30px 0;
+        }
+        .blog-thumb {
+          height: 140px;
+        }
+        .modal-content {
+          max-height: 85vh;
+        }
+      }
+
+      /* Touch devices – remove hover effects on tap */
+      @media (hover: none) {
+        .blog-card:hover {
+          transform: none;
+        }
+        .read-more-btn:hover {
+          background: transparent;
+          color: #0b2c4a;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <img src="vlogo.png" alt="VYOMARC Logo" class="logo-img" />
+          <span class="nav-logo-text">VYOMARC</span>
+        </a>
+        <div class="menu-toggle" id="mobile-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-links" id="nav-links">
+          <a href="index.html#home">Home</a>
+          <a href="index.html#services">Services</a>
+          <a href="index.html#work">Work</a>
+          <a href="about.html">About</a>
+          <a href="contactus.html">Contact</a>
+          <a href="clients.html" class="active">Our Clients</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="blog.html" style="color: #00a8ff">Blog</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content with fade-in class -->
+    <main class="fade-in">
+      <section class="blog-hero">
+        <div class="container">
+          <h1>Articles & Blogs</h1>
+          <p>Insights on software, AI, and digital innovation</p>
+        </div>
+      </section>
+
+      <div class="container">
+        <div id="blog-list" class="blog-grid">
+          <div class="empty-state">Loading articles...</div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Full Article Modal -->
+    <div id="articleModal" class="article-modal">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <img id="modalThumb" class="modal-thumb" alt="thumbnail" />
+        <div id="modalFullContent"></div>
+      </div>
+    </div>
+
+    <footer id="contact">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <span class="logo-foot">VYOMARC</span>
+            <p>Building scalable software, websites & digital products.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Links</h4>
+            <a href="index.html#home">Home</a
+            ><a href="index.html#services">Services</a
+            ><a href="index.html#work">Portfolio</a
+            ><a href="about.html">About</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <p><i class="fas fa-envelope"></i> vyomarctechnologies@gmail.com</p>
+            <p><i class="fas fa-phone-alt"></i> +91 825 270 2699</p>
+            <p><i class="fas fa-map-marker-alt"></i> Patna, Bihar</p>
+          </div>
+          <div class="footer-col">
+            <h4>Social</h4>
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/company/vyomarc-technologies/"
+                ><i class="fab fa-linkedin"></i></a
+              ><a href="https://x.com/vyomarc"><i class="fab fa-twitter"></i></a
+              ><a href="https://www.instagram.com/vyomarc.tech"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          © 2026 VYOMARC Technologies — All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyBtn2HmtV-ku5XkQauF-v56cLIu23DvgkU",
+        authDomain: "vyomarc-blog.firebaseapp.com",
+        projectId: "vyomarc-blog",
+        storageBucket: "vyomarc-blog.firebasestorage.app",
+        messagingSenderId: "124236032657",
+        appId: "1:124236032657:web:7515f9af9687f6d0782d30",
+        measurementId: "G-98YQQYEZR4",
+      };
+
+      // Initialize Firebase
+      if (!firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
+      }
+      const db = firebase.firestore();
+
+      let globalPosts = [];
+
+      // Load and display posts from Cloud
+      async function loadPosts() {
+        const container = document.getElementById("blog-list");
+
+        try {
+          const snapshot = await db
+            .collection("vyomarc_posts")
+            .orderBy("date", "desc")
+            .get();
+          globalPosts = [];
+          snapshot.forEach((doc) => {
+            globalPosts.push({ id: doc.id, ...doc.data() });
+          });
+
+          if (!globalPosts.length) {
+            container.innerHTML =
+              '<div class="empty-state">✨ No articles yet. Check back soon!</div>';
+            return;
+          }
+
+          container.innerHTML = globalPosts
+            .map(
+              (post) => `
           <div class="blog-card" data-id="${post.id}">
             <img src="${post.thumbnail}" class="blog-thumb" alt="${escapeHtml(post.title)}" onerror="this.src='https://placehold.co/600x400?text=No+Image'">
             <div class="blog-content">
@@ -381,69 +433,81 @@ const firebaseConfig = {
               <button class="read-more-btn" data-id="${post.id}">Read Full Article →</button>
             </div>
           </div>
-        `).join('');
+        `,
+            )
+            .join("");
 
-        // Attach click listeners
-        document.querySelectorAll('.read-more-btn').forEach(btn => {
-          btn.addEventListener('click', (e) => {
-            const id = btn.getAttribute('data-id');
-            const post = globalPosts.find(p => p.id === id);
-            if (post) openModal(post);
+          // Attach click listeners
+          document.querySelectorAll(".read-more-btn").forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+              const id = btn.getAttribute("data-id");
+              const post = globalPosts.find((p) => p.id === id);
+              if (post) openModal(post);
+            });
           });
-        });
-
-      } catch (error) {
-        console.error("Error fetching blogs:", error);
-        container.innerHTML = '<div class="empty-state" style="color:red;">Error loading articles. Please try again.</div>';
+        } catch (error) {
+          console.error("Error fetching blogs:", error);
+          container.innerHTML =
+            '<div class="empty-state" style="color:red;">Error loading articles. Please try again.</div>';
+        }
       }
-    }
 
-    function openModal(post) {
-      document.getElementById('modalTitle').innerHTML = escapeHtml(post.title);
-      document.getElementById('modalThumb').src = post.thumbnail || 'https://placehold.co/600x400?text=Article';
-      document.getElementById('modalFullContent').innerHTML = post.fullContent || '<p>Content not available.</p>';
-      document.getElementById('articleModal').classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
+      function openModal(post) {
+        document.getElementById("modalTitle").innerHTML = escapeHtml(
+          post.title,
+        );
+        document.getElementById("modalThumb").src =
+          post.thumbnail || "https://placehold.co/600x400?text=Article";
+        document.getElementById("modalFullContent").innerHTML =
+          post.fullContent || "<p>Content not available.</p>";
+        document.getElementById("articleModal").classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
 
-    function closeModal() {
-      document.getElementById('articleModal').classList.remove('active');
-      document.body.style.overflow = '';
-    }
+      function closeModal() {
+        document.getElementById("articleModal").classList.remove("active");
+        document.body.style.overflow = "";
+      }
 
-    function escapeHtml(str) {
-      if (!str) return '';
-      return str.replace(/[&<>]/g, function(m) {
-        if (m === '&') return '&amp;';
-        if (m === '<') return '&lt;';
-        if (m === '>') return '&gt;';
-        return m;
-      }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
-        return c;
+      function escapeHtml(str) {
+        if (!str) return "";
+        return str
+          .replace(/[&<>]/g, function (m) {
+            if (m === "&") return "&amp;";
+            if (m === "<") return "&lt;";
+            if (m === ">") return "&gt;";
+            return m;
+          })
+          .replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function (c) {
+            return c;
+          });
+      }
+
+      // Modal close handlers
+      document
+        .querySelector(".modal-close")
+        .addEventListener("click", closeModal);
+      document.getElementById("articleModal").addEventListener("click", (e) => {
+        if (e.target === document.getElementById("articleModal")) closeModal();
       });
-    }
-
-    // Modal close handlers
-    document.querySelector('.modal-close').addEventListener('click', closeModal);
-    document.getElementById('articleModal').addEventListener('click', (e) => {
-      if (e.target === document.getElementById('articleModal')) closeModal();
-    });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
-
-    // Mobile menu toggle
-    const mobileBtn = document.getElementById('mobile-menu');
-    const navLinksDiv = document.getElementById('nav-links');
-    if (mobileBtn && navLinksDiv) {
-      mobileBtn.addEventListener('click', () => {
-        navLinksDiv.classList.toggle('active');
-        const icon = mobileBtn.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
       });
-    }
 
-    // Initial load from Cloud
-    loadPosts();
-  </script>
-</body>
+      // Mobile menu toggle
+      const mobileBtn = document.getElementById("mobile-menu");
+      const navLinksDiv = document.getElementById("nav-links");
+      if (mobileBtn && navLinksDiv) {
+        mobileBtn.addEventListener("click", () => {
+          navLinksDiv.classList.toggle("active");
+          const icon = mobileBtn.querySelector("i");
+          icon.classList.toggle("fa-bars");
+          icon.classList.toggle("fa-times");
+        });
+      }
+
+      // Initial load from Cloud
+      loadPosts();
+    </script>
+  </body>
 </html>
