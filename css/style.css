@@ -1678,12 +1678,10 @@ a,
 }
 
 /* ---- Dark mode ---- */
-@media (prefers-color-scheme: dark) {
-  .faq-section { background: #040d1a; }
-  .faq-title { color: #ffffff; }
-  .faq-question { color: #ffffff; }
-  .faq-item { border-color: #353535; }
-  .faq-answer { color: #cbd5e1; }
-  .faq-answer strong { color: #ffffff; }
-  .faq-cta { background: #0b2c4a; border-color: #353535; }
-}
+[data-theme="dark"] .faq-section { background: #040d1a; }
+[data-theme="dark"] .faq-title { color: #ffffff; }
+[data-theme="dark"] .faq-question { color: #ffffff; }
+[data-theme="dark"] .faq-item { border-color: #353535; }
+[data-theme="dark"] .faq-answer { color: #cbd5e1; }
+[data-theme="dark"] .faq-answer strong { color: #ffffff; }
+[data-theme="dark"] .faq-cta { background: #0b2c4a; border-color: #353535; }
