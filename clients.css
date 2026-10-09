@@ -232,57 +232,7 @@ nav {
   transform: translateY(-2px);
 }
 
-/* ---------- FOOTER (same as homepage) ---------- */
-footer {
-  background: #f9fafb;
-  border-top: 1px solid #e5e9f0;
-  padding: 48px 0 24px;
-  margin-top: 40px;
-}
-.footer-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 40px;
-  margin-bottom: 40px;
-}
-.footer-col {
-  flex: 1;
-  min-width: 150px;
-}
-.footer-col .logo-foot {
-  font-size: 1.7rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #0b2c4a, #1f4e79);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  display: inline-block;
-  margin-bottom: 12px;
-}
-.footer-col p, .footer-col a {
-  color: #4b5563;
-  text-decoration: none;
-  display: block;
-  margin: 8px 0;
-  font-size: 0.9rem;
-}
-.footer-col a:hover {
-  color: #00a8ff;
-}
-.social-icons a {
-  display: inline-block;
-  margin-right: 16px;
-  font-size: 1.3rem;
-  color: #1f4e79;
-}
-.copyright {
-  text-align: center;
-  border-top: 1px solid #e2e8f0;
-  padding-top: 28px;
-  color: #6c757d;
-  font-size: 0.85rem;
-}
+
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 768px) {

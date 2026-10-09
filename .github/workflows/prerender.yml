@@ -1,0 +1,37 @@
+name: Pre-render Blog Posts
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'blogs/posts/**.md'
+      - 'blogs/posts.json'
+      - 'blogs/post.html'
+      - 'blogs/build/prerender.js'
+
+jobs:
+  prerender:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        working-directory: ./blogs
+        run: npm ci || npm install
+
+      - name: Run Pre-render Script
+        working-directory: ./blogs
+        run: node build/prerender.js
+
+      - name: Commit and Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: auto pre-render blog posts [skip ci]"
+          file_pattern: 'blogs/posts/*.html'

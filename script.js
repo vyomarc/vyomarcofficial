@@ -42,3 +42,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+(function () {
+  var questions = document.querySelectorAll('.faq-question');
+
+  questions.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      var answerId = this.getAttribute('aria-controls');
+      var answer   = document.getElementById(answerId);
+
+      /* Close all others */
+      questions.forEach(function (other) {
+        if (other !== btn) {
+          other.setAttribute('aria-expanded', 'false');
+          var otherId = other.getAttribute('aria-controls');
+          var otherAnswer = document.getElementById(otherId);
+          if (otherAnswer) {
+              otherAnswer.setAttribute('aria-hidden', 'true');
+          }
+        }
+      });
+
+      /* Toggle current */
+      this.setAttribute('aria-expanded', String(!expanded));
+      if (answer) {
+          answer.setAttribute('aria-hidden', String(expanded));
+      }
+    });
+  });
+})();

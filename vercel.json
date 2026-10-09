@@ -1,0 +1,21 @@
+{
+  "redirects": [
+    {
+      "source": "/blogs/post.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "file",
+          "value": "(?<slug>.*)"
+        }
+      ],
+      "destination": "/blogs/posts/:slug.html",
+      "permanent": true
+    },
+    {
+      "source": "/blogs/post.html",
+      "destination": "/blogs/",
+      "permanent": true
+    }
+  ]
+}
