@@ -1,6 +1,9 @@
 const fs = require('fs');
 const path = require('path');
-const { marked } = require('marked');
+(async () => {
+    try {
+        const { marked } = await import('marked');
+
 
 function formatDate(dateStr) {
     const date = new Date(dateStr + 'T00:00:00');
@@ -249,3 +252,8 @@ async function run() {
 }
 
 run();
+    } catch (error) {
+        console.error('Failed to load marked module:', error);
+        process.exit(1);
+    }
+})();
