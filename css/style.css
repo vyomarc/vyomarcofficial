@@ -1685,3 +1685,113 @@ a,
 [data-theme="dark"] .faq-answer { color: #cbd5e1; }
 [data-theme="dark"] .faq-answer strong { color: #ffffff; }
 [data-theme="dark"] .faq-cta { background: #0b2c4a; border-color: #353535; }
+
+/* =========================================
+   TRUST & GOVERNMENT VERIFICATION BADGE
+   ========================================= */
+.gem-trust-card {
+  margin-top: 32px;
+  padding: 24px 28px;
+  background: linear-gradient(135deg, #f0f9ff 0%, #f8fafc 100%);
+  border: 1px solid #bfdbfe;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(11, 44, 74, 0.04);
+}
+
+.gem-trust-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.gem-trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #0b2c4a;
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.gem-trust-badge i {
+  color: #38bdf8;
+}
+
+.gem-inc-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: #475569;
+  font-weight: 600;
+}
+
+.gem-inc-date i {
+  color: #0284c7;
+}
+
+.gem-trust-text {
+  margin: 14px 0 16px;
+  color: #334155;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.gem-trust-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gem-seller-id {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #0b2c4a;
+}
+
+.gem-seller-id i {
+  color: #0284c7;
+}
+
+@media (max-width: 640px) {
+  .gem-trust-card {
+    padding: 20px;
+  }
+  .gem-trust-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+[data-theme="dark"] .gem-trust-card {
+  background: #0b2c4a;
+  border-color: #1e3a5f;
+}
+
+[data-theme="dark"] .gem-trust-text {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .gem-inc-date {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .gem-seller-id {
+  background: #040d1a;
+  border-color: #1e3a5f;
+  color: #f1f5f9;
+}
