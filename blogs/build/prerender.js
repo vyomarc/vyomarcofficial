@@ -116,7 +116,7 @@ async function run() {
                     {
                         "@type": "ListItem",
                         "position": 2,
-                        "name": "Blog",
+                        "name": "Article & Blogs",
                         "item": "https://vyomarctech.com/blogs/"
                     },
                     {
@@ -137,7 +137,8 @@ async function run() {
 
             // Generate Post Container HTML
             const isAbsolute = postMeta.thumbnail && (postMeta.thumbnail.startsWith('http://') || postMeta.thumbnail.startsWith('https://'));
-            const thumbSrc = isAbsolute ? postMeta.thumbnail : (postMeta.thumbnail ? '../' + postMeta.thumbnail : '');
+            const cleanThumb = postMeta.thumbnail ? postMeta.thumbnail.replace(/^\.\.\//, '') : '';
+            const thumbSrc = isAbsolute ? postMeta.thumbnail : (cleanThumb ? '../' + cleanThumb : '');
             const thumbnailHTML = thumbSrc
                 ? `<img src="${thumbSrc}" alt="${postMeta.title}" class="post-hero-image" onerror="this.style.display='none'">`
                 : '';
@@ -182,7 +183,8 @@ async function run() {
                 let relatedHTML = '<div class="related-posts-section"><h2 class="related-posts-title">Related Posts</h2><div class="related-posts-grid">';
                 relatedPosts.forEach(post => {
                     const isRelAbsolute = post.thumbnail && (post.thumbnail.startsWith('http://') || post.thumbnail.startsWith('https://'));
-                    const relThumbSrc = isRelAbsolute ? post.thumbnail : (post.thumbnail ? '../' + post.thumbnail : '');
+                    const cleanRelThumb = post.thumbnail ? post.thumbnail.replace(/^\.\.\//, '') : '';
+                    const relThumbSrc = isRelAbsolute ? post.thumbnail : (cleanRelThumb ? '../' + cleanRelThumb : '');
                     const thumb = relThumbSrc 
                         ? `<img src="${relThumbSrc}" alt="${post.title}" class="related-card-img" onerror="this.style.display='none'">`
                         : `<div class="related-card-fallback"><svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></div>`;
@@ -209,6 +211,7 @@ async function run() {
             postHtml = postHtml.replace(/src="post-script\.js"/g, 'src="../post-script.js"');
             postHtml = postHtml.replace(/src="script\.js"/g, 'src="../script.js"');
             postHtml = postHtml.replace(/href="\/blogs\/"/g, 'href="/blogs/"');
+            postHtml = postHtml.replace(/>Blog<\/a>/g, '>Article & Blogs</a>');
             // Back to articles link
             postHtml = postHtml.replace(/href="index\.html"/g, 'href="../index.html"');
 

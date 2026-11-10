@@ -110,7 +110,11 @@
         // Thumbnail
         const img = document.createElement('img');
         img.className = 'post-card-thumbnail';
-        img.src = post.thumbnail;
+        let thumbSrc = post.thumbnail || '';
+        if (thumbSrc.startsWith('../')) {
+            thumbSrc = thumbSrc.replace(/^\.\.\//, '');
+        }
+        img.src = thumbSrc;
         img.alt = post.title;
         img.loading = 'lazy';
         img.onerror = function () {
