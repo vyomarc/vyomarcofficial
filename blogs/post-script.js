@@ -102,16 +102,6 @@
                 // Update SEO tags
                 if (!isPrerendered) updateMetaTags(postMeta);
 
-                let views = 0;
-                try {
-                    const viewsKey = 'views_' + postMeta.slug;
-                    views = parseInt(localStorage.getItem(viewsKey) || '0', 10) + 1;
-                    localStorage.setItem(viewsKey, views);
-                } catch (e) {
-                    // Fail silently
-                }
-                const viewsText = views > 0 ? '<span class="separator view-count-rendered">·</span><span class="view-count-rendered">' + views + (views === 1 ? ' view' : ' views') + '</span>' : '';
-
                 const isAbsolute = postMeta.thumbnail && (postMeta.thumbnail.startsWith('http://') || postMeta.thumbnail.startsWith('https://'));
                 const thumbSrc = isAbsolute ? postMeta.thumbnail : (postMeta.thumbnail ? postMeta.thumbnail : '');
                 const thumbnailHTML = thumbSrc
@@ -127,7 +117,6 @@
                         '<span>' + formatDate(postMeta.date) + '</span>' +
                         '<span class="separator">·</span>' +
                         '<span>By ' + (postMeta.author || 'VYOMARC') + '</span>' +
-                        viewsText +
                         '</div>' +
                         '<h1 class="post-page-title">' + postMeta.title + '</h1>' +
                         '<div class="post-content">' + htmlContent + '</div>' +
@@ -141,11 +130,6 @@
                         '</div>' +
                         '<div class="share-toast" aria-live="polite"></div>' +
                         '</div>';
-                } else {
-                    const metaDiv = postContainer.querySelector('.post-meta');
-                    if (metaDiv && views > 0 && !metaDiv.querySelector('.view-count-rendered')) {
-                        metaDiv.insertAdjacentHTML('beforeend', viewsText);
-                    }
                 }
 
                 if (!isPrerendered) {
@@ -233,8 +217,7 @@
                     });
                     
                     if (window.mermaid) {
-                        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-                        mermaid.initialize({ startOnLoad: false, theme: isDark ? 'dark' : 'default' });
+                        mermaid.initialize({ startOnLoad: false, theme: 'default' });
                         mermaid.init(undefined, postContainer.querySelectorAll('.mermaid'));
                     }
                 }

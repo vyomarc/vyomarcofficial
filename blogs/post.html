@@ -53,14 +53,6 @@
     <!-- Mermaid CDN -->
     <script src="https://cdn.jsdelivr.net/npm/mermaid@9.4.3/dist/mermaid.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <script>
-        (function() {
-            var savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            }
-        })();
-    </script>
     <style>
         /* ... same styles as before ... */
         .post-page {
@@ -306,34 +298,6 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         })();
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const toggle = document.getElementById('theme-toggle');
-            if (toggle) {
-                toggle.addEventListener('click', function() {
-                    const current = document.documentElement.getAttribute('data-theme');
-                    const next = current === 'dark' ? 'light' : 'dark';
-                    document.documentElement.setAttribute('data-theme', next);
-                    localStorage.setItem('theme', next);
-                    document.dispatchEvent(new CustomEvent('theme-changed', { detail: next }));
-                });
-            }
-
-            document.addEventListener('theme-changed', function(e) {
-                if (window.mermaid) {
-                    const isDark = e.detail === 'dark';
-                    mermaid.initialize({ startOnLoad: false, theme: isDark ? 'dark' : 'default' });
-                    document.querySelectorAll('.mermaid').forEach(function(div) {
-                        if (div.getAttribute('data-src')) {
-                            div.removeAttribute('data-processed');
-                            div.innerHTML = div.getAttribute('data-src');
-                        }
-                    });
-                    mermaid.init(undefined, document.querySelectorAll('.mermaid'));
-                }
-            });
-        });
     </script>
     
     <!-- ==================== WHATSAPP CTA (MOBILE) ==================== -->

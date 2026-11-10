@@ -141,8 +141,6 @@ async function run() {
             const thumbnailHTML = thumbSrc
                 ? `<img src="${thumbSrc}" alt="${postMeta.title}" class="post-hero-image" onerror="this.style.display='none'">`
                 : '';
-                
-            let viewsText = ''; // Views will be dynamically updated by client script if available
 
             let containerHtml =
                 thumbnailHTML +
@@ -151,7 +149,6 @@ async function run() {
                 '<span>' + formatDate(postMeta.date) + '</span>' +
                 '<span class="separator">·</span>' +
                 '<span>By ' + (postMeta.author || 'VYOMARC') + '</span>' +
-                viewsText +
                 '</div>' +
                 '<h1 class="post-page-title">' + postMeta.title + '</h1>' +
                 '<div class="post-content">' + htmlContent + '</div>' +

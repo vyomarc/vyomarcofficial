@@ -24,14 +24,6 @@
     <!-- Marked.js CDN for Markdown parsing -->
     <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js" defer></script>
     <link rel="stylesheet" href="style.css">
-    <script>
-        (function() {
-            var savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            }
-        })();
-    </script>
 </head>
 <body>
 
@@ -205,19 +197,6 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         })();
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const toggle = document.getElementById('theme-toggle');
-            if (toggle) {
-                toggle.addEventListener('click', function() {
-                    const current = document.documentElement.getAttribute('data-theme');
-                    const next = current === 'dark' ? 'light' : 'dark';
-                    document.documentElement.setAttribute('data-theme', next);
-                    localStorage.setItem('theme', next);
-                });
-            }
-        });
     </script>
     
     <!-- ==================== WHATSAPP CTA (MOBILE) ==================== -->
