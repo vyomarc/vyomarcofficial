@@ -228,27 +228,44 @@ async function run() {
 
     // Sitemap auto-generation
     const sitemapPath = path.join(blogsDir, '..', 'sitemap.xml');
-    if (fs.existsSync(sitemapPath)) {
-        let sitemapContent = fs.readFileSync(sitemapPath, 'utf-8');
-        
-        const urlsetEnd = sitemapContent.indexOf('</urlset>');
-        if (urlsetEnd !== -1) {
-            let coreSitemap = sitemapContent.substring(0, urlsetEnd);
-            
-            // Remove existing blog post URLs
-            coreSitemap = coreSitemap.replace(/<url>\s*<loc>https:\/\/vyomarctech\.com\/blogs\/posts\/.*?<\/loc>.*?<\/url>\s*/gs, '');
-            
-            let newSitemap = coreSitemap.trim() + '\n';
-            
-            for (const postMeta of allPostsData) {
-                newSitemap += `  <url>\n    <loc>https://vyomarctech.com/blogs/posts/${postMeta.slug}.html</loc>\n    <lastmod>${postMeta.date}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n`;
-            }
-            newSitemap += '</urlset>\n';
-            
-            fs.writeFileSync(sitemapPath, newSitemap, 'utf-8');
-            console.log('Sitemap auto-updated.');
-        }
+    const today = new Date().toISOString().split('T')[0];
+
+    const mainPages = [
+        { loc: 'https://vyomarctech.com/', changefreq: 'daily', priority: '1.0' },
+        { loc: 'https://vyomarctech.com/about.html', changefreq: 'weekly', priority: '0.8' },
+        { loc: 'https://vyomarctech.com/contactus.html', changefreq: 'weekly', priority: '0.8' },
+        { loc: 'https://vyomarctech.com/clients.html', changefreq: 'weekly', priority: '0.8' },
+        { loc: 'https://vyomarctech.com/krishiai.html', changefreq: 'weekly', priority: '0.8' },
+        { loc: 'https://vyomarctech.com/privacy-terms.html', changefreq: 'weekly', priority: '0.8' },
+        { loc: 'https://vyomarctech.com/learn.vyomarc.html', changefreq: 'weekly', priority: '0.8' },
+        { loc: 'https://vyomarctech.com/blogs/', changefreq: 'weekly', priority: '0.9' }
+    ];
+
+    let sitemapXml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+    sitemapXml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+
+    for (const page of mainPages) {
+        sitemapXml += '  <url>\n';
+        sitemapXml += `    <loc>${page.loc}</loc>\n`;
+        sitemapXml += `    <lastmod>${today}</lastmod>\n`;
+        sitemapXml += `    <changefreq>${page.changefreq}</changefreq>\n`;
+        sitemapXml += `    <priority>${page.priority}</priority>\n`;
+        sitemapXml += '  </url>\n';
     }
+
+    for (const postMeta of allPostsData) {
+        sitemapXml += '  <url>\n';
+        sitemapXml += `    <loc>https://vyomarctech.com/blogs/posts/${postMeta.slug}.html</loc>\n`;
+        sitemapXml += `    <lastmod>${postMeta.date}</lastmod>\n`;
+        sitemapXml += '    <changefreq>monthly</changefreq>\n';
+        sitemapXml += '    <priority>0.7</priority>\n';
+        sitemapXml += '  </url>\n';
+    }
+
+    sitemapXml += '</urlset>\n';
+
+    fs.writeFileSync(sitemapPath, sitemapXml, 'utf-8');
+    console.log('Sitemap auto-updated.');
 }
 
 run();

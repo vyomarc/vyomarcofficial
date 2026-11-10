@@ -1,8 +1,4 @@
-# User-agent: * ka matlab hai ye rules sabhi search bots ke liye hain
 User-agent: *
 Allow: /
 
-
-
-# Sitemap ka full link search engine ko dena zaroori hai
 Sitemap: https://vyomarctech.com/sitemap.xml

@@ -1,5 +1,14 @@
 [
     {
+        "slug": "osi-reference-model-7-layers-explained",
+        "title": "Explain OSI Reference Model with its 7 Layers (Computer Networks)",
+        "date": "2026-11-12",
+        "excerpt": "Complete B.Tech notes on the OSI model. Learn the 7 layers, data flow (encapsulation), with a visual Mermaid diagram, advantages, and disadvantages.",
+        "thumbnail": "../thumbnails/osi-model.webp",
+        "author": "Saurabh M. Kumar",
+        "category": "B.Tech Study Notes"
+    },
+    {
         "slug": "nvidia-spy-controversy-impact-bihar-computer-shops",
         "title": "Nvidia Spy Controversy: Market Reality & Impact on Computer Shops in Bihar",
         "date": "2026-11-10",
