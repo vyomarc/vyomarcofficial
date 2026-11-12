@@ -98,6 +98,61 @@
                 jsonLd.textContent = JSON.stringify(structuredData);
             }
 
+            
+            // Function to render Mermaid diagrams reliably
+            function renderMermaidDiagrams(container) {
+                if (!container) return;
+                const mermaidBlocks = container.querySelectorAll('pre code.language-mermaid');
+                if (mermaidBlocks.length > 0) {
+                    mermaidBlocks.forEach(function (codeEl) {
+                        const preEl = codeEl.parentElement;
+                        const mermaidDiv = document.createElement('div');
+                        mermaidDiv.className = 'mermaid';
+                        mermaidDiv.textContent = codeEl.textContent;
+                        preEl.parentNode.replaceChild(mermaidDiv, preEl);
+                    });
+                }
+                const mermaidDivs = container.querySelectorAll('.mermaid');
+                if (mermaidDivs.length > 0 && window.mermaid) {
+                    try {
+                        mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
+                        mermaid.init(undefined, mermaidDivs);
+                    } catch (e) {
+                        console.error('Mermaid render error:', e);
+                    }
+                }
+            }
+
+            function initMermaidWhenReady(container) {
+                if (!container) return;
+                if (window.mermaid) {
+                    renderMermaidDiagrams(container);
+                } else {
+                    let attempts = 0;
+                    const interval = setInterval(function () {
+                        attempts++;
+                        if (window.mermaid) {
+                            clearInterval(interval);
+                            renderMermaidDiagrams(container);
+                        } else if (attempts > 50) {
+                            clearInterval(interval);
+                        }
+                    }, 50);
+                }
+            }
+
+            function wrapTables(container) {
+                if (!container) return;
+                container.querySelectorAll('table').forEach(function (table) {
+                    if (!table.parentElement.classList.contains('table-wrapper')) {
+                        const wrapper = document.createElement('div');
+                        wrapper.className = 'table-wrapper';
+                        table.parentNode.insertBefore(wrapper, table);
+                        wrapper.appendChild(table);
+                    }
+                });
+            }
+
             function renderPost(postMeta, htmlContent, allPostsData) {
                 // Update SEO tags
                 if (!isPrerendered) updateMetaTags(postMeta);
@@ -205,30 +260,9 @@
                     });
                 }
 
-                // Process Mermaid diagrams
-                const mermaidBlocks = postContainer.querySelectorAll('pre code.language-mermaid');
-                if (mermaidBlocks.length > 0) {
-                    mermaidBlocks.forEach(function (codeEl) {
-                        const preEl = codeEl.parentElement;
-                        const mermaidDiv = document.createElement('div');
-                        mermaidDiv.className = 'mermaid';
-                        mermaidDiv.textContent = codeEl.textContent;
-                        preEl.parentNode.replaceChild(mermaidDiv, preEl);
-                    });
-                    
-                    if (window.mermaid) {
-                        mermaid.initialize({ startOnLoad: false, theme: 'default' });
-                        mermaid.init(undefined, postContainer.querySelectorAll('.mermaid'));
-                    }
-                }
-
-                // Wrap tables for responsiveness
-                postContainer.querySelectorAll('table').forEach(function (table) {
-                    const wrapper = document.createElement('div');
-                    wrapper.className = 'table-wrapper';
-                    table.parentNode.insertBefore(wrapper, table);
-                    wrapper.appendChild(table);
-                });
+                // Process Mermaid diagrams & tables
+                initMermaidWhenReady(postContainer);
+                wrapTables(postContainer);
 
                 // Style FAQs and Next Step
                 const headers = postContainer.querySelectorAll('h2, h3');
@@ -288,6 +322,12 @@
                 document.title = 'Article Not Found — VYOMARC';
                 postContainer.innerHTML =
                     '<div class="error-state">⚠️ ' + message + '</div>';
+            }
+
+                        // If pre-rendered content exists in DOM, initialize immediately
+            if (postContainer) {
+                initMermaidWhenReady(postContainer);
+                wrapTables(postContainer);
             }
 
             if (!slug) {

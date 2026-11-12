@@ -228,45 +228,341 @@
   </head>
 
   <body>
-    <nav>
-      <div class="nav-container">
-        <a href="/" class="nav-logo">
-          <img src="vlogo.png" alt="VYOMARC Logo - Enterprise Software Company" class="logo-img" width="40" height="40" fetchpriority="high" decoding="async" />
-          <span class="nav-logo-text">VYOMARC</span>
-        </a>
-        <div class="menu-toggle" id="mobile-menu" aria-label="Toggle Menu" aria-expanded="false">
-          <i class="fas fa-bars"></i>
+    <!-- Floating Pill Navigation -->
+    <header class="navbar-wrapper">
+      <nav class="nav-floating" aria-label="Main Navigation">
+        <div class="nav-brand-group">
+          <a href="/" class="nav-logo" aria-label="VYOMARC Home">
+            <img src="vlogo.png" alt="VYOMARC Logo - Enterprise Software Company" class="logo-img" width="38" height="38" fetchpriority="high" decoding="async" />
+            <span class="nav-logo-text">VYOMARC</span>
+          </a>
+          <span class="nav-brand-divider" aria-hidden="true"></span>
         </div>
+
+        <button type="button" class="menu-toggle" id="mobile-menu" aria-label="Toggle Menu" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </button>
+
         <div class="nav-links" id="nav-links">
-          <a href="/#home">Home</a>
+          <a href="/#home" class="nav-link-pill active">Home</a>
+          <a href="about.html" class="nav-link-pill">About</a>
           <div class="nav-dropdown">
-            <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Services <i class="fas fa-chevron-down nav-chevron"></i></button>
+            <button type="button" class="dropdown-toggle nav-link-pill" aria-haspopup="true" aria-expanded="false">
+              Services
+              <svg class="dropdown-chevron-svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
             <div class="dropdown-menu">
               <a href="website-development-services-bihar.html">Website Development</a>
               <a href="software-development-company-bihar.html">Software Development</a>
               <a href="index.html#services">View All Services</a>
             </div>
           </div>
-          <a href="/#work">Work</a>
-          <a href="about.html">About</a>
-          <a href="contactus.html">Contact</a>
-          <a href="clients.html">Our Clients</a>
-          <a href="/blogs/">Article & Blogs</a>
+          <a href="/#work" class="nav-link-pill">Work</a>
+          <a href="/blogs/" class="nav-link-pill">Article & Blogs</a>
+          <a href="contactus.html" class="nav-link-pill">Contact</a>
+          <a href="clients.html" class="nav-link-pill">Our Clients</a>
+          <a href="contactus.html" class="nav-cta-pill nav-cta-mobile">
+            <span>Get a Free Consultation</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
         </div>
-      </div>
-    </nav>
+
+        <a href="contactus.html" class="nav-cta-pill nav-cta-desktop">
+          <span>Get a Free Consultation</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </nav>
+    </header>
 
     <main>
-      <section id="home" class="enterprise-hero">
-        <img src="images/vyomarc-hero-image.jpeg" alt="VYOMARC Enterprise Engineering Hub" class="hero-bg-img" fetchpriority="high" width="1920" height="1080" decoding="async" />
-        <div class="hero-bg-overlay"></div>
-        <div class="container hero-content">
-          <span class="hero-badge"><i class="fas fa-shield-alt"></i> Enterprise Engineering Hub</span>
-          <h1 class="hero-title">Building Scalable Software, Websites & Digital Products.</h1>
-          <p class="hero-subtitle">Logic without limits.</p>
-          <div class="cta-group">
-            <a href="software-development-company-bihar.html" class="btn-primary hero-btn-primary">Get Started</a>
-            <a href="#work" class="btn-secondary hero-btn-secondary">View Work</a>
+      <!-- Hero Section Redesign -->
+      <section id="home" class="hero-redesign">
+        <div class="hero-bg-art" aria-hidden="true"></div>
+        <div class="hero-container hero-content">
+          <div class="hero-grid">
+            <div class="hero-left-content">
+              <!-- Top Badge -->
+              <div class="hero-pill-badge anim-fade-up delay-1">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 22v-9"></path>
+                  <path d="M12 13c-3-2-6-1-7 2 0-4 3-7 7-7s7 3 7 7c-1-3-4-4-7-2z"></path>
+                  <path d="M9 13c-2-2-4-2-5 0 0-3 2-5 5-5s5 2 5 5c-1-2-3-2-5 0z"></path>
+                </svg>
+                <span>IT Solutions for Bihar & Beyond</span>
+              </div>
+
+              <!-- H1 Headline -->
+              <h1 class="hero-headline anim-fade-up delay-2">
+                We Build Software That<br>
+                <span class="hero-cyan-highlight highlight-text">
+                   Grows Business.
+                  <svg class="hero-underline-swoosh" viewBox="0 0 260 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M4 14C65 5 195 5 256 14" stroke="#fbbf24" stroke-width="4.5" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </h1>
+
+              <!-- Subheadline -->
+              <p class="hero-subheadline anim-fade-up delay-3">
+                From custom web apps to automated WhatsApp ordering systems, we engineer digital products that scale for businesses in Bihar.
+              </p>
+
+              <!-- CTA Buttons -->
+              <div class="hero-cta-actions anim-fade-up delay-4">
+                <a href="software-development-company-bihar.html" class="hero-btn-primary">
+                  <span>Start Your Project</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+                <a href="#work" class="hero-btn-secondary">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                  <span>See Our Work</span>
+                </a>
+              </div>
+
+              <!-- 4 Feature Cards Strip -->
+              <div class="hero-features-strip">
+                <div class="hero-feature-card">
+                  <div class="feature-icon-wrap">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                      <line x1="2" y1="20" x2="22" y2="20"></line>
+                    </svg>
+                  </div>
+                  <span class="feature-title">Website<br>Development</span>
+                </div>
+
+                <div class="hero-feature-card">
+                  <div class="feature-icon-wrap">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                      <polyline points="2 17 12 22 22 17"></polyline>
+                      <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                  </div>
+                  <span class="feature-title">SaaS<br>Products</span>
+                </div>
+
+                <div class="hero-feature-card">
+                  <div class="feature-icon-wrap">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <circle cx="12" cy="12" r="3"></circle>
+                      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                  </div>
+                  <span class="feature-title">Business<br>Automation</span>
+                </div>
+
+                <div class="hero-feature-card">
+                  <div class="feature-icon-wrap">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="16 18 22 12 16 6"></polyline>
+                      <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                  </div>
+                  <span class="feature-title">IT<br>Consulting</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column with Mobile Image & Based in Bihar Badge -->
+            <div class="hero-right-content">
+              <div class="hero-mobile-image-card" aria-hidden="true"></div>
+              <div class="bihar-floating-badge" title="VYOMARC Technologies - Proudly Rooted in Bihar">
+                <svg class="location-pin-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span class="bihar-badge-text">Based in <strong>Bihar</strong></span>
+                <svg class="heritage-stupa-svg" width="34" height="24" viewBox="0 0 64 48" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M32 4 L32 10 M28 10 L36 10 M32 10 Q22 18 16 26 L48 26 Q42 18 32 10 Z M12 26 L52 26 L52 34 L12 34 Z M8 34 L56 34 L58 42 L6 42 Z M4 42 L60 42 L62 46 L2 46 Z M24 26 L24 34 M40 26 L40 34 M20 34 L20 42 M32 34 L32 42 M44 34 L44 42"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Mobile Hero Background Wrapper (Visible on Mobile only) -->
+        <div class="mobile-hero-bg"></div>
+
+        <!-- Mobile Scroll Indicator (Visible on Mobile only) -->
+        <div class="mobile-scroll-indicator">
+          <span>Scroll to explore</span>
+          <svg class="chevron-down" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+      </section>
+
+      <!-- Infinite Scrolling Trust Strip -->
+      <section class="trust-strip-section" aria-label="Key Benefits and Trust Features">
+        <div class="trust-scroll-wrapper">
+          <div class="trust-scroll-track">
+            <ul class="trust-items">
+              <li class="trust-item">
+                <svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+                <span>Fast 7–10 Day Delivery</span>
+              </li>
+              <li class="trust-item-divider" aria-hidden="true"></li>
+              <li class="trust-item">
+                <svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <span>SEO Optimized</span>
+              </li>
+              <li class="trust-item-divider" aria-hidden="true"></li>
+              <li class="trust-item">
+                <svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Made in Bihar, India</span>
+              </li>
+              <li class="trust-item-divider" aria-hidden="true"></li>
+              <li class="trust-item">
+                <svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+                <span>100% Mobile Responsive</span>
+              </li>
+              <li class="trust-item-divider" aria-hidden="true"></li>
+              <li class="trust-item">
+                <svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <span>SSL Secured Websites</span>
+              </li>
+              <li class="trust-item-divider" aria-hidden="true"></li>
+              <li class="trust-item">
+                <svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="4" y="6" width="16" height="13" rx="3"></rect>
+                  <circle cx="9" cy="12" r="1.5" fill="currentColor"></circle>
+                  <circle cx="15" cy="12" r="1.5" fill="currentColor"></circle>
+                  <path d="M12 2v4M2 13h2M20 13h2M9 16h6"></path>
+                </svg>
+                <span>AI WhatsApp Automation</span>
+              </li>
+              <li class="trust-item-divider" aria-hidden="true"></li>
+              <li class="trust-item">
+                <svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M8 7h8M8 10.5h5.5a2.2 2.2 0 0 0 0-4.4H8M8 10.5l5.5 6.5"></path>
+                </svg>
+                <span>Starting ₹9,999 One-Time Cost</span>
+              </li>
+              <li class="trust-item-divider" aria-hidden="true"></li>
+              <li class="trust-item">
+                <svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                  <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                </svg>
+                <span>24/7 Support</span>
+              </li>
+              <li class="trust-item-divider" aria-hidden="true"></li>
+              <li class="trust-item">
+                <svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                <span>Custom Domain & Hosting</span>
+              </li>
+              <li class="trust-item-divider" aria-hidden="true"></li>
+            </ul>
+
+            <!-- Duplicate list for seamless infinite loop -->
+            <ul class="trust-items" aria-hidden="true">
+              <li class="trust-item">
+                <svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+                <span>Fast 7–10 Day Delivery</span>
+              </li>
+              <li class="trust-item-divider" aria-hidden="true"></li>
+              <li class="trust-item">
+                <svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <span>SEO Optimized</span>
+              </li>
+              <li class="trust-item-divider" aria-hidden="true"></li>
+              <li class="trust-item">
+                <svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Made in Bihar, India</span>
+              </li>
+              <li class="trust-item-divider" aria-hidden="true"></li>
+              <li class="trust-item">
+                <svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+                <span>100% Mobile Responsive</span>
+              </li>
+              <li class="trust-item-divider" aria-hidden="true"></li>
+              <li class="trust-item">
+                <svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <span>SSL Secured Websites</span>
+              </li>
+              <li class="trust-item-divider" aria-hidden="true"></li>
+              <li class="trust-item">
+                <svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="4" y="6" width="16" height="13" rx="3"></rect>
+                  <circle cx="9" cy="12" r="1.5" fill="currentColor"></circle>
+                  <circle cx="15" cy="12" r="1.5" fill="currentColor"></circle>
+                  <path d="M12 2v4M2 13h2M20 13h2M9 16h6"></path>
+                </svg>
+                <span>AI WhatsApp Automation</span>
+              </li>
+              <li class="trust-item-divider" aria-hidden="true"></li>
+              <li class="trust-item">
+                <svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M8 7h8M8 10.5h5.5a2.2 2.2 0 0 0 0-4.4H8M8 10.5l5.5 6.5"></path>
+                </svg>
+                <span>Starting ₹9,999 One-Time Cost</span>
+              </li>
+              <li class="trust-item-divider" aria-hidden="true"></li>
+              <li class="trust-item">
+                <svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                  <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                </svg>
+                <span>24/7 Support</span>
+              </li>
+              <li class="trust-item-divider" aria-hidden="true"></li>
+              <li class="trust-item">
+                <svg class="trust-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                <span>Custom Domain & Hosting</span>
+              </li>
+              <li class="trust-item-divider" aria-hidden="true"></li>
+            </ul>
           </div>
         </div>
       </section>
@@ -274,88 +570,328 @@
       <section id="services" class="enterprise-solutions-section">
         <div class="container">
           <div class="section-header">
-            <h2 class="section-title">Custom Digital Architecture</h2>
-            <p class="section-sub">We build high-performance websites, Applications, and automated ordering systems for growing businesses. Clean code, real results, and zero corporate fluff.</p>
+            <span class="section-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+              <span>Our Core Offerings</span>
+            </span>
+            <h2 class="section-title">
+              Custom Digital
+              <span class="arch-highlight">
+                Architecture
+                <svg class="arch-underline-svg" viewBox="0 0 220 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M4 13C55 4 165 4 216 13" stroke="#fbbf24" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </h2>
+            <p class="section-sub">We build high-performance websites, applications, and automated ordering systems for growing businesses. Clean code, real results, and zero corporate fluff.</p>
           </div>
+
           <div class="enterprise-grid">
-             <div class="ent-card">
-              <div class="ent-icon"><i class="fas fa-server"></i></div>
+            <!-- Card 1 -->
+            <div class="ent-card fade-up">
+              <div class="ent-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+              </div>
               <h3>Scalable Web Platforms</h3>
-              <p>High-performance websites custom-built on modern stacks (Next.js, React, Node.js, HTML5, CSS3). Lightning-fast loading speeds, absolute data security, and flawless user experiences that convert visitors into paying clients.</p>
+              <div class="ent-card-media">
+                <img src="images/web-platform.webp" alt="Scalable Web Platforms - Modern responsive web application on laptop" class="ent-card-img" width="300" height="168" loading="lazy" decoding="async" />
+              </div>
+              <p>High-performance websites custom-built on modern stacks (Next.js, React, Node.js, HTML5, CSS3). Lightning-fast, secure, and seamless experiences that convert visitors into paying clients.</p>
+              <a href="website-development-services-bihar.html" class="btn-learn-more">
+                <span>Learn More</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
             </div>
 
-            <div class="ent-card">
-              <div class="ent-icon"><i class="fas fa-laptop-code"></i></div>
+            <!-- Card 2 -->
+            <div class="ent-card fade-up">
+              <div class="ent-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
               <h3>Online CBT Platforms</h3>
-              <p>Secure, NTA-style Computer Based Test (CBT) platforms designed for local coaching institutes. Engineered with strict anti-cheat mechanisms, robust admin controls, and zero-latency interfaces to give your students a real exam-room experience.</p>
+              <div class="ent-card-media">
+                <img src="images/cbt-platform.webp" alt="Online CBT Platforms - Computer based test software interface with graduation cap" class="ent-card-img" width="300" height="224" loading="lazy" decoding="async" />
+              </div>
+              <p>Secure, NTA-style Computer Based Test (CBT) platforms designed for local coaching institutes. Built with strict anti-cheat mechanisms, robust admin controls, and zero-latency interfaces for a real exam-room experience.</p>
+              <a href="software-development-company-bihar.html" class="btn-learn-more outline">
+                <span>Learn More</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
             </div>
-         
-            <div class="ent-card">
-              <div class="ent-icon"><i class="fas fa-tachometer-alt"></i></div>
+
+            <!-- Card 3 -->
+            <div class="ent-card fade-up">
+              <div class="ent-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+              </div>
               <h3>Zero-Commission WhatsApp Ordering</h3>
+              <div class="ent-card-media">
+                <img src="images/whatsapp-ordering.webp" alt="Zero-Commission WhatsApp Ordering - Direct ordering smartphone system with delivery bag" class="ent-card-img" width="300" height="300" loading="lazy" decoding="async" />
+              </div>
               <p>Custom-engineered direct ordering systems for restaurants and retail brands. Eliminate 30% aggregator commissions with automated WhatsApp menus, instant customer receipts, and streamlined kitchen display systems.</p>
+              <a href="software-development-company-bihar.html" class="btn-learn-more outline">
+                <span>Learn More</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="services" class="bg-light">
+      <!-- What We Do Section -->
+      <section id="what-we-do" class="what-we-do-section">
         <div class="container">
           <div class="section-header">
-            <h2 class="section-title">What We Do</h2>
+            <span class="section-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+              <span>What We Do</span>
+            </span>
+            <h2 class="section-title">
+              End-to-End <span class="highlight-text">Digital Solutions<svg class="wwd-sparkle-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="16" y1="4" x2="22" y2="2"></line><line x1="18" y1="10" x2="23" y2="9"></line><line x1="13" y1="2" x2="16" y2="7"></line></svg><svg class="wwd-underline-svg" viewBox="0 0 220 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 13C55 4 165 4 216 13" stroke="#fbbf24" stroke-width="4" stroke-linecap="round"/></svg></span>
+            </h2>
             <p class="section-sub">End-to-end digital craftsmanship — from concept to scale.</p>
           </div>
-          <div class="cards-grid">
-            <a href="website-development-services-bihar.html" class="service-card" style="text-decoration: none; color: inherit; display: block;">
-              <img src="images/web-development-card-bihar.jpg" alt="Website development services in Bihar Sharif by VYOMARC Technologies" width="400" height="250" loading="lazy" decoding="async" class="service-card-img" />
-              <h3>Website Development</h3>
-              <p>Responsive, high-performance custom-built websites & secure backends tailored to convert local traffic into loyal customers.</p>
-            </a>
-            <div class="service-card">
-              <img src="images/application-development-card-bihar.jpg" alt="Mobile app development services in Bihar Sharif by VYOMARC Technologies" width="400" height="250" loading="lazy" decoding="async" class="service-card-img" />
-              <h3>App Development</h3>
-              <p>High-performance Android & cross-platform native experiences for seamless mobile usage.</p>
+
+          <div class="what-we-do-grid">
+            <!-- Card 1: Website Development -->
+            <div class="wwd-card scroll-fade-up" style="transition-delay: 0s;">
+              <div class="wwd-card-img-wrap">
+                <img src="images/web-development-card-bihar.jpg" alt="Website development services in Bihar Sharif by VYOMARC Technologies" width="400" height="250" loading="lazy" decoding="async" class="wwd-card-img" />
+              </div>
+              <div class="wwd-card-body">
+                <div class="wwd-title-group">
+                  <div class="wwd-icon-box" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="8 6 2 12 8 18"></polyline>
+                      <polyline points="16 18 22 12 16 6"></polyline>
+                      <line x1="14" y1="4" x2="10" y2="20"></line>
+                    </svg>
+                  </div>
+                  <h3 class="wwd-card-title">Website<br>Development</h3>
+                </div>
+                <p class="wwd-card-text">Responsive, high-performance custom-built websites &amp; secure backends tailored to convert local traffic into loyal customers.</p>
+                <div class="wwd-card-footer">
+                  <a href="website-development-services-bihar.html" class="wwd-btn primary">Learn More &rarr;</a>
+                </div>
+              </div>
             </div>
-            <div class="service-card">
-              <img src="images/WhatsApp-Automation-bihar.jpg" alt="WhatsApp business automation and ordering systems in Bihar Sharif by VYOMARC Technologies" width="400" height="250" loading="lazy" decoding="async" class="service-card-img" />
-              <h3>WhatsApp Business Automation</h3>
-              <p>We build custom WhatsApp ordering and booking systems for any business.</p>
+
+            <!-- Card 2: App Development -->
+            <div class="wwd-card scroll-fade-up" style="transition-delay: 0.15s;">
+              <div class="wwd-card-img-wrap">
+                <img src="images/application-development-card-bihar.jpg" alt="Mobile app development services in Bihar Sharif by VYOMARC Technologies" width="400" height="250" loading="lazy" decoding="async" class="wwd-card-img" />
+              </div>
+              <div class="wwd-card-body">
+                <div class="wwd-title-group">
+                  <div class="wwd-icon-box" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                      <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                    </svg>
+                  </div>
+                  <h3 class="wwd-card-title">App<br>Development</h3>
+                </div>
+                <p class="wwd-card-text">High-performance Android &amp; cross-platform native experiences for seamless mobile usage.</p>
+                <div class="wwd-card-footer">
+                  <a href="#" class="wwd-btn outline">Learn More &rarr;</a>
+                </div>
+              </div>
             </div>
-            <div class="service-card">
-              <img src="images/brand-identity-digital-marketing-bihar.png" alt="Brand identity and digital marketing design services in Bihar Sharif by VYOMARC Technologies" width="400" height="250" loading="lazy" decoding="async" class="service-card-img" />
-              <h3>Brand Identity</h3>
-              <p>Designing unique, industry-grade logos, posters, and comprehensive brand guidelines.</p>
+
+            <!-- Card 3: WhatsApp Business Automation -->
+            <div class="wwd-card wwd-card-accent-gold scroll-fade-up" style="transition-delay: 0.3s;">
+              <div class="wwd-card-img-wrap">
+                <img src="images/WhatsApp-Automation-bihar.jpg" alt="WhatsApp business automation and ordering systems in Bihar Sharif by VYOMARC Technologies" width="400" height="250" loading="lazy" decoding="async" class="wwd-card-img" />
+              </div>
+              <div class="wwd-card-body">
+                <div class="wwd-title-group">
+                  <div class="wwd-icon-box" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.48-8.413z"/>
+                    </svg>
+                  </div>
+                  <h3 class="wwd-card-title">WhatsApp<br>Business Automation</h3>
+                </div>
+                <p class="wwd-card-text">We build custom WhatsApp ordering and booking systems for any business.</p>
+                <div class="wwd-card-footer">
+                  <a href="#" class="wwd-btn outline">Learn More &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: Brand Identity -->
+            <div class="wwd-card scroll-fade-up" style="transition-delay: 0.45s;">
+              <div class="wwd-card-img-wrap">
+                <img src="images/brand-identity-digital-marketing-bihar.png" alt="Brand identity and digital marketing design services in Bihar Sharif by VYOMARC Technologies" width="400" height="250" loading="lazy" decoding="async" class="wwd-card-img" />
+              </div>
+              <div class="wwd-card-body">
+                <div class="wwd-title-group">
+                  <div class="wwd-icon-box" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                      <polyline points="2 17 12 22 22 17"></polyline>
+                      <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                  </div>
+                  <h3 class="wwd-card-title">Brand<br>Identity</h3>
+                </div>
+                <p class="wwd-card-text">Designing unique, industry-grade logos, posters, and comprehensive brand guidelines.</p>
+                <div class="wwd-card-footer">
+                  <a href="#" class="wwd-btn outline">Learn More &rarr;</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="bg-light">
+      <!-- Why Choose VYOMARC Section (Orbit Layout) -->
+      <section id="why-us" class="why-orbit-section">
         <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">Why Ambitious Businesses Choose VYOMARC</h2>
-            <p class="section-sub">We replace complex corporate jargon with clean, high-performance software systems that grow your business.</p>
-          </div>
-          <div class="why-grid">
-            <div class="why-card">
-              <i class="fas fa-bolt"></i>
-              <h3>Direct Founder Involvement</h3>
-              <p>No corporate layers or junior staff. You work directly with Saurabh M. Kumar, our lead system architect.</p>
+          <div class="why-orbit-wrapper">
+            <!-- Left Column: Content -->
+            <div class="why-orbit-content">
+              <div class="why-badge-line">
+                <span class="why-badge-dash" aria-hidden="true"></span>
+                <span class="why-badge-text">WHY CHOOSE VYOMARC</span>
+              </div>
+              <h2 class="why-orbit-title">
+                Why Ambitious<br>
+                Businesses Choose<br>
+                <span class="why-highlight">
+                  VYOMARC
+                  <svg class="why-underline-svg" viewBox="0 0 200 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M4 11C50 3 150 3 196 11" stroke="#fbbf24" stroke-width="4" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </h2>
+              <p class="why-orbit-sub">
+                We replace complex corporate jargon with clean, high-performance software systems that grow your business.
+              </p>
+              <div class="why-orbit-actions">
+                <a href="contactus.html" class="why-btn-primary">Work With Us &rarr;</a>
+                <a href="#work" class="why-btn-secondary">
+                  <span class="why-play-icon" aria-hidden="true">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                  </span>
+                  <span>See Our Approach</span>
+                </a>
+              </div>
             </div>
-            <div class="why-card">
-              <i class="fas fa-layer-group"></i>
-              <h3>Zero Per-Order Commissions</h3>
-              <p>We eliminate expensive aggregator cuts and setup your platform on own micro-cloud server for just a basic, transparent hosting maintenance fee.</p>
-            </div>
-            <div class="why-card">
-              <i class="fas fa-palette"></i>
-              <h3>Premium UI/UX</h3>
-              <p>Design-led development focused on conversion, retention, and flawless accessibility.</p>
-            </div>
-            <div class="why-card">
-              <i class="fas fa-code-branch"></i>
-              <h3>Conversational Automation</h3>
-              <p>Turning complex processes into frictionless interactions, from automated WhatsApp catalogs and orders to instant digital billing for any business.</p>
+
+            <!-- Right Column: Orbit Graphic -->
+            <div class="why-orbit-graphic">
+              <div class="orbit-system">
+                <!-- Center Logo Container -->
+                <div class="orbit-center-node">
+                  <div class="orbit-center-box">
+                    <img src="images/vlogo.png" alt="VYOMARC" class="orbit-logo" width="46" height="46" />
+                  </div>
+                </div>
+
+                <!-- Dashed Orbit Ring & Dots -->
+                <div class="orbit-ring-wrap">
+                  <div class="orbit-ring"></div>
+                  <!-- Connecting Dots -->
+                  <span class="orbit-dot dot-top" aria-hidden="true"></span>
+                  <span class="orbit-dot dot-right" aria-hidden="true"></span>
+                  <span class="orbit-dot dot-bottom" aria-hidden="true"></span>
+                  <span class="orbit-dot dot-left" aria-hidden="true"></span>
+                </div>
+
+                <!-- 4 Floating Cards -->
+                <!-- Card 1 (Top) -->
+                <div class="orbit-card card-top">
+                  <div class="orbit-card-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                  </div>
+                  <div class="orbit-card-body">
+                    <h3 class="orbit-card-title">Direct Founder Involvement</h3>
+                    <p class="orbit-card-sub">Work directly with Saurabh M. Kumar, our lead system architect.</p>
+                  </div>
+                </div>
+
+                <!-- Card 2 (Right) -->
+                <div class="orbit-card card-right">
+                  <div class="orbit-card-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+                      <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+                      <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+                      <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+                      <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.563-2.512 5.563-5.563C21.437 6.094 17.188 2 12 2z"></path>
+                    </svg>
+                  </div>
+                  <div class="orbit-card-body">
+                    <h3 class="orbit-card-title">Premium UI/UX</h3>
+                    <p class="orbit-card-sub">Design-led development focused on conversion, retention, and seamless accessibility.</p>
+                  </div>
+                </div>
+
+                <!-- Card 3 (Bottom) -->
+                <div class="orbit-card card-bottom">
+                  <div class="orbit-card-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="18" cy="18" r="3"></circle>
+                      <circle cx="6" cy="6" r="3"></circle>
+                      <path d="M13 6h3a2 2 0 0 1 2 2v7"></path>
+                      <line x1="6" y1="9" x2="6" y2="21"></line>
+                    </svg>
+                  </div>
+                  <div class="orbit-card-body">
+                    <h3 class="orbit-card-title">Conversational Automation</h3>
+                    <p class="orbit-card-sub">Turn complex processes into frictionless interactions—from WhatsApp catalogs to digital billing.</p>
+                  </div>
+                </div>
+
+                <!-- Card 4 (Left) -->
+                <div class="orbit-card card-left card-accent-gold">
+                  <div class="orbit-card-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                      <polyline points="2 17 12 22 22 17"></polyline>
+                      <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                  </div>
+                  <div class="orbit-card-body">
+                    <h3 class="orbit-card-title">Zero Per-Order Commissions</h3>
+                    <p class="orbit-card-sub">Eliminate costly aggregator cuts and run on your own micro-cloud server.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -584,32 +1120,197 @@
         </div><!-- /.faq-container -->
       </section>
 
-      <section class="bg-light">
+      <!-- The Engineering Lifecycle (Mountain Timeline) -->
+      <section id="process" class="lifecycle-section">
         <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">The Engineering Lifecycle</h2>
-            <p class="section-sub">A battle-tested methodology for shipping software that works.</p>
+          <div class="lifecycle-header">
+            <div class="lifecycle-badge">
+              <span class="lifecycle-badge-dash" aria-hidden="true"></span>
+              <span class="lifecycle-badge-text">OUR PROCESS</span>
+            </div>
+            <h2 class="lifecycle-title">
+              The Engineering <span class="highlight-text">Lifecycle<svg class="lifecycle-sparkle-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="16" y1="4" x2="22" y2="2"></line><line x1="18" y1="10" x2="23" y2="9"></line><line x1="13" y1="2" x2="16" y2="7"></line></svg><svg class="lifecycle-underline-svg" viewBox="0 0 180 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 11C45 3 135 3 176 11" stroke="#fbbf24" stroke-width="4" stroke-linecap="round"/></svg></span>
+            </h2>
+            <p class="lifecycle-sub">A battle-tested methodology for shipping software that works.</p>
           </div>
-          <div class="process-steps">
-            <div class="process-step">
-              <div class="step-num">1</div>
-              <h3>Discovery</h3>
-              <p>Architecture mapping & technical blueprinting.</p>
+
+          <div class="lifecycle-timeline">
+            <!-- Inline SVG Mountain & Curve Illustration -->
+            <svg class="lifecycle-mountain-svg" viewBox="0 0 1100 460" preserveAspectRatio="xMidYMax meet" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="mtnGradFront" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#93c5fd" stop-opacity="0.85"/>
+                  <stop offset="100%" stop-color="#dbeafe" stop-opacity="0.45"/>
+                </linearGradient>
+                <linearGradient id="mtnGradBack" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#bfdbfe" stop-opacity="0.6"/>
+                  <stop offset="100%" stop-color="#eff6ff" stop-opacity="0.25"/>
+                </linearGradient>
+                <linearGradient id="curveGlow" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#38bdf8"/>
+                  <stop offset="100%" stop-color="#0284c7"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Distant Mountain Layer -->
+              <path d="M 680 460 L 880 135 L 1080 460 Z" fill="url(#mtnGradBack)"/>
+              <!-- Main Mountain Peak -->
+              <path d="M 740 460 L 880 135 L 1020 460 Z" fill="url(#mtnGradFront)"/>
+              <!-- Snow Cap -->
+              <path d="M 880 135 L 855 200 L 872 188 L 880 208 L 892 188 L 905 200 Z" fill="#ffffff"/>
+              <!-- Summit Flag Pole & Flag -->
+              <line x1="880" y1="135" x2="880" y2="98" stroke="#0a192f" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M 880 100 Q 904 90 926 106 Q 908 120 880 120 Z" fill="#fbbf24"/>
+              <!-- Sparkles at Flag -->
+              <line x1="930" y1="88" x2="940" y2="82" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"/>
+              <line x1="936" y1="98" x2="947" y2="98" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"/>
+              <line x1="930" y1="108" x2="940" y2="114" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"/>
+
+              <!-- Rolling Hills Base -->
+              <path d="M 0 460 Q 220 425 450 380 Q 700 330 920 420 L 1100 460 Z" fill="#eff6ff" opacity="0.75"/>
+              <path d="M 0 460 Q 320 440 620 375 Q 850 315 1100 405 L 1100 460 Z" fill="#f8fafc" opacity="0.85"/>
+
+              <!-- Pine Trees Silhouettes -->
+              <polygon points="620,380 626,394 623,394 628,406 612,406 617,394 614,394" fill="#93c5fd" opacity="0.85"/>
+              <polygon points="642,370 649,386 645,386 651,399 633,399 639,386 635,386" fill="#60a5fa" opacity="0.85"/>
+              <polygon points="840,390 846,403 843,403 848,414 832,414 837,403 834,403" fill="#93c5fd" opacity="0.85"/>
+              <polygon points="858,382 865,397 861,397 867,410 849,410 855,397 851,397" fill="#60a5fa" opacity="0.85"/>
+
+              <!-- Ascending Lifecycle Curve -->
+              <path class="lifecycle-curve-path" d="M 40 400 C 130 395 150 365 210 365 C 280 365 330 330 390 330 C 480 330 530 275 590 275 C 680 275 750 220 848 165" fill="none" stroke="url(#curveGlow)" stroke-width="3.5" stroke-linecap="round"/>
+              <polygon points="848,154 856,170 842,166" fill="#0284c7"/>
+
+              <!-- Dashed Connector Lines to Curve -->
+              <line class="curve-connector-svg line-1" x1="145" y1="280" x2="145" y2="368" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="4 4"/>
+              <line class="curve-connector-svg line-2" x1="345" y1="245" x2="345" y2="335" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="4 4"/>
+              <line class="curve-connector-svg line-3" x1="540" y1="180" x2="540" y2="280" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="4 4"/>
+              <line class="curve-connector-svg line-4" x1="725" y1="115" x2="725" y2="230" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="4 4"/>
+
+              <!-- Curve Nodes (Concentric Pulse Rings) -->
+              <circle cx="145" cy="368" r="10" fill="#0284c7" fill-opacity="0.2" class="curve-pulse-node"/>
+              <circle cx="145" cy="368" r="5" fill="#ffffff" stroke="#0284c7" stroke-width="3"/>
+
+              <circle cx="345" cy="335" r="10" fill="#0284c7" fill-opacity="0.2" class="curve-pulse-node"/>
+              <circle cx="345" cy="335" r="5" fill="#ffffff" stroke="#0284c7" stroke-width="3"/>
+
+              <circle cx="540" cy="280" r="10" fill="#0284c7" fill-opacity="0.2" class="curve-pulse-node"/>
+              <circle cx="540" cy="280" r="5" fill="#ffffff" stroke="#0284c7" stroke-width="3"/>
+
+              <circle cx="725" cy="230" r="10" fill="#0284c7" fill-opacity="0.2" class="curve-pulse-node"/>
+              <circle cx="725" cy="230" r="5" fill="#ffffff" stroke="#0284c7" stroke-width="3"/>
+            </svg>
+
+            <!-- 4 Interactive Step Cards -->
+            <div class="lifecycle-steps-wrap">
+              <!-- Step 1 (Discovery) -->
+              <div class="lifecycle-step process-step step-1">
+                <div class="step-icon-wrap" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </div>
+                <div class="step-content">
+                  <div class="step-num-pill">01</div>
+                  <h3 class="step-title">Discovery</h3>
+                  <p class="step-desc">Architecture mapping &amp; technical blueprinting.</p>
+                </div>
+              </div>
+
+              <!-- Step 2 (Design) -->
+              <div class="lifecycle-step process-step step-2">
+                <div class="step-icon-wrap" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                  </svg>
+                </div>
+                <div class="step-content">
+                  <div class="step-num-pill">02</div>
+                  <h3 class="step-title">Design</h3>
+                  <p class="step-desc">High-fidelity prototyping &amp; UX validation.</p>
+                </div>
+              </div>
+
+              <!-- Step 3 (Engineering) -->
+              <div class="lifecycle-step process-step step-3">
+                <div class="step-icon-wrap" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <div class="step-content">
+                  <div class="step-num-pill">03</div>
+                  <h3 class="step-title">Engineering</h3>
+                  <p class="step-desc">Strict agile coding, CI/CD &amp; rigorous QA.</p>
+                </div>
+              </div>
+
+              <!-- Step 4 (Deployment) -->
+              <div class="lifecycle-step process-step step-4">
+                <div class="step-icon-wrap" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 16l-4-4-4 4"></path>
+                    <path d="M12 12v9"></path>
+                    <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
+                    <polyline points="16 16 12 12 8 16"></polyline>
+                  </svg>
+                </div>
+                <div class="step-content">
+                  <div class="step-num-pill">04</div>
+                  <h3 class="step-title">Deployment</h3>
+                  <p class="step-desc">Cloud launch, scaling &amp; ongoing SLA support.</p>
+                </div>
+              </div>
             </div>
-            <div class="process-step">
-              <div class="step-num">2</div>
-              <h3>Design</h3>
-              <p>High-fidelity prototyping & UX validation.</p>
+          </div>
+
+          <!-- Bottom Feature Strip -->
+          <div class="lifecycle-bottom-strip">
+            <div class="lifecycle-strip-item">
+              <span class="strip-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="6"></circle>
+                  <circle cx="12" cy="12" r="2"></circle>
+                </svg>
+              </span>
+              <span class="strip-label">Goal-Driven</span>
             </div>
-            <div class="process-step">
-              <div class="step-num">3</div>
-              <h3>Engineering</h3>
-              <p>Strict agile coding, CI/CD & rigorous QA.</p>
+            <div class="lifecycle-strip-divider" aria-hidden="true"></div>
+
+            <div class="lifecycle-strip-item">
+              <span class="strip-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </span>
+              <span class="strip-label">Process-Led</span>
             </div>
-            <div class="process-step">
-              <div class="step-num">4</div>
-              <h3>Deployment</h3>
-              <p>Cloud launch, scaling & ongoing SLA support.</p>
+            <div class="lifecycle-strip-divider" aria-hidden="true"></div>
+
+            <div class="lifecycle-strip-item">
+              <span class="strip-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <polyline points="9 12 11 14 15 10"></polyline>
+                </svg>
+              </span>
+              <span class="strip-label">Quality-Focused</span>
+            </div>
+            <div class="lifecycle-strip-divider" aria-hidden="true"></div>
+
+            <div class="lifecycle-strip-item">
+              <span class="strip-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#0284c7">
+                  <rect x="4" y="14" width="3" height="6" rx="1"></rect>
+                  <rect x="10.5" y="10" width="3" height="10" rx="1"></rect>
+                  <rect x="17" y="5" width="3" height="15" rx="1"></rect>
+                </svg>
+              </span>
+              <span class="strip-label">Built for Scale</span>
             </div>
           </div>
         </div>
@@ -652,8 +1353,170 @@
         </div>
       </div>
 
-      <section class="container" style="padding: 40px 20px; font-size: 0.9rem; color: var(--text-secondary); background: var(--surface-1); margin-top: 40px; border-radius: 12px;">
-        <p style="margin-bottom: 12px;"><strong>Areas We Serve:</strong> Bihar Sharif, Patna, Gaya, Muzaffarpur, Bhagalpur, Nalanda, Rajgir, and all over in North India.</p>
+      <!-- Areas We Serve Section (Interactive SVG Map) -->
+      <section id="areas-we-serve" class="areas-we-serve">
+        <div class="container">
+          <div class="areas-wrapper">
+            <!-- Left Column: Text & City Pills -->
+            <div class="areas-content">
+              <div class="areas-badge">
+                <span class="areas-badge-dash" aria-hidden="true"></span>
+                <span class="areas-badge-text">LOCAL PRESENCE</span>
+              </div>
+              <h2 class="areas-title">
+                Serving Businesses Across<br>
+                <span class="highlight-text">
+                  Bihar &amp; Beyond
+                  <svg class="areas-underline-svg" viewBox="0 0 220 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M4 11C55 3 165 3 216 11" stroke="#fbbf24" stroke-width="4" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </h2>
+              <p class="areas-sub">
+                We provide high-performance digital solutions to growing businesses in Bihar Sharif, Patna, Gaya, Muzaffarpur, Bhagalpur, Nalanda, Rajgir, and all over North India.
+              </p>
+              
+              <div class="city-tags">
+                <span class="city-pill">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="6"></circle></svg>
+                  Bihar Sharif
+                </span>
+                <span class="city-pill">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="6"></circle></svg>
+                  Patna
+                </span>
+                <span class="city-pill">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="6"></circle></svg>
+                  Gaya
+                </span>
+                <span class="city-pill">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="6"></circle></svg>
+                  Muzaffarpur
+                </span>
+                <span class="city-pill">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="6"></circle></svg>
+                  Bhagalpur
+                </span>
+                <span class="city-pill">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="6"></circle></svg>
+                  Nalanda
+                </span>
+                <span class="city-pill">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="6"></circle></svg>
+                  Rajgir
+                </span>
+                 <span class="city-pill">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="6"></circle></svg>
+                  All districts.
+                </span>
+              </div>
+            </div>
+
+            <!-- Right Column: Interactive Map Graphic -->
+            <div class="areas-map-col">
+              <div class="bihar-map-container">
+                <div class="map-header">
+                  <span class="status-dot"></span>
+                  BIHAR REGIONAL COVERAGE
+                </div>
+                <svg class="bihar-svg-map" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Abstract regional network map of Bihar">
+                  <defs>
+                    <linearGradient id="techGridGrad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#f0f9ff" stop-opacity="0.8"/>
+                      <stop offset="100%" stop-color="#e0f2fe" stop-opacity="0.4"/>
+                    </linearGradient>
+                  </defs>
+
+                  <!-- Stylized Tech-Grid Border & Canvas -->
+                  <rect x="15" y="15" width="470" height="370" rx="16" fill="url(#techGridGrad)" stroke="#bae6fd" stroke-width="1.5" stroke-dasharray="6 4"/>
+                  
+                  <!-- Tech Crosshairs / Corner Marks -->
+                  <path d="M 25 35 L 25 25 L 35 25" fill="none" stroke="#0284c7" stroke-width="2"/>
+                  <path d="M 465 25 L 475 25 L 475 35" fill="none" stroke="#0284c7" stroke-width="2"/>
+                  <path d="M 25 365 L 25 375 L 35 375" fill="none" stroke="#0284c7" stroke-width="2"/>
+                  <path d="M 465 375 L 475 375 L 475 365" fill="none" stroke="#0284c7" stroke-width="2"/>
+
+                  <!-- Internal Coordinate Grid Lines -->
+                  <line x1="15" y1="120" x2="485" y2="120" stroke="#e0f2fe" stroke-width="1" stroke-dasharray="3 3"/>
+                  <line x1="15" y1="260" x2="485" y2="260" stroke="#e0f2fe" stroke-width="1" stroke-dasharray="3 3"/>
+                  <line x1="160" y1="15" x2="160" y2="385" stroke="#e0f2fe" stroke-width="1" stroke-dasharray="3 3"/>
+                  <line x1="330" y1="15" x2="330" y2="385" stroke="#e0f2fe" stroke-width="1" stroke-dasharray="3 3"/>
+
+                  <!-- Stylized Ganga River Curve -->
+                  <path class="map-river" d="M 20 185 Q 120 205 210 185 T 350 205 T 480 215" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="8 4" stroke-linecap="round"/>
+                  <text x="350" y="180" font-size="9.5" font-weight="700" fill="#0284c7" letter-spacing="1.5" opacity="0.85">GANGA RIVER</text>
+
+                  <!-- Network Interconnect Mesh Lines -->
+                  <line x1="210" y1="100" x2="200" y2="195" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 3"/>
+                  <line x1="200" y1="195" x2="280" y2="255" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 3"/>
+                  <line x1="200" y1="195" x2="175" y2="335" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 3"/>
+                  <line x1="280" y1="255" x2="265" y2="295" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 3"/>
+                  <line x1="265" y1="295" x2="250" y2="330" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 3"/>
+                  <line x1="250" y1="330" x2="175" y2="335" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 3"/>
+                  <line x1="280" y1="255" x2="405" y2="215" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 3"/>
+                  <line x1="200" y1="195" x2="405" y2="215" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.6"/>
+
+                  <!-- 7 City Nodes -->
+                  <!-- 1. Muzaffarpur (Top) -->
+                  <g class="map-node" transform="translate(210, 100)">
+                    <circle class="node-pulse" r="14" fill="#fbbf24" fill-opacity="0.25"/>
+                    <circle class="node-ring" r="8" fill="#fbbf24" fill-opacity="0.4"/>
+                    <circle class="node-core" r="4.5" fill="#f59e0b" stroke="#ffffff" stroke-width="2"/>
+                    <text class="node-label" x="0" y="-14" text-anchor="middle">Muzaffarpur</text>
+                  </g>
+
+                  <!-- 2. Patna (Center) -->
+                  <g class="map-node" transform="translate(200, 195)">
+                    <circle class="node-pulse" r="14" fill="#fbbf24" fill-opacity="0.25"/>
+                    <circle class="node-ring" r="8" fill="#fbbf24" fill-opacity="0.4"/>
+                    <circle class="node-core" r="4.5" fill="#f59e0b" stroke="#ffffff" stroke-width="2"/>
+                    <text class="node-label" x="-14" y="4" text-anchor="end">Patna</text>
+                  </g>
+
+                  <!-- 3. Bihar Sharif (HQ / South-East) -->
+                  <g class="map-node is-hq" transform="translate(280, 255)">
+                    <circle class="node-pulse hq-pulse" r="16" fill="#0284c7" fill-opacity="0.3"/>
+                    <circle class="node-ring hq-ring" r="9" fill="#0284c7" fill-opacity="0.45"/>
+                    <circle class="node-core hq-core" r="5" fill="#0284c7" stroke="#ffffff" stroke-width="2"/>
+                    <text class="node-label hq-label" x="14" y="4" text-anchor="start">Bihar Sharif (HQ)</text>
+                  </g>
+
+                  <!-- 4. Nalanda -->
+                  <g class="map-node" transform="translate(265, 295)">
+                    <circle class="node-pulse" r="12" fill="#fbbf24" fill-opacity="0.25"/>
+                    <circle class="node-ring" r="6.5" fill="#fbbf24" fill-opacity="0.4"/>
+                    <circle class="node-core" r="3.5" fill="#f59e0b" stroke="#ffffff" stroke-width="2"/>
+                    <text class="node-label" x="12" y="4" text-anchor="start">Nalanda</text>
+                  </g>
+
+                  <!-- 5. Rajgir -->
+                  <g class="map-node" transform="translate(250, 330)">
+                    <circle class="node-pulse" r="12" fill="#fbbf24" fill-opacity="0.25"/>
+                    <circle class="node-ring" r="6.5" fill="#fbbf24" fill-opacity="0.4"/>
+                    <circle class="node-core" r="3.5" fill="#f59e0b" stroke="#ffffff" stroke-width="2"/>
+                    <text class="node-label" x="12" y="4" text-anchor="start">Rajgir</text>
+                  </g>
+
+                  <!-- 6. Gaya (Bottom) -->
+                  <g class="map-node" transform="translate(175, 335)">
+                    <circle class="node-pulse" r="14" fill="#fbbf24" fill-opacity="0.25"/>
+                    <circle class="node-ring" r="8" fill="#fbbf24" fill-opacity="0.4"/>
+                    <circle class="node-core" r="4.5" fill="#f59e0b" stroke="#ffffff" stroke-width="2"/>
+                    <text class="node-label" x="-14" y="4" text-anchor="end">Gaya</text>
+                  </g>
+
+                  <!-- 7. Bhagalpur (Right) -->
+                  <g class="map-node" transform="translate(405, 215)">
+                    <circle class="node-pulse" r="14" fill="#fbbf24" fill-opacity="0.25"/>
+                    <circle class="node-ring" r="8" fill="#fbbf24" fill-opacity="0.4"/>
+                    <circle class="node-core" r="4.5" fill="#f59e0b" stroke="#ffffff" stroke-width="2"/>
+                    <text class="node-label" x="14" y="4" text-anchor="start">Bhagalpur</text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -753,6 +1616,53 @@
         processSteps.forEach(step => {
           observer.observe(step);
         });
+
+        // Sequential staggered fade-up for Core Offerings cards
+        const fadeUpCards = document.querySelectorAll(".enterprise-solutions-section .fade-up");
+        if (fadeUpCards.length) {
+          const fadeObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                fadeUpCards.forEach((card, index) => {
+                  setTimeout(() => {
+                    card.classList.add("active");
+                  }, index * 180);
+                });
+                observer.disconnect();
+              }
+            });
+          }, {
+            threshold: 0.12,
+            rootMargin: "0px 0px -40px 0px"
+          });
+
+          const section = document.querySelector(".enterprise-solutions-section");
+          if (section) fadeObserver.observe(section);
+        }
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Select all elements with the animation class
+        const animatedElements = document.querySelectorAll('.scroll-fade-up');
+
+        // Set up the observer
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            // When the element enters the viewport
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              // Stop observing once animated
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.15, // Triggers when 15% of the card is visible
+          rootMargin: "0px 0px -50px 0px" // Triggers slightly before it hits the bottom
+        });
+
+        // Start observing each element
+        animatedElements.forEach(el => observer.observe(el));
       });
     </script>
   </body>

@@ -207,13 +207,23 @@ async function run() {
             );
             
             // Adjust paths in template (so they resolve properly from /blogs/posts/)
+            // Adjust root-level navbar links and assets (2 levels up from /blogs/posts/)
+            postHtml = postHtml.replace(/href="\.\.\/index\.html"/g, 'href="../../index.html"');
+            postHtml = postHtml.replace(/href="\.\.\/about\.html"/g, 'href="../../about.html"');
+            postHtml = postHtml.replace(/href="\.\.\/contactus\.html"/g, 'href="../../contactus.html"');
+            postHtml = postHtml.replace(/href="\.\.\/clients\.html"/g, 'href="../../clients.html"');
+            postHtml = postHtml.replace(/href="\.\.\/website-development-services-bihar\.html"/g, 'href="../../website-development-services-bihar.html"');
+            postHtml = postHtml.replace(/href="\.\.\/software-development-company-bihar\.html"/g, 'href="../../software-development-company-bihar.html"');
+            postHtml = postHtml.replace(/href="\.\.\/css\/style\.css"/g, 'href="../../css/style.css"');
+            postHtml = postHtml.replace(/src="\.\.\/vlogo\.png"/g, 'src="../../vlogo.png"');
+            postHtml = postHtml.replace(/src="\.\.\/script\.js"/g, 'src="../../script.js"');
+
+            // Adjust blog-level links and assets (1 level up from /blogs/posts/)
             postHtml = postHtml.replace(/href="style\.css"/g, 'href="../style.css"');
             postHtml = postHtml.replace(/src="post-script\.js"/g, 'src="../post-script.js"');
-            postHtml = postHtml.replace(/src="script\.js"/g, 'src="../script.js"');
+            postHtml = postHtml.replace(/href="index\.html"/g, 'href="../index.html"');
             postHtml = postHtml.replace(/href="\/blogs\/"/g, 'href="/blogs/"');
             postHtml = postHtml.replace(/>Blog<\/a>/g, '>Article & Blogs</a>');
-            // Back to articles link
-            postHtml = postHtml.replace(/href="index\.html"/g, 'href="../index.html"');
 
             const outPath = path.join(blogsDir, 'posts', postMeta.slug + '.html');
             fs.writeFileSync(outPath, postHtml, 'utf-8');

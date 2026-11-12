@@ -24,39 +24,70 @@
 
     <!-- Marked.js CDN for Markdown parsing -->
     <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js" defer></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- ==================== NEW NAV ==================== -->
-    <header class="header-main" role="banner">
-        <nav class="nav-primary" aria-label="Main Navigation">
-            <div class="nav-inner-container">
-                <a href="/" class="brand-anchor" aria-label="Homepage">VYOMARC</a>
-                <button class="menu-trigger" aria-expanded="false" aria-controls="menu-primary" aria-label="Toggle menu">
-                    <span class="trigger-bar"></span>
-                    <span class="trigger-bar"></span>
-                    <span class="trigger-bar"></span>
-                </button>
-                <div class="menu-container" id="menu-primary">
-                    <ul class="menu-list" role="menubar">
-                        <li class="menu-item" role="none"><a href="/" class="menu-anchor" role="menuitem">Home</a></li>
-                        <li class="menu-item" role="none"><a href="/#services" class="menu-anchor" role="menuitem">Services</a></li>
-                        <li class="menu-item" role="none"><a href="/#work" class="menu-anchor" role="menuitem">Work</a></li>
-                        <li class="menu-item" role="none"><a href="/about.html" class="menu-anchor" role="menuitem">About</a></li>
-                        <li class="menu-item" role="none"><a href="/contactus.html" class="menu-anchor" role="menuitem">Contact</a></li>
-                        <li class="menu-item" role="none"><a href="/clients.html" class="menu-anchor" role="menuitem">Our Clients</a></li>
-                        <li class="menu-item" role="none"><a href="/blogs/" class="menu-anchor active-page" role="menuitem" aria-current="page">Article & Blogs</a></li>
+        <!-- Floating Pill Navigation -->
+    <header class="navbar-wrapper">
+      <nav class="nav-floating" aria-label="Main Navigation">
+        <div class="nav-brand-group">
+          <a href="../index.html" class="nav-logo" aria-label="VYOMARC Home">
+            <img src="../vlogo.png" alt="VYOMARC Logo - Enterprise Software Company" class="logo-img" width="38" height="38" fetchpriority="high" decoding="async" />
+            <span class="nav-logo-text">VYOMARC</span>
+          </a>
+          <span class="nav-brand-divider" aria-hidden="true"></span>
+        </div>
 
-                    </ul>
-                </div>
+        <button type="button" class="menu-toggle" id="mobile-menu" aria-label="Toggle Menu" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="nav-links" id="nav-links">
+          <a href="../index.html" class="nav-link-pill">Home</a>
+          <a href="../about.html" class="nav-link-pill">About</a>
+          <div class="nav-dropdown">
+            <button type="button" class="dropdown-toggle nav-link-pill" aria-haspopup="true" aria-expanded="false">
+              Services
+              <svg class="dropdown-chevron-svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="dropdown-menu">
+              <a href="../website-development-services-bihar.html">Website Development</a>
+              <a href="../software-development-company-bihar.html">Software Development</a>
+              <a href="../index.html#services">View All Services</a>
             </div>
-        </nav>
+          </div>
+          <a href="../index.html#work" class="nav-link-pill">Work</a>
+          <a href="index.html" class="nav-link-pill active">Article & Blogs</a>
+          <a href="../contactus.html" class="nav-link-pill">Contact</a>
+          <a href="../clients.html" class="nav-link-pill">Our Clients</a>
+          <a href="../contactus.html" class="nav-cta-pill nav-cta-mobile">
+            <span>Get a Free Consultation</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <a href="../contactus.html" class="nav-cta-pill nav-cta-desktop">
+          <span>Get a Free Consultation</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </nav>
     </header>
 
 
     <!-- ==================== POSTS GRID ==================== -->
-    <main id="posts-grid" class="posts-section">
+    <main id="posts-grid" class="posts-section" style="padding-top: 110px;">
         <div class="posts-container">
             <div class="search-filter-container">
                 <div class="search-input-wrapper">
@@ -228,5 +259,6 @@
             });
         })();
     </script>
+    <script src="../script.js" defer></script>
 </body>
 </html>
