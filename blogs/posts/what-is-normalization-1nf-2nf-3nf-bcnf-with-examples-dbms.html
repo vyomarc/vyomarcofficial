@@ -1,0 +1,949 @@
+<!-- ==================== post.html (updated) ==================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title will be dynamically set, provide a fallback -->
+    <title>What is Normalization? Explain 1NF, 2NF, 3NF and BCNF with Examples (DBMS) — VYOMARC</title>
+    <meta name="description" content="Complete B.Tech guide to DBMS Normalization. Understand 1NF, 2NF, 3NF, and BCNF with table examples, insertion/update/deletion anomalies, and a Mermaid flowchart.">
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="What is Normalization? Explain 1NF, 2NF, 3NF and BCNF with Examples (DBMS)">
+    <meta property="og:description" content="Complete B.Tech guide to DBMS Normalization. Understand 1NF, 2NF, 3NF, and BCNF with table examples, insertion/update/deletion anomalies, and a Mermaid flowchart.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://vyomarctech.com/blogs/posts/what-is-normalization-1nf-2nf-3nf-bcnf-with-examples-dbms.html">
+    <meta property="og:image" content="https://vyomarctech.com/blogs/thumbnails/dbms-normalization-1nf-2nf-3nf-bcnf.webp">
+    <meta property="og:site_name" content="VYOMARC">
+    
+    <!-- Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What is Normalization? Explain 1NF, 2NF, 3NF and BCNF with Examples (DBMS)">
+    <meta name="twitter:description" content="Complete B.Tech guide to DBMS Normalization. Understand 1NF, 2NF, 3NF, and BCNF with table examples, insertion/update/deletion anomalies, and a Mermaid flowchart.">
+    <meta name="twitter:image" content="https://vyomarctech.com/blogs/thumbnails/dbms-normalization-1nf-2nf-3nf-bcnf.webp">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://vyomarctech.com/blogs/posts/what-is-normalization-1nf-2nf-3nf-bcnf-with-examples-dbms.html">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What is Normalization? Explain 1NF, 2NF, 3NF and BCNF with Examples (DBMS)",
+    "description": "Complete B.Tech guide to DBMS Normalization. Understand 1NF, 2NF, 3NF, and BCNF with table examples, insertion/update/deletion anomalies, and a Mermaid flowchart.",
+    "image": "https://vyomarctech.com/blogs/thumbnails/dbms-normalization-1nf-2nf-3nf-bcnf.webp",
+    "author": {
+      "@type": "Person",
+      "name": "Team VYOMARC TECHNOLOGIES"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "VYOMARC Technologies",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://vyomarctech.com/images/logo.png"
+      }
+    },
+    "datePublished": "2026-11-12",
+    "dateModified": "2026-11-12",
+    "about": [
+      "B.Tech Study Notes",
+      "Local Business",
+      "Software Engineering"
+    ],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://vyomarctech.com/blogs/posts/what-is-normalization-1nf-2nf-3nf-bcnf-with-examples-dbms.html"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://vyomarctech.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Article & Blogs",
+        "item": "https://vyomarctech.com/blogs/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "What is Normalization? Explain 1NF, 2NF, 3NF and BCNF with Examples (DBMS)",
+        "item": "https://vyomarctech.com/blogs/posts/what-is-normalization-1nf-2nf-3nf-bcnf-with-examples-dbms.html"
+      }
+    ]
+  }
+]
+</script>
+    
+    <!-- Marked.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js" defer></script>
+    <!-- Mermaid CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@9.4.3/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* ... same styles as before ... */
+        .post-page {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 40px 24px 60px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 24px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--navy-dark);
+            padding: 8px 14px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--gray-border);
+            transition: all var(--transition);
+        }
+        .back-link:hover {
+            background-color: var(--navy-dark);
+            color: var(--white);
+            border-color: var(--navy-dark);
+        }
+        .post-hero-image {
+            width: 100%;
+            max-height: 420px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            margin-bottom: 28px;
+            box-shadow: var(--shadow-md);
+            background-color: var(--gray-light);
+        }
+        .post-meta {
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+        .post-meta .separator {
+            margin: 0 8px;
+            color: var(--gray-border);
+        }
+        .post-page-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--navy-dark);
+            line-height: 1.25;
+            letter-spacing: -0.4px;
+            margin-bottom: 32px;
+        }
+        .post-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--navy-dark);
+        }
+        /* ... rest of the post-content styles unchanged ... */
+    </style>
+</head>
+<body data-prerendered-slug="what-is-normalization-1nf-2nf-3nf-bcnf-with-examples-dbms">
+    <div id="reading-progress" aria-hidden="true"></div>
+
+    <!-- ==================== NEW NAV ==================== -->
+    <header class="header-main" role="banner">
+        <nav class="nav-primary" aria-label="Main Navigation">
+            <div class="nav-inner-container">
+                <a href="../index.html" class="brand-anchor" aria-label="Homepage">VYOMARC</a>
+                <button class="menu-trigger" aria-expanded="false" aria-controls="menu-primary" aria-label="Toggle menu">
+                    <span class="trigger-bar"></span>
+                    <span class="trigger-bar"></span>
+                    <span class="trigger-bar"></span>
+                </button>
+                <div class="menu-container" id="menu-primary">
+                    <ul class="menu-list" role="menubar">
+                        <li class="menu-item" role="none"><a href="../index.html" class="menu-anchor" role="menuitem">Home</a></li>
+                        <li class="menu-item" role="none"><a href="../index.html#services" class="menu-anchor" role="menuitem">Services</a></li>
+                        <li class="menu-item" role="none"><a href="../index.html#work" class="menu-anchor" role="menuitem">Work</a></li>
+                        <li class="menu-item" role="none"><a href="../about.html" class="menu-anchor" role="menuitem">About</a></li>
+                        <li class="menu-item" role="none"><a href="../contactus.html" class="menu-anchor" role="menuitem">Contact</a></li>
+                        <li class="menu-item" role="none"><a href="../clients.html" class="menu-anchor" role="menuitem">Our Clients</a></li>
+                        <li class="menu-item" role="none"><a href="/blogs/" class="menu-anchor active-page" role="menuitem" aria-current="page">Article & Blogs</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Post Content Area -->
+    <main class="post-page">
+        <a href="/blogs/" class="back-link">← Back to Articles</a>
+        <div id="post-container"><img src="../thumbnails/dbms-normalization-1nf-2nf-3nf-bcnf.webp" alt="What is Normalization? Explain 1NF, 2NF, 3NF and BCNF with Examples (DBMS)" class="post-hero-image" onerror="this.style.display='none'"><div class="post-meta"><a href="../index.html?cat=B.Tech%20Study%20Notes" class="category-tag">B.Tech Study Notes</a><br><span>November 12, 2026</span><span class="separator">·</span><span>By Team VYOMARC TECHNOLOGIES</span></div><h1 class="post-page-title">What is Normalization? Explain 1NF, 2NF, 3NF and BCNF with Examples (DBMS)</h1><div class="post-content"><p><img src="https://img.shields.io/badge/B.Tech_Notes-DBMS-blue?style=for-the-badge&amp;logo=mysql" alt="B.Tech Study Notes"> <img src="https://img.shields.io/badge/Subject-Database_Management_Systems-success?style=for-the-badge" alt="University Exam Guide"></p>
+<hr>
+<p><img src="../thumbnails/dbms-normalization-1nf-2nf-3nf-bcnf.webp" alt="What is Normalization in DBMS - 1NF, 2NF, 3NF and BCNF with Examples"></p>
+<blockquote>
+<p><strong>Quick Summary for Semester Exams:</strong> <strong>Normalization</strong> is a systematic, step-by-step technique in Database Management Systems (DBMS) used to organize relational tables to <strong>minimize data redundancy</strong> (duplication) and eliminate undesirable <strong>anomalies</strong> (Insertion, Deletion, and Updation). It proceeds hierarchically from <strong>1NF</strong> (Atomic values) → <strong>2NF</strong> (No partial dependency) → <strong>3NF</strong> (No transitive dependency) → <strong>BCNF</strong> (Every determinant is a super key).</p>
+</blockquote>
+<hr>
+<h2>1. What is Normalization in DBMS?</h2>
+<p>In relational database design, storing unorganized data inside a single large table leads to severe problems: massive disk space wastage, duplicate entries, and inconsistent data states when records are modified.</p>
+<p><strong>Normalization</strong> is the formal scientific process of decomposing large, redundant tables into smaller, well-structured, modular relations while preserving data relationships through foreign keys.</p>
+<p>It was first introduced by <strong>Dr. Edgar F. Codd</strong> (the inventor of the Relational Model) in 1970 and later expanded with Raymond F. Boyce to establish higher normal forms.</p>
+<h3>Primary Objectives of Normalization:</h3>
+<ol>
+<li><strong>Eliminate Redundant Data:</strong> Prevent storing the same piece of information in multiple places.</li>
+<li><strong>Prevent Database Anomalies:</strong> Ensure seamless INSERT, UPDATE, and DELETE operations without unintended side-effects.</li>
+<li><strong>Maintain Data Integrity:</strong> Enforce functional dependencies and relational constraints automatically.</li>
+</ol>
+<hr>
+<h2>2. Database Anomalies (Why Normalization is Essential)</h2>
+<p>If a relational database is not properly normalized, it suffers from three primary types of anomalies. Let us understand them using an unnormalized sample table:</p>
+<h3>Unnormalized Sample Table: <code>Employee_Department</code></h3>
+<table>
+<thead>
+<tr>
+<th align="left">Emp_ID</th>
+<th align="left">Emp_Name</th>
+<th align="left">Dept_ID</th>
+<th align="left">Dept_Name</th>
+<th align="left">Dept_Head</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">101</td>
+<td align="left">Amit Sharma</td>
+<td align="left">D01</td>
+<td align="left">IT</td>
+<td align="left">Rajesh Verma</td>
+</tr>
+<tr>
+<td align="left">102</td>
+<td align="left">Priya Singh</td>
+<td align="left">D01</td>
+<td align="left">IT</td>
+<td align="left">Rajesh Verma</td>
+</tr>
+<tr>
+<td align="left">103</td>
+<td align="left">Rohan Mehta</td>
+<td align="left">D02</td>
+<td align="left">Marketing</td>
+<td align="left">Sunita Rao</td>
+</tr>
+<tr>
+<td align="left">104</td>
+<td align="left">Neha Gupta</td>
+<td align="left">D01</td>
+<td align="left">IT</td>
+<td align="left">Rajesh Verma</td>
+</tr>
+</tbody></table>
+<hr>
+<h3>A. Updation Anomaly (Update Anomaly)</h3>
+<ul>
+<li><strong>Problem:</strong> Data inconsistency caused by updating data in one place but missing other redundant rows.</li>
+<li><strong>Example:</strong> If the Department Head for IT changes from <em>Rajesh Verma</em> to <em>Vikram Patel</em>, we must update all rows where <code>Dept_ID = &#39;D01&#39;</code>. If we update the record for <code>Emp_ID = 101</code> and <code>102</code> but fail to update <code>104</code>, the database enters an inconsistent state where IT appears to have two different Department Heads.</li>
+</ul>
+<h3>B. Insertion Anomaly</h3>
+<ul>
+<li><strong>Problem:</strong> Inability to record certain valid business facts without artificially creating unrelated synthetic records.</li>
+<li><strong>Example:</strong> Suppose the organization creates a new department called <strong>&quot;Research &amp; Development&quot; (D03)</strong> under head <em>Dr. Sen</em>, but has not yet hired any employees for it. Because <code>Emp_ID</code> is the primary key, we cannot insert this department into the table with a <code>NULL</code> employee ID without violating entity integrity constraints.</li>
+</ul>
+<h3>C. Deletion Anomaly</h3>
+<ul>
+<li><strong>Problem:</strong> Unintentionally losing vital related data when deleting an unrelated record.</li>
+<li><strong>Example:</strong> If employee <code>103 (Rohan Mehta)</code> resigns and we delete his row, we inadvertently erase the <strong>Marketing (D02)</strong> department and its head <em>Sunita Rao</em> from our database entirely, as it was the only record holding that department&#39;s information.</li>
+</ul>
+<hr>
+<h2>3. Step-by-Step Normal Forms Explained (with Examples)</h2>
+<p>Normalization works through progressive stages called <strong>Normal Forms (NF)</strong>. Each higher normal form builds upon and satisfies the conditions of all preceding normal forms.</p>
+<pre><code>Unnormalized Table (UNF)
+        ↓  (Remove Multi-Valued Attributes / Ensure Atomic Data)
+       1NF
+        ↓  (Remove Partial Functional Dependencies)
+       2NF
+        ↓  (Remove Transitive Functional Dependencies)
+       3NF
+        ↓  (Ensure Every Determinant is a Super Key)
+      BCNF (Boyce-Codd Normal Form)
+</code></pre>
+<hr>
+<h3>1NF (First Normal Form)</h3>
+<blockquote>
+<p><strong>Strict Condition for 1NF:</strong> </p>
+<ol>
+<li>Each column must contain only <strong>atomic (indivisible) values</strong>.</li>
+<li>There must be <strong>no multi-valued attributes</strong> or repeating groups.</li>
+<li>Each row must be uniquely identifiable (Primary Key defined).</li>
+</ol>
+</blockquote>
+<h4>Non-1NF Table (Violates 1NF):</h4>
+<p>In the table below, employee Amit has multiple phone numbers stored in a single cell, violating atomicity:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Emp_ID</th>
+<th align="left">Emp_Name</th>
+<th align="left">Phone_Numbers</th>
+<th align="left">City</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">101</td>
+<td align="left">Amit Sharma</td>
+<td align="left">9876543210, 8765432109</td>
+<td align="left">Patna</td>
+</tr>
+<tr>
+<td align="left">102</td>
+<td align="left">Priya Singh</td>
+<td align="left">9123456780</td>
+<td align="left">Bihar Sharif</td>
+</tr>
+</tbody></table>
+<h4>Conversion to 1NF:</h4>
+<p>Deconstruct composite and multi-valued values so every cell contains exactly one single value:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Emp_ID</th>
+<th align="left">Emp_Name</th>
+<th align="left">Phone_Number</th>
+<th align="left">City</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">101</td>
+<td align="left">Amit Sharma</td>
+<td align="left">9876543210</td>
+<td align="left">Patna</td>
+</tr>
+<tr>
+<td align="left">101</td>
+<td align="left">Amit Sharma</td>
+<td align="left">8765432109</td>
+<td align="left">Patna</td>
+</tr>
+<tr>
+<td align="left">102</td>
+<td align="left">Priya Singh</td>
+<td align="left">9123456780</td>
+<td align="left">Bihar Sharif</td>
+</tr>
+</tbody></table>
+<p><em>Primary Key for 1NF Table:</em> Composite key <code>{Emp_ID, Phone_Number}</code>.</p>
+<hr>
+<h3>2NF (Second Normal Form)</h3>
+<blockquote>
+<p><strong>Strict Condition for 2NF:</strong> </p>
+<ol>
+<li>The table must already be in <strong>1NF</strong>.</li>
+<li><strong>No Partial Dependency:</strong> No non-prime attribute should be functionally dependent on a <em>proper subset</em> of any candidate key. Every non-prime attribute must depend on the <strong>entire</strong> candidate key.</li>
+</ol>
+<p><em>(Note: If the primary key consists of a single attribute, the table is automatically in 2NF once it satisfies 1NF!)</em></p>
+</blockquote>
+<h4>Non-2NF Table (Contains Partial Dependency):</h4>
+<p>Consider an engineering student course registration relation:</p>
+<ul>
+<li><strong>Composite Primary Key:</strong> <code>{Student_ID, Course_ID}</code></li>
+<li><strong>Non-prime attributes:</strong> <code>Student_Name</code>, <code>Course_Name</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Student_ID (PK)</th>
+<th align="left">Course_ID (PK)</th>
+<th align="left">Student_Name</th>
+<th align="left">Course_Name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">S101</td>
+<td align="left">CS201</td>
+<td align="left">Rahul Kumar</td>
+<td align="left">Data Structures</td>
+</tr>
+<tr>
+<td align="left">S101</td>
+<td align="left">CS202</td>
+<td align="left">Rahul Kumar</td>
+<td align="left">DBMS</td>
+</tr>
+<tr>
+<td align="left">S102</td>
+<td align="left">CS201</td>
+<td align="left">Ananya Roy</td>
+<td align="left">Data Structures</td>
+</tr>
+</tbody></table>
+<h4>The Partial Dependencies:</h4>
+<ul>
+<li><code>Student_ID → Student_Name</code> (<code>Student_Name</code> depends only on <code>Student_ID</code>, not on <code>Course_ID</code>).</li>
+<li><code>Course_ID → Course_Name</code> (<code>Course_Name</code> depends only on <code>Course_ID</code>, not on <code>Student_ID</code>).</li>
+<li>Both violate 2NF because non-prime attributes depend on parts of the composite primary key.</li>
+</ul>
+<h4>Conversion to 2NF (Decomposition into 3 Relations):</h4>
+<ol>
+<li><strong><code>Student</code> Table:</strong><ul>
+<li>Primary Key: <code>Student_ID</code></li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">Student_ID</th>
+<th align="left">Student_Name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">S101</td>
+<td align="left">Rahul Kumar</td>
+</tr>
+<tr>
+<td align="left">S102</td>
+<td align="left">Ananya Roy</td>
+</tr>
+</tbody></table>
+<ol start="2">
+<li><strong><code>Course</code> Table:</strong><ul>
+<li>Primary Key: <code>Course_ID</code></li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">Course_ID</th>
+<th align="left">Course_Name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">CS201</td>
+<td align="left">Data Structures</td>
+</tr>
+<tr>
+<td align="left">CS202</td>
+<td align="left">DBMS</td>
+</tr>
+</tbody></table>
+<ol start="3">
+<li><strong><code>Enrollment</code> Table:</strong><ul>
+<li>Composite Primary Key: <code>{Student_ID, Course_ID}</code></li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">Student_ID</th>
+<th align="left">Course_ID</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">S101</td>
+<td align="left">CS201</td>
+</tr>
+<tr>
+<td align="left">S101</td>
+<td align="left">CS202</td>
+</tr>
+<tr>
+<td align="left">S102</td>
+<td align="left">CS201</td>
+</tr>
+</tbody></table>
+<hr>
+<h3>3NF (Third Normal Form)</h3>
+<blockquote>
+<p><strong>Strict Condition for 3NF:</strong> </p>
+<ol>
+<li>The table must be in <strong>2NF</strong>.</li>
+<li><strong>No Transitive Dependency:</strong> No non-prime attribute should be determined by another non-prime attribute ($A \to B \to C$).</li>
+</ol>
+<p><strong>Formal Rule:</strong> For every non-trivial functional dependency $X \to Y$, at least ONE of the following must be true:</p>
+<ul>
+<li>$X$ is a <strong>Super Key</strong>, OR</li>
+<li>$Y$ is a <strong>Prime Attribute</strong> (part of a candidate key).</li>
+</ul>
+</blockquote>
+<h4>Non-3NF Table (Contains Transitive Dependency):</h4>
+<p>Consider a project allocation table where <code>Emp_ID</code> is the Primary Key:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Emp_ID (PK)</th>
+<th align="left">Emp_Name</th>
+<th align="left">Project_ID</th>
+<th align="left">Project_Name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">101</td>
+<td align="left">Satyam</td>
+<td align="left">P01</td>
+<td align="left">CBT Platform</td>
+</tr>
+<tr>
+<td align="left">102</td>
+<td align="left">Manish</td>
+<td align="left">P01</td>
+<td align="left">CBT Platform</td>
+</tr>
+<tr>
+<td align="left">103</td>
+<td align="left">Neha</td>
+<td align="left">P02</td>
+<td align="left">WhatsApp Engine</td>
+</tr>
+</tbody></table>
+<h4>The Transitive Dependency:</h4>
+<ul>
+<li>Functional Dependencies:<ol>
+<li><code>Emp_ID → Project_ID</code> (<code>Emp_ID</code> is a Super Key — Valid)</li>
+<li><code>Project_ID → Project_Name</code> (Here <code>Project_ID</code> is <strong>NOT</strong> a super key, and <code>Project_Name</code> is <strong>NOT</strong> a prime attribute!)</li>
+</ol>
+</li>
+<li>Therefore: <code>Emp_ID → Project_ID → Project_Name</code> is a <strong>transitive dependency</strong>, violating 3NF.</li>
+</ul>
+<h4>Conversion to 3NF (Decomposition into 2 Relations):</h4>
+<ol>
+<li><strong><code>Employee</code> Table:</strong><ul>
+<li>Primary Key: <code>Emp_ID</code>, Foreign Key: <code>Project_ID</code></li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">Emp_ID</th>
+<th align="left">Emp_Name</th>
+<th align="left">Project_ID</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">101</td>
+<td align="left">Satyam</td>
+<td align="left">P01</td>
+</tr>
+<tr>
+<td align="left">102</td>
+<td align="left">Manish</td>
+<td align="left">P01</td>
+</tr>
+<tr>
+<td align="left">103</td>
+<td align="left">Neha</td>
+<td align="left">P02</td>
+</tr>
+</tbody></table>
+<ol start="2">
+<li><strong><code>Project</code> Table:</strong><ul>
+<li>Primary Key: <code>Project_ID</code></li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">Project_ID</th>
+<th align="left">Project_Name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">P01</td>
+<td align="left">CBT Platform</td>
+</tr>
+<tr>
+<td align="left">P02</td>
+<td align="left">WhatsApp Engine</td>
+</tr>
+</tbody></table>
+<hr>
+<h3>BCNF (Boyce-Codd Normal Form / 3.5NF)</h3>
+<blockquote>
+<p><strong>Strict Condition for BCNF:</strong> </p>
+<ol>
+<li>The table must be in <strong>3NF</strong>.</li>
+<li><strong>Strict Determinant Rule:</strong> For every non-trivial functional dependency $X \to Y$, <strong>$X$ MUST strictly be a Super Key</strong>.</li>
+</ol>
+</blockquote>
+<h4>Why do we need BCNF when we have 3NF?</h4>
+<p>In 3NF, a dependency $X \to Y$ is permitted if $Y$ is a <strong>prime attribute</strong>, even when $X$ is <strong>not a super key</strong>. While rare, this loophole still allows redundant data anomalies when a table has overlapping candidate keys. BCNF closes this loophole by removing the &quot;$Y$ is prime attribute&quot; clause entirely.</p>
+<h4>Non-BCNF Table (Valid in 3NF, but Violates BCNF):</h4>
+<p>Consider a tutoring system where:</p>
+<ul>
+<li>A student can take multiple subjects.</li>
+<li>For each subject, multiple professors can teach.</li>
+<li><strong>Each professor teaches only ONE subject.</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Student (PK)</th>
+<th align="left">Subject (PK)</th>
+<th align="left">Professor</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Aayush</td>
+<td align="left">Physics</td>
+<td align="left">Dr. Verma</td>
+</tr>
+<tr>
+<td align="left">Ankit</td>
+<td align="left">Physics</td>
+<td align="left">Dr. Verma</td>
+</tr>
+<tr>
+<td align="left">Aayush</td>
+<td align="left">Chemistry</td>
+<td align="left">Dr. Sharma</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>Candidate Keys:</strong> <code>{Student, Subject}</code> and <code>{Student, Professor}</code></li>
+<li><strong>Prime Attributes:</strong> <code>Student</code>, <code>Subject</code>, <code>Professor</code></li>
+<li><strong>Functional Dependencies:</strong><ol>
+<li><code>{Student, Subject} → Professor</code> (LHS is a Super Key — Satisfies BCNF)</li>
+<li><code>Professor → Subject</code> (LHS <code>Professor</code> is <strong>NOT</strong> a Super Key! However, <code>Subject</code> is a Prime Attribute, so it passed 3NF, but <strong>violates BCNF</strong>!)</li>
+</ol>
+</li>
+</ul>
+<h4>Conversion to BCNF (Decomposition):</h4>
+<ol>
+<li><strong><code>Professor_Subject</code> Table:</strong><ul>
+<li>Primary Key: <code>Professor</code> (Now <code>Professor</code> is a Super Key!)</li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">Professor</th>
+<th align="left">Subject</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Dr. Verma</td>
+<td align="left">Physics</td>
+</tr>
+<tr>
+<td align="left">Dr. Sharma</td>
+<td align="left">Chemistry</td>
+</tr>
+</tbody></table>
+<ol start="2">
+<li><strong><code>Student_Professor</code> Table:</strong><ul>
+<li>Composite Primary Key: <code>{Student, Professor}</code></li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">Student</th>
+<th align="left">Professor</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Aayush</td>
+<td align="left">Dr. Verma</td>
+</tr>
+<tr>
+<td align="left">Ankit</td>
+<td align="left">Dr. Verma</td>
+</tr>
+<tr>
+<td align="left">Aayush</td>
+<td align="left">Dr. Sharma</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>4. Key Differences: 3NF vs BCNF</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Feature / Criteria</th>
+<th align="left">3NF (Third Normal Form)</th>
+<th align="left">BCNF (Boyce-Codd Normal Form)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Formal Rule for $X \to Y$</strong></td>
+<td align="left">$X$ must be Super Key <strong>OR</strong> $Y$ is a Prime Attribute.</td>
+<td align="left">$X$ must <strong>strictly</strong> be a Super Key (no exceptions).</td>
+</tr>
+<tr>
+<td align="left"><strong>Strictness</strong></td>
+<td align="left">Less strict than BCNF.</td>
+<td align="left">Stricter; also known as 3.5 Normal Form.</td>
+</tr>
+<tr>
+<td align="left"><strong>Redundancy</strong></td>
+<td align="left">May still contain minimal redundancy with overlapping keys.</td>
+<td align="left">Completely eliminates functional dependency redundancy.</td>
+</tr>
+<tr>
+<td align="left"><strong>Dependency Preservation</strong></td>
+<td align="left">Always guarantees dependency preservation.</td>
+<td align="left">May not always preserve all functional dependencies.</td>
+</tr>
+<tr>
+<td align="left"><strong>Lossless Join</strong></td>
+<td align="left">Always achievable.</td>
+<td align="left">Always achievable.</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>5. Summary Table: Normal Forms at a Glance</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Normal Form</th>
+<th align="left">Foundational Requirement</th>
+<th align="left">Strict Condition to Satisfy</th>
+<th align="left">Anomalies Eliminated</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>1NF</strong></td>
+<td align="left">Relational Table</td>
+<td align="left">Atomic values only; no multi-valued columns.</td>
+<td align="left">Repeating group ambiguity</td>
+</tr>
+<tr>
+<td align="left"><strong>2NF</strong></td>
+<td align="left">In 1NF</td>
+<td align="left">No Partial Dependency (all non-primes depend on full PK).</td>
+<td align="left">Insertion &amp; Deletion on partial keys</td>
+</tr>
+<tr>
+<td align="left"><strong>3NF</strong></td>
+<td align="left">In 2NF</td>
+<td align="left">No Transitive Dependency ($X$ is Super Key or $Y$ is Prime).</td>
+<td align="left">Transitive update inconsistencies</td>
+</tr>
+<tr>
+<td align="left"><strong>BCNF</strong></td>
+<td align="left">In 3NF</td>
+<td align="left">For every non-trivial $X \to Y$, $X$ must be a Super Key.</td>
+<td align="left">Anomalies from overlapping candidate keys</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>6. Advantages &amp; Disadvantages of Normalization</h2>
+<p>Understanding the trade-offs between normalized and denormalized architectures is critical for real-world enterprise software engineering:</p>
+<h3>Advantages</h3>
+<ol>
+<li><strong>Minimized Data Redundancy:</strong> Drastically cuts down duplicate data storage across database disks.</li>
+<li><strong>Enhanced Data Integrity:</strong> Updates happen in a single canonical record, eliminating conflicting or stale data states.</li>
+<li><strong>Prevention of All 3 Anomalies:</strong> Insertion, deletion, and update operations are isolated and risk-free.</li>
+<li><strong>Optimized Indexing and Writes:</strong> Smaller table widths lead to compact B-Tree indices and significantly faster <code>INSERT</code>, <code>UPDATE</code>, and <code>DELETE</code> execution.</li>
+</ol>
+<h3>Disadvantages</h3>
+<ol>
+<li><strong>Slower Read Queries (JOIN Overhead):</strong> Because data is separated across multiple tables, complex reports and dashboards require numerous heavy SQL <code>JOIN</code> operations, increasing query latency.</li>
+<li><strong>Increased Architectural Complexity:</strong> More tables mean more foreign key relationships, complex constraints, and intricate schema migrations.</li>
+<li><strong>Suboptimal for Analytics (OLAP):</strong> In data warehousing and Business Intelligence where lightning-fast aggregations are required, teams intentionally choose <strong>Denormalization</strong> (Star/Snowflake schemas) to avoid expensive joins.</li>
+</ol>
+<hr>
+<h2>7. Normalization Funnel Pipeline (Mermaid Diagram)</h2>
+<p>The following diagram illustrates the systematic progression from an unnormalized table down to Boyce-Codd Normal Form:</p>
+<pre><code class="language-mermaid">flowchart LR
+    UNF[&quot;Unnormalized Table (UNF)&lt;br/&gt;• Composite &amp; multi-valued data&quot;] --&gt;|&quot;Step 1: Enforce Atomic Values&lt;br/&gt;Remove repeating groups&quot;| N1[&quot;1NF (First Normal Form)&lt;br/&gt;• Atomic attributes only&lt;br/&gt;• Primary key assigned&quot;]
+    N1 --&gt;|&quot;Step 2: Eliminate Partial Dependency&lt;br/&gt;Non-primes depend on whole key&quot;| N2[&quot;2NF (Second Normal Form)&lt;br/&gt;• Satisfies 1NF&lt;br/&gt;• Full functional dependency&quot;]
+    N2 --&gt;|&quot;Step 3: Eliminate Transitive Dependency&lt;br/&gt;X is Super Key or Y is Prime&quot;| N3[&quot;3NF (Third Normal Form)&lt;br/&gt;• Satisfies 2NF&lt;br/&gt;• No non-prime determines non-prime&quot;]
+    N3 --&gt;|&quot;Step 4: Strict Super Key Rule&lt;br/&gt;For every X → Y, X is Super Key&quot;| BCNF[&quot;BCNF (Boyce-Codd NF)&lt;br/&gt;• Complete redundancy elimination&lt;br/&gt;• All determinants are Super Keys&quot;]
+
+    classDef stage fill:#0b2c4a,stroke:#38bdf8,stroke-width:2px,color:#ffffff;
+    classDef target fill:#059669,stroke:#34d399,stroke-width:2px,color:#ffffff;
+    class UNF,N1,N2,N3 stage;
+    class BCNF target;
+</code></pre>
+</div><div class="share-bar"><span class="share-label">Share this article:</span><div class="share-buttons"><button class="share-btn share-wa" aria-label="Share on WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></button><button class="share-btn share-reddit" aria-label="Share on Reddit" title="Reddit"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 11.5c0-.94.76-1.7 1.7-1.7.6 0 1.16.32 1.46.82C3.86 11.36 2.65 12.56 2.06 14.1c-.5-.5-.86-1.12-.86-1.8zm18 7c-2.3 2.1-6.15 2.1-8.3 2.1-2.15 0-6-.02-8.3-2.1-1.32-1.28-1.7-2.9-1.7-3.9 0-1.64 1.34-3.16 3.8-3.8.3-.08.5-.4.4-.7-.04-.17-.06-.34-.06-.5 0-2.43 3.03-4.4 6.8-4.4 3.76 0 6.8 1.97 6.8 4.4 0 .16-.02.33-.06.5-.02.3.18.62.48.7 2.46.64 3.8 2.16 3.8 3.8 0 1-3.9 2.62-5.22 3.9zm3.64-4.4c-.6-1.54-1.8-2.74-3.4-3.48.3-.5.86-.82 1.46-.82.94 0 1.7.76 1.7 1.7 0 .68-.36 1.3-.86 1.8z"/><path d="M16 14.7c-1.4 1.4-4 1.4-4 1.4s-2.6 0-4-1.4c-.26-.26-.7-.26-.96 0-.27.27-.27.7 0 .97 1.7 1.7 4.96 1.7 4.96 1.7s3.25 0 4.95-1.7c.26-.26.26-.7 0-.96-.25-.26-.7-.26-.95 0zM8.38 10.32c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM15.62 10.32c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg></button><button class="share-btn share-in" aria-label="Share on LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></button><button class="share-btn share-copy" aria-label="Copy URL" title="Copy URL"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg><span class="copy-text">Copy</span></button></div><div class="share-toast" aria-live="polite"></div></div><div class="related-posts-section"><h2 class="related-posts-title">Related Posts</h2><div class="related-posts-grid"><a href="osi-reference-model-7-layers-explained.html" class="related-card"><div class="related-card-img-wrapper"><img src="../thumbnails/osi-model.webp" alt="Explain OSI Reference Model with its 7 Layers (Computer Networks)" class="related-card-img" onerror="this.style.display='none'"><span class="related-card-cat">B.Tech Study Notes</span></div><div class="related-card-content"><h3 class="related-card-title">Explain OSI Reference Model with its 7 Layers (Computer Networks)</h3></div></a><a href="nvidia-spy-controversy-impact-bihar-computer-shops.html" class="related-card"><div class="related-card-img-wrapper"><img src="../thumbnails/nvidia-spy-controversy-impact-bihar-computer-shops.webp" alt="Nvidia Spy Controversy: Market Reality & Impact on Computer Shops in Bihar" class="related-card-img" onerror="this.style.display='none'"><span class="related-card-cat">Trends</span></div><div class="related-card-content"><h3 class="related-card-title">Nvidia Spy Controversy: Market Reality & Impact on Computer Shops in Bihar</h3></div></a><a href="website-development-cost-bihar-2026-guide.html" class="related-card"><div class="related-card-img-wrapper"><img src="../thumbnails/website-development-cost-bihar-2026-guide.webp" alt="Website Development Cost in Bihar (2026 Guide): Real Prices & Custom vs WordPress" class="related-card-img" onerror="this.style.display='none'"><span class="related-card-cat">Web Development</span></div><div class="related-card-content"><h3 class="related-card-title">Website Development Cost in Bihar (2026 Guide): Real Prices & Custom vs WordPress</h3></div></a></div></div></div>
+    </main>
+
+    <!-- Footer -->
+            <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand-col">
+                <div class="footer-brand-name">VYOMARC</div>
+                <p class="footer-tagline">Building scalable software, websites &amp; digital products.</p>
+            </div>
+            
+            <div class="footer-links-col">
+                <h4 class="footer-col-title">Links</h4>
+                <ul class="footer-list">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#products">Products</a></li>
+                    <li><a href="../index.html#work">Portfolio</a></li>
+                    <li><a href="../about.html">About</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact-col">
+                <h4 class="footer-col-title">Contact</h4>
+                <ul class="footer-list">
+                    <li>
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <a href="mailto:vyomarctechnologies@gmail.com">vyomarctechnologies@gmail.com</a>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <a href="tel:+918252702699">+91 825 270 2699</a>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        <span>Mon to Sat, 10:00 AM to 4:00 AM</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <a href="https://maps.google.com/?q=Ramchandarpur,+Biharsharif,+Nalanda,+Bihar+803216" target="_blank" rel="noopener noreferrer">Ramchandarpur, Biharsharif, Nalanda, Bihar, 803216</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="footer-social-col">
+                <h4 class="footer-col-title">Social</h4>
+                <ul class="footer-list">
+                    <li>
+                        <a href="https://www.linkedin.com/company/vyomarc-technologies/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            <span>LinkedIn</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://x.com/vyomarc" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                            <span>Twitter / X</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/vyomarc.tech" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                            <span>Instagram</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-copyright">&copy; 2026 VYOMARC Technologies</div>
+            <div class="footer-legal">
+                <a href="../privacy-terms.html">Privacy Policy &amp; Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../post-script.js" defer></script>
+    <script>
+        (function() {
+            'use strict';
+            const hdr = document.querySelector('.header-main');
+            const btn = document.querySelector('.menu-trigger');
+            const navWrp = document.querySelector('.menu-container');
+            
+            if (!hdr || !btn || !navWrp) return;
+
+            const bgLayer = document.createElement('div');
+            bgLayer.className = 'backdrop-layer';
+            document.body.appendChild(bgLayer);
+
+            const closeNav = () => {
+                btn.setAttribute('aria-expanded', 'false');
+                navWrp.classList.remove('menu-is-open');
+                bgLayer.classList.remove('backdrop-is-active');
+                document.body.classList.remove('is-locked');
+            };
+
+            const openNav = () => {
+                btn.setAttribute('aria-expanded', 'true');
+                navWrp.classList.add('menu-is-open');
+                bgLayer.classList.add('backdrop-is-active');
+                document.body.classList.add('is-locked');
+            };
+
+            btn.addEventListener('click', () => {
+                if (btn.getAttribute('aria-expanded') === 'true') {
+                    closeNav();
+                } else {
+                    openNav();
+                }
+            });
+
+            bgLayer.addEventListener('click', closeNav);
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeNav();
+                }
+            });
+
+
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    hdr.setAttribute('data-is-scrolled', 'true');
+                } else {
+                    hdr.setAttribute('data-is-scrolled', 'false');
+                }
+            }, { passive: true });
+        })();
+    </script>
+    
+    <!-- ==================== SCROLL TO TOP ==================== -->
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+    <script>
+        (function() {
+            const scrollBtn = document.getElementById('scroll-to-top');
+            if(!scrollBtn) return;
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollBtn.classList.add('is-visible');
+                } else {
+                    scrollBtn.classList.remove('is-visible');
+                }
+            }, { passive: true });
+            scrollBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+    
+    <!-- ==================== WHATSAPP CTA (MOBILE) ==================== -->
+    <div id="wa-cta-container" class="wa-cta-container" aria-hidden="false">
+        <a href="https://wa.me/918252702699?text=Hello%20Vyomarc,%20I%20have%20an%20inquiry." class="wa-cta-btn" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            <span>WhatsApp Us</span>
+        </a>
+        <button id="wa-cta-close" class="wa-cta-close" aria-label="Dismiss WhatsApp button">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+    </div>
+    <script>
+        (function() {
+            var cta = document.getElementById('wa-cta-container');
+            var close = document.getElementById('wa-cta-close');
+            if (!cta || !close) return;
+            try {
+                if (sessionStorage.getItem('wa-cta-dismissed')) {
+                    cta.style.display = 'none';
+                    return;
+                }
+            } catch(e) {}
+            close.addEventListener('click', function() {
+                cta.style.display = 'none';
+                try { sessionStorage.setItem('wa-cta-dismissed', 'true'); } catch(e) {}
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -1,5 +1,14 @@
 [
     {
+        "slug": "what-is-normalization-1nf-2nf-3nf-bcnf-with-examples-dbms",
+        "title": "What is Normalization? Explain 1NF, 2NF, 3NF and BCNF with Examples (DBMS)",
+        "date": "2026-11-12",
+        "excerpt": "Complete B.Tech guide to DBMS Normalization. Understand 1NF, 2NF, 3NF, and BCNF with table examples, insertion/update/deletion anomalies, and a Mermaid flowchart.",
+        "thumbnail": "thumbnails/dbms-normalization-1nf-2nf-3nf-bcnf.webp",
+        "author": "Team VYOMARC TECHNOLOGIES",
+        "category": "B.Tech Study Notes"
+    },
+    {
         "slug": "osi-reference-model-7-layers-explained",
         "title": "Explain OSI Reference Model with its 7 Layers (Computer Networks)",
         "date": "2026-11-12",

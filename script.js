@@ -18,6 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     navAnchors.forEach(link => {
       link.addEventListener("click", () => {
+        if (link.classList.contains("dropdown-toggle") || link.closest(".dropdown-toggle")) {
+          return;
+        }
         navLinks.classList.remove("active");
         mobileBtn.setAttribute("aria-expanded", "false");
         const icon = mobileBtn.querySelector("i");
@@ -25,9 +28,60 @@ document.addEventListener("DOMContentLoaded", () => {
           icon.classList.add("fa-bars");
           icon.classList.remove("fa-times");
         }
+        document.querySelectorAll(".nav-dropdown.is-open, .nav-dropdown.active").forEach(dropdown => {
+          dropdown.classList.remove("is-open", "active");
+          const toggle = dropdown.querySelector(".dropdown-toggle");
+          if (toggle) toggle.setAttribute("aria-expanded", "false");
+        });
       });
     });
   }
+
+  // ---------- Navbar Services Dropdown ----------
+  const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const parent = toggle.closest(".nav-dropdown");
+      if (!parent) return;
+
+      const isOpen = parent.classList.toggle("is-open");
+      parent.classList.toggle("active", isOpen);
+      toggle.setAttribute("aria-expanded", String(isOpen));
+
+      // Close any other open dropdowns
+      document.querySelectorAll(".nav-dropdown").forEach(other => {
+        if (other !== parent) {
+          other.classList.remove("is-open", "active");
+          const otherToggle = other.querySelector(".dropdown-toggle");
+          if (otherToggle) otherToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".nav-dropdown")) {
+      document.querySelectorAll(".nav-dropdown.is-open, .nav-dropdown.active").forEach(dropdown => {
+        dropdown.classList.remove("is-open", "active");
+        const toggle = dropdown.querySelector(".dropdown-toggle");
+        if (toggle) toggle.setAttribute("aria-expanded", "false");
+      });
+    }
+  });
+
+  // Close dropdown when pressing Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      document.querySelectorAll(".nav-dropdown.is-open, .nav-dropdown.active").forEach(dropdown => {
+        dropdown.classList.remove("is-open", "active");
+        const toggle = dropdown.querySelector(".dropdown-toggle");
+        if (toggle) toggle.setAttribute("aria-expanded", "false");
+      });
+    }
+  });
 
   // ---------- Smooth Scroll (only for # anchors) ----------
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
