@@ -42,7 +42,7 @@ async function run() {
 
         try {
             const markdownText = fs.readFileSync(mdPath, 'utf-8');
-            const htmlContent = marked.parse(markdownText);
+            let htmlContent = marked.parse(markdownText);
             
             let postHtml = templateHtml;
 
@@ -137,9 +137,23 @@ async function run() {
 
             // Generate Post Container HTML
             const isAbsolute = postMeta.thumbnail && (postMeta.thumbnail.startsWith('http://') || postMeta.thumbnail.startsWith('https://'));
-            const cleanThumb = postMeta.thumbnail ? postMeta.thumbnail.replace(/^\.\.\//, '') : '';
-            const thumbSrc = isAbsolute ? postMeta.thumbnail : (cleanThumb ? '../' + cleanThumb : '');
-            const thumbnailHTML = thumbSrc
+            const cleanThumb = postMeta.thumbnail ? postMeta.thumbnail.replace(/^(\.\.\/)+/, '') : '';
+            let thumbSrc = isAbsolute ? postMeta.thumbnail : '';
+            if (!isAbsolute && cleanThumb) {
+                thumbSrc = cleanThumb.startsWith('images/') ? '../../' + cleanThumb : '../' + cleanThumb;
+            }
+
+            // Safety check: ensure markdown content does not duplicate the header image going forward
+            if (cleanThumb) {
+                const thumbFilename = path.basename(cleanThumb);
+                const duplicateImgRegex = new RegExp(`<p>\\s*<img[^>]*${thumbFilename}[^>]*>\\s*<\\/p>\\s*`, 'gi');
+                htmlContent = htmlContent.replace(duplicateImgRegex, '');
+            }
+
+            // Safety check: if parsed markdown content already starts with a hero image (excluding shields badges), skip injecting manifest thumbnail
+            const startsWithNonBadgeImg = /^\s*<p>\s*<img(?![^>]*img\.shields\.io)[^>]*>\s*<\/p>/i.test(htmlContent);
+
+            const thumbnailHTML = (thumbSrc && !startsWithNonBadgeImg)
                 ? `<img src="${thumbSrc}" alt="${postMeta.title}" class="post-hero-image" onerror="this.style.display='none'">`
                 : '';
 
@@ -183,8 +197,11 @@ async function run() {
                 let relatedHTML = '<div class="related-posts-section"><h2 class="related-posts-title">Related Posts</h2><div class="related-posts-grid">';
                 relatedPosts.forEach(post => {
                     const isRelAbsolute = post.thumbnail && (post.thumbnail.startsWith('http://') || post.thumbnail.startsWith('https://'));
-                    const cleanRelThumb = post.thumbnail ? post.thumbnail.replace(/^\.\.\//, '') : '';
-                    const relThumbSrc = isRelAbsolute ? post.thumbnail : (cleanRelThumb ? '../' + cleanRelThumb : '');
+                    const cleanRelThumb = post.thumbnail ? post.thumbnail.replace(/^(\.\.\/)+/, '') : '';
+                    let relThumbSrc = isRelAbsolute ? post.thumbnail : '';
+                    if (!isRelAbsolute && cleanRelThumb) {
+                        relThumbSrc = cleanRelThumb.startsWith('images/') ? '../../' + cleanRelThumb : '../' + cleanRelThumb;
+                    }
                     const thumb = relThumbSrc 
                         ? `<img src="${relThumbSrc}" alt="${post.title}" class="related-card-img" onerror="this.style.display='none'">`
                         : `<div class="related-card-fallback"><svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></div>`;

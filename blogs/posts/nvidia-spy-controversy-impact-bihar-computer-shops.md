@@ -2,8 +2,6 @@
 
 ---
 
-![Nvidia spy controversy and GPU market impact on Bihar computer shops - Modern semiconductor GPU graphics chip on circuit board](../thumbnails/nvidia-spy-controversy-impact-bihar-computer-shops.webp)
-
 > **Quick answer:** The headline controversy surrounding Nvidia CEO Jensen Huang's confirmed extramarital affair and an independent board probe into suspected Chinese intelligence connections will not cause an immediate GPU price spike in Bihar. In China's primary Huaqiangbei electronics market, spot GPU prices are actually falling (RTX 5090 fell from ~60,000 yuan to ~50,000 yuan; RTX 5060 declined to ~3,400–3,700 yuan) due to cooling speculation and soft demand. Local computer shop owners in Patna and Bihar Sharif face near-zero immediate stock risk, but should monitor potential long-term U.S. export control tightening on high-end silicon rather than hoarding inventory out of panic.
 
 ---

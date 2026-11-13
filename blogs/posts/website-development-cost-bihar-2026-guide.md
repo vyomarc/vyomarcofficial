@@ -2,8 +2,6 @@
 
 ---
 
-![Website development cost in Bihar 2026 - Laptop displaying pricing analytics chart with calculator on modern office desk](../thumbnails/website-development-cost-bihar-2026-guide.webp)
-
 > **Quick answer:** In 2026, the website development cost in Bihar ranges from **₹2,999** for basic business informational pages up to **₹25,000 to ₹30,000** for dynamic portals and catalog platforms, reaching **₹2,00,000 to ₹20,00,000+** for complex enterprise applications. For standard commercial websites, turnkey CMS solutions (typically benchmarked around $2,500) offer significantly higher return on investment than bespoke custom React builds (benchmarked around $12,000), which require full-stack teams without guaranteeing better business returns for informational portfolios.
 
 ---

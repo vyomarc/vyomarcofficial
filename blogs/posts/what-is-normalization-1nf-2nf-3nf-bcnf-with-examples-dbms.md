@@ -2,8 +2,6 @@
 
 ---
 
-![What is Normalization in DBMS - 1NF, 2NF, 3NF and BCNF with Examples](../thumbnails/dbms-normalization-1nf-2nf-3nf-bcnf.webp)
-
 > **Quick Summary for Semester Exams:** **Normalization** is a systematic, step-by-step technique in Database Management Systems (DBMS) used to organize relational tables to **minimize data redundancy** (duplication) and eliminate undesirable **anomalies** (Insertion, Deletion, and Updation). It proceeds hierarchically from **1NF** (Atomic values) → **2NF** (No partial dependency) → **3NF** (No transitive dependency) → **BCNF** (Every determinant is a super key).
 
 ---

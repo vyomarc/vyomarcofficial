@@ -1,5 +1,14 @@
 [
     {
+        "slug": "microsys-case-study",
+        "title": "Case Study: Architecting a Scalable Frontend & UI/UX System for Microsys",
+        "date": "2026-11-14",
+        "excerpt": "How VYOMARC Technologies engineered a high-performance, dynamic-ready frontend architecture and custom admin UI for Microsys Computer & Accessories.",
+        "thumbnail": "../images/microsys-case-study-thumbnail.webp",
+        "author": "VYOMARC Technologies",
+        "category": "Case Study"
+    },
+    {
         "slug": "masala-junction-case-study",
         "title": "Case Study: Digital Presence Transformation for a Multi-Cuisine Eatery",
         "date": "2026-04-23",

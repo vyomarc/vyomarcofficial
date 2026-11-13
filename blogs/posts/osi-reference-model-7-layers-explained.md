@@ -2,8 +2,6 @@
 
 ---
 
-![Explain OSI Reference Model with its 7 Layers - Computer Networks Notes](../thumbnails/osi-model.webp)
-
 > **Quick Summary for Exam Revision:** The **OSI (Open Systems Interconnection) Reference Model** is a 7-layer theoretical framework established by the International Organization for Standardization (ISO) in 1984. It breaks down complex network communication into modular layers, establishing standardized protocols for data transmission between disparate computer systems.
 
 ---
