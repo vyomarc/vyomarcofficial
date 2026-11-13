@@ -1,5 +1,14 @@
 [
     {
+        "slug": "masala-junction-case-study",
+        "title": "Case Study: Digital Presence Transformation for a Multi-Cuisine Eatery",
+        "date": "2026-04-23",
+        "excerpt": "How VYOMARC transformed Masala Junction into a 24/7 digital host with a mobile-first website, reducing friction between browsing the menu and placing an order.",
+        "thumbnail": "images/portfolio3.webp",
+        "author": "VYOMARC Technologies",
+        "category": "Case Study"
+    },
+    {
         "slug": "what-is-normalization-1nf-2nf-3nf-bcnf-with-examples-dbms",
         "title": "What is Normalization? Explain 1NF, 2NF, 3NF and BCNF with Examples (DBMS)",
         "date": "2026-11-12",
