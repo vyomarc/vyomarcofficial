@@ -153,8 +153,14 @@ async function run() {
             // Safety check: if parsed markdown content already starts with a hero image (excluding shields badges), skip injecting manifest thumbnail
             const startsWithNonBadgeImg = /^\s*<p>\s*<img(?![^>]*img\.shields\.io)[^>]*>\s*<\/p>/i.test(htmlContent);
 
+            // Strip any leading duplicate H1 from markdown to enforce strictly 1 H1 per page
+            htmlContent = htmlContent.replace(/^\s*<h1[^>]*>.*?<\/h1>\s*/i, '');
+
+            // Ensure images inside markdown content have loading="lazy" and decoding="async"
+            htmlContent = htmlContent.replace(/<img(?![^>]*loading=)([^>]*)>/gi, '<img loading="lazy" decoding="async"$1>');
+
             const thumbnailHTML = (thumbSrc && !startsWithNonBadgeImg)
-                ? `<img src="${thumbSrc}" alt="${postMeta.title}" class="post-hero-image" onerror="this.style.display='none'">`
+                ? `<img src="${thumbSrc}" alt="${postMeta.title}" class="post-hero-image" width="1200" height="630" loading="lazy" decoding="async" onerror="this.style.display='none'">`
                 : '';
 
             let containerHtml =
@@ -203,7 +209,7 @@ async function run() {
                         relThumbSrc = cleanRelThumb.startsWith('images/') ? '../../' + cleanRelThumb : '../' + cleanRelThumb;
                     }
                     const thumb = relThumbSrc 
-                        ? `<img src="${relThumbSrc}" alt="${post.title}" class="related-card-img" onerror="this.style.display='none'">`
+                        ? `<img src="${relThumbSrc}" alt="${post.title}" class="related-card-img" width="400" height="232" loading="lazy" decoding="async" onerror="this.style.display='none'">`
                         : `<div class="related-card-fallback"><svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></div>`;
                     const catTag = post.category ? `<span class="related-card-cat">${post.category}</span>` : '';
                     
@@ -275,6 +281,11 @@ async function run() {
         { loc: 'https://vyomarctech.com/about.html', changefreq: 'weekly', priority: '0.8' },
         { loc: 'https://vyomarctech.com/contactus.html', changefreq: 'weekly', priority: '0.8' },
         { loc: 'https://vyomarctech.com/clients.html', changefreq: 'weekly', priority: '0.8' },
+        { loc: 'https://vyomarctech.com/website-development-services-bihar.html', changefreq: 'weekly', priority: '0.9' },
+        { loc: 'https://vyomarctech.com/app-development-bihar.html', changefreq: 'weekly', priority: '0.9' },
+        { loc: 'https://vyomarctech.com/whatsapp-business-automation.html', changefreq: 'weekly', priority: '0.9' },
+        { loc: 'https://vyomarctech.com/brand-identity-design.html', changefreq: 'weekly', priority: '0.9' },
+        { loc: 'https://vyomarctech.com/software-development-company-bihar.html', changefreq: 'weekly', priority: '0.9' },
         { loc: 'https://vyomarctech.com/krishiai.html', changefreq: 'weekly', priority: '0.8' },
         { loc: 'https://vyomarctech.com/policies/privacy-policy.html', changefreq: 'weekly', priority: '0.8' },
         { loc: 'https://vyomarctech.com/policies/terms-of-service.html', changefreq: 'weekly', priority: '0.8' },
