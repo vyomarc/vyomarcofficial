@@ -240,7 +240,20 @@ async function run() {
             postHtml = postHtml.replace(/src="post-script\.js"/g, 'src="../post-script.js"');
             postHtml = postHtml.replace(/href="index\.html"/g, 'href="../index.html"');
             postHtml = postHtml.replace(/href="\/blogs\/"/g, 'href="/blogs/"');
-            postHtml = postHtml.replace(/>Blog<\/a>/g, '>Article & Blogs</a>');
+
+            // Adjust footer links and labels (for generated post pages)
+            postHtml = postHtml.replace(/href="\.\.\/index\.html#services"/g, 'href="../../index.html#services"');
+            postHtml = postHtml.replace(/href="index\.html\?cat=Case%20Study"/g, 'href="../index.html?cat=Case%20Study"');
+            postHtml = postHtml.replace(/href="\.\.\/index\.html#products"/g, 'href="../../index.html#services"');
+            postHtml = postHtml.replace(/href="\.\.\/index\.html#work"/g, 'href="../index.html?cat=Case%20Study"');
+            postHtml = postHtml.replace(/>Products<\/a>/g, '>Our Services</a>');
+            postHtml = postHtml.replace(/>Portfolio<\/a>/g, '>Case Studies</a>');
+            postHtml = postHtml.replace(/href="\.\.\/\.\.\/index\.html">Blog<\/a>/g, 'href="../index.html">Blog</a>');
+            postHtml = postHtml.replace(/href="\.\.\/policies\/privacy-policy\.html"/g, 'href="../../policies/privacy-policy.html"');
+            postHtml = postHtml.replace(/href="\.\.\/policies\/terms-of-service\.html"/g, 'href="../../policies/terms-of-service.html"');
+            postHtml = postHtml.replace(/href="\.\.\/policies\/refund-policy\.html"/g, 'href="../../policies/refund-policy.html"');
+            postHtml = postHtml.replace(/>Privacy Policy &amp; Terms<\/a>/g, '>Privacy Policy</a>');
+            postHtml = postHtml.replace(/>Privacy Policy & Terms<\/a>/g, '>Privacy Policy</a>');
 
             const outPath = path.join(blogsDir, 'posts', postMeta.slug + '.html');
             fs.writeFileSync(outPath, postHtml, 'utf-8');
@@ -263,7 +276,9 @@ async function run() {
         { loc: 'https://vyomarctech.com/contactus.html', changefreq: 'weekly', priority: '0.8' },
         { loc: 'https://vyomarctech.com/clients.html', changefreq: 'weekly', priority: '0.8' },
         { loc: 'https://vyomarctech.com/krishiai.html', changefreq: 'weekly', priority: '0.8' },
-        { loc: 'https://vyomarctech.com/privacy-terms.html', changefreq: 'weekly', priority: '0.8' },
+        { loc: 'https://vyomarctech.com/policies/privacy-policy.html', changefreq: 'weekly', priority: '0.8' },
+        { loc: 'https://vyomarctech.com/policies/terms-of-service.html', changefreq: 'weekly', priority: '0.8' },
+        { loc: 'https://vyomarctech.com/policies/refund-policy.html', changefreq: 'weekly', priority: '0.8' },
         { loc: 'https://vyomarctech.com/learn.vyomarc.html', changefreq: 'weekly', priority: '0.8' },
         { loc: 'https://vyomarctech.com/blogs/', changefreq: 'weekly', priority: '0.9' }
     ];

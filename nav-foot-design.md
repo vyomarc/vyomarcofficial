@@ -497,14 +497,17 @@ document.addEventListener("DOMContentLoaded", () => {
   - Instagram (`https://www.instagram.com/vyomarc.tech`) with official Instagram SVG icon
 - **Bottom Bar:**
   - Copyright: `© 2026 VYOMARC Technologies`
-  - Legal: Privacy Policy & Terms (`privacy-terms.html`)
+  - Legal: Privacy Policy (`policies/privacy-policy.html`), Terms of Service (`policies/terms-of-service.html`), Refund Policy (`policies/refund-policy.html`)
 
 ### HTML Structure
 ```html
 <footer class="site-footer">
   <div class="footer-grid">
     <div class="footer-brand-col">
-      <div class="footer-brand-name">VYOMARC</div>
+      <div class="footer-brand-name">
+  <span class="brand-main">VYOMARC</span>
+  <span class="brand-sub">TECHNOLOGIES</span>
+</div>
       <p class="footer-tagline">Building scalable software, websites &amp; digital products.</p>
     </div>
     
@@ -586,7 +589,11 @@ document.addEventListener("DOMContentLoaded", () => {
   <div class="footer-bottom">
     <div class="footer-copyright">&copy; 2026 VYOMARC Technologies</div>
     <div class="footer-legal">
-      <a href="privacy-terms.html">Privacy Policy &amp; Terms</a>
+      <a href="policies/privacy-policy.html">Privacy Policy</a>
+      <span class="footer-legal-sep" aria-hidden="true" style="color: rgba(255, 255, 255, 0.4); margin: 0 4px;">•</span>
+      <a href="policies/terms-of-service.html">Terms of Service</a>
+      <span class="footer-legal-sep" aria-hidden="true" style="color: rgba(255, 255, 255, 0.4); margin: 0 4px;">•</span>
+      <a href="policies/refund-policy.html">Refund Policy</a>
     </div>
   </div>
 </footer>

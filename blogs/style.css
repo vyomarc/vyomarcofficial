@@ -619,11 +619,24 @@ a:hover {
 }
 
 .footer-brand-name {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 16px;
-    letter-spacing: -0.02em;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+.footer-brand-name .brand-main {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+.footer-brand-name .brand-sub {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #38bdf8; /* Light blue accent */
+  letter-spacing: 3px;
 }
 
 .footer-col-title {
@@ -1362,4 +1375,60 @@ a:hover {
 .mermaid svg {
     max-width: 100%;
     height: auto;
+}
+
+/* ==========================================================================
+   Footer CTA Block
+   ========================================================================== */
+.footer-cta-block {
+  text-align: center;
+  padding: 40px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-trust {
+  color: #38bdf8;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.footer-cta-title {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.footer-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: #ffffff;
+  color: #0a192f;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 10px;
+}
+
+.footer-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .footer-cta-title {
+    font-size: 1.5rem;
+  }
 }
