@@ -299,24 +299,33 @@ async function run() {
     const today = new Date().toISOString().split('T')[0];
 
     const mainPages = [
+        // Group 1: Root Pages (Priority 1.0 to 0.8)
         { loc: 'https://vyomarctech.com/', changefreq: 'daily', priority: '1.0' },
-        { loc: 'https://vyomarctech.com/about.html', changefreq: 'weekly', priority: '0.8' },
-        { loc: 'https://vyomarctech.com/contactus.html', changefreq: 'weekly', priority: '0.8' },
-        { loc: 'https://vyomarctech.com/clients.html', changefreq: 'weekly', priority: '0.8' },
+        { loc: 'https://vyomarctech.com/about.html', changefreq: 'monthly', priority: '0.8' },
+        { loc: 'https://vyomarctech.com/contactus.html', changefreq: 'monthly', priority: '0.8' },
+        { loc: 'https://vyomarctech.com/clients.html', changefreq: 'monthly', priority: '0.8' },
+
+        // Group 2: Service Pages (Priority 0.9)
         { loc: 'https://vyomarctech.com/website-development-services-bihar.html', changefreq: 'weekly', priority: '0.9' },
         { loc: 'https://vyomarctech.com/app-development-bihar.html', changefreq: 'weekly', priority: '0.9' },
         { loc: 'https://vyomarctech.com/whatsapp-business-automation.html', changefreq: 'weekly', priority: '0.9' },
         { loc: 'https://vyomarctech.com/brand-identity-design.html', changefreq: 'weekly', priority: '0.9' },
         { loc: 'https://vyomarctech.com/software-development-company-bihar.html', changefreq: 'weekly', priority: '0.9' },
-        { loc: 'https://vyomarctech.com/policies/privacy-policy.html', changefreq: 'weekly', priority: '0.8' },
-        { loc: 'https://vyomarctech.com/policies/terms-of-service.html', changefreq: 'weekly', priority: '0.8' },
-        { loc: 'https://vyomarctech.com/policies/refund-policy.html', changefreq: 'weekly', priority: '0.8' },
-        { loc: 'https://vyomarctech.com/tools/index.html', changefreq: 'weekly', priority: '0.8' },
-        { loc: 'https://vyomarctech.com/tools/whatsapp-link-generator/index.html', changefreq: 'weekly', priority: '0.8' },
-        { loc: 'https://vyomarctech.com/tools/justdial-scanner/index.html', changefreq: 'weekly', priority: '0.8' },
-        { loc: 'https://vyomarctech.com/tools/commission-calculator/index.html', changefreq: 'weekly', priority: '0.8' },
-        { loc: 'https://vyomarctech.com/tools/cgpa-to-percentage-converter/index.html', changefreq: 'weekly', priority: '0.8' },
-        { loc: 'https://vyomarctech.com/blogs/', changefreq: 'weekly', priority: '0.9' }
+
+        // Group 3: Tools Hub & Tools (Priority 0.9)
+        { loc: 'https://vyomarctech.com/tools/index.html', changefreq: 'weekly', priority: '0.9' },
+        { loc: 'https://vyomarctech.com/tools/whatsapp-link-generator/index.html', changefreq: 'weekly', priority: '0.9' },
+        { loc: 'https://vyomarctech.com/tools/justdial-scanner/index.html', changefreq: 'weekly', priority: '0.9' },
+        { loc: 'https://vyomarctech.com/tools/commission-calculator/index.html', changefreq: 'weekly', priority: '0.9' },
+        { loc: 'https://vyomarctech.com/tools/cgpa-to-percentage-converter/index.html', changefreq: 'weekly', priority: '0.9' },
+
+        // Group 4: Blog Hub (Priority 0.8)
+        { loc: 'https://vyomarctech.com/blogs/', changefreq: 'weekly', priority: '0.8' },
+
+        // Group 5: Policies (Priority 0.5)
+        { loc: 'https://vyomarctech.com/policies/privacy-policy.html', changefreq: 'monthly', priority: '0.5' },
+        { loc: 'https://vyomarctech.com/policies/terms-of-service.html', changefreq: 'monthly', priority: '0.5' },
+        { loc: 'https://vyomarctech.com/policies/refund-policy.html', changefreq: 'monthly', priority: '0.5' }
     ];
 
     let sitemapXml = '<?xml version="1.0" encoding="UTF-8"?>\n';
@@ -336,7 +345,7 @@ async function run() {
         sitemapXml += `    <loc>https://vyomarctech.com/blogs/posts/${postMeta.slug}.html</loc>\n`;
         sitemapXml += `    <lastmod>${postMeta.date}</lastmod>\n`;
         sitemapXml += '    <changefreq>monthly</changefreq>\n';
-        sitemapXml += '    <priority>0.7</priority>\n';
+        sitemapXml += '    <priority>0.8</priority>\n';
         sitemapXml += '  </url>\n';
     }
 
