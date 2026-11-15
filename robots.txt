@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+Disallow: /blogs/404.html
+Disallow: /blogs/post.html
+
 Sitemap: https://vyomarctech.com/sitemap.xml

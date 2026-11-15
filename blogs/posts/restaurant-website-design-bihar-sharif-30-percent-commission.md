@@ -26,7 +26,7 @@ Main restaurant website design pe kaam karta hoon, aur ye hisaab mere saamne baa
 
 ### 💡 Ek order pe ₹112 ka fark.
 
-> *Note: Ye dummy numbers hain. Apne actual numbers pe same table banao — asli dard wahi dikhega.*
+> *Note: Ye dummy numbers hain. Apne actual numbers se calculate karne ke liye hamara free [Commission Calculator Tool](/tools/commission-calculator/index.html "Free Zomato and Swiggy Commission Loss Calculator") use karo — asli bachat wahi dikhegi.*
 
 ---
 
@@ -59,7 +59,7 @@ Ye line kisi ke P&L me alag se dikhti nahi. Commission sales se kat ke aati hai 
 
 Zomato/Swiggy **naye customer** laate hain. Wo kaam ka hai.
 
-Par jo customer **teesri baar** order kar raha hai — usse 30% pe kyun pakadna?
+Par jo customer **teesri baar** order kar raha hai — usse 30% pe kyun pakadna? Local shops aur retail businesses bhi yahi strategy apna rahe hain — dekho kaise [traditional retail stores direct ordering se badh rahe hain](ecommerce-website-developer-bihar-sharif-traditional-retail.html "Traditional Retail E-Commerce in Bihar Sharif").
 
 > **Repeat customer ko apne channel pe lao. Ye hai unit economics.**
 

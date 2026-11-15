@@ -1,0 +1,28 @@
+# VYOMARC Technologies
+
+> VYOMARC Technologies is a founder-led software engineering agency in Bihar Sharif, Bihar. We build high-performance websites, custom web apps, secure CBT platforms, and zero-commission WhatsApp ordering systems for local businesses.
+
+## Core Services
+
+- [Website Development](https://vyomarctech.com/website-development-services-bihar.html)
+- [Software Development](https://vyomarctech.com/software-development-company-bihar.html)
+- [WhatsApp Automation](https://vyomarctech.com/whatsapp-business-automation.html)
+- [App Development](https://vyomarctech.com/app-development-bihar.html)
+- [Brand Identity](https://vyomarctech.com/brand-identity-design.html)
+
+## Free Business Tools
+
+- [WhatsApp Link Generator](https://vyomarctech.com/tools/whatsapp-link-generator/index.html): Create zero-commission direct ordering links.
+- [JustDial Lead Scanner](https://vyomarctech.com/tools/justdial-scanner/index.html): Calculate hidden aggregator losses.
+- [Commission Calculator](https://vyomarctech.com/tools/commission-calculator/index.html): Calculate Zomato/Swiggy commission loss.
+- [CGPA Converter](https://vyomarctech.com/tools/cgpa-to-percentage-converter/index.html): Convert CGPA to percentage instantly.
+
+## Featured Case Studies
+
+- [Microsys Case Study](https://vyomarctech.com/blogs/posts/microsys-case-study.html): Architecting a scalable frontend for a B2B hardware retailer.
+- [Masala Junction Case Study](https://vyomarctech.com/blogs/posts/masala-junction-case-study.html): Digital transformation for a multi-cuisine eatery.
+
+## Optional
+
+- [About VYOMARC](https://vyomarctech.com/about.html)
+- [Contact Us](https://vyomarctech.com/contactus.html)

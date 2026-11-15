@@ -185,3 +185,11 @@ graph TD
     L2 -->|Transmission: Convert to Raw Bitstream| L1
 ```
 
+---
+
+## Recommended Next Study
+
+* Next, learn about [Database Normalization (1NF, 2NF, 3NF, BCNF) with Examples](what-is-normalization-1nf-2nf-3nf-bcnf-with-examples-dbms.html "Database Normalization (1NF, 2NF, 3NF, BCNF) with Examples - DBMS Guide").
+* Agar aapko hardware-level memory architecture samajhna hai, toh hamara [Paging vs Segmentation in OS Memory Management](paging-vs-segmentation-memory-management.html "Paging vs Segmentation in Memory Management - Operating System Study Notes") wala article padhein.
+
+

@@ -299,3 +299,11 @@ flowchart LR
     class UNF,N1,N2,N3 stage;
     class BCNF target;
 ```
+
+---
+
+## Recommended Next Study
+
+* For more foundational computer science and networking architecture notes, explore our comprehensive guide: [OSI Reference Model: 7 Layers Explained with Protocols and Architecture](osi-reference-model-7-layers-explained.html "OSI Reference Model: 7 Layers Explained with Protocols and Architecture").
+* Agar aapko hardware-level memory architecture samajhna hai, toh hamara [Paging vs Segmentation in OS Memory Management](paging-vs-segmentation-memory-management.html "Paging vs Segmentation in Memory Management - Operating System Study Notes") wala article padhein.
+

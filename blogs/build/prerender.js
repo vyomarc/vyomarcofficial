@@ -44,6 +44,17 @@ async function run() {
             const markdownText = fs.readFileSync(mdPath, 'utf-8');
             let htmlContent = marked.parse(markdownText);
             
+            // Translate code blocks with mermaid language into native <div class="mermaid">...code...</div>
+            htmlContent = htmlContent.replace(/<pre><code class="language-mermaid">([\s\S]*?)<\/code><\/pre>/gi, (match, code) => {
+                const unescaped = code
+                    .replace(/&amp;/g, '&')
+                    .replace(/&lt;/g, '<')
+                    .replace(/&gt;/g, '>')
+                    .replace(/&quot;/g, '"')
+                    .replace(/&#39;/g, "'");
+                return `<div class="mermaid">\n${unescaped.trim()}\n</div>`;
+            });
+            
             let postHtml = templateHtml;
 
             // Update title
@@ -82,9 +93,18 @@ async function run() {
                 "headline": postMeta.title,
                 "description": postMeta.excerpt,
                 "image": postMeta.thumbnail ? new URL(postMeta.thumbnail, 'https://vyomarctech.com/blogs/').href : "https://vyomarctech.com/images/default-og.jpg",
-                "author": {
+                "author": postMeta.author === "Saurabh M. Kumar" ? {
                     "@type": "Person",
-                    "name": postMeta.author || "VYOMARC"
+                    "name": "Saurabh M. Kumar",
+                    "jobTitle": "Founder & Lead System Architect",
+                    "url": "https://vyomarctech.com/about.html",
+                    "sameAs": [
+                        "https://www.linkedin.com/in/mrsaurabh009/",
+                        "https://x.com/mrsaurabh009"
+                    ]
+                } : {
+                    "@type": "Organization",
+                    "name": postMeta.author || "VYOMARC Technologies"
                 },
                 "publisher": {
                     "@type": "Organization",
@@ -235,10 +255,12 @@ async function run() {
             postHtml = postHtml.replace(/href="\.\.\/about\.html"/g, 'href="../../about.html"');
             postHtml = postHtml.replace(/href="\.\.\/contactus\.html"/g, 'href="../../contactus.html"');
             postHtml = postHtml.replace(/href="\.\.\/clients\.html"/g, 'href="../../clients.html"');
+            postHtml = postHtml.replace(/href="\.\.\/tools\/index\.html"/g, 'href="../../tools/index.html"');
             postHtml = postHtml.replace(/href="\.\.\/website-development-services-bihar\.html"/g, 'href="../../website-development-services-bihar.html"');
             postHtml = postHtml.replace(/href="\.\.\/software-development-company-bihar\.html"/g, 'href="../../software-development-company-bihar.html"');
             postHtml = postHtml.replace(/href="\.\.\/css\/style\.css"/g, 'href="../../css/style.css"');
-            postHtml = postHtml.replace(/src="\.\.\/vlogo\.png"/g, 'src="../../vlogo.png"');
+            postHtml = postHtml.replace(/src="\.\.\/images\/vyomarc-logo\.png"/g, 'src="../../images/vyomarc-logo.png"');
+            postHtml = postHtml.replace(/src="\.\.\/vlogo\.png"/g, 'src="../../images/vyomarc-logo.png"');
             postHtml = postHtml.replace(/src="\.\.\/script\.js"/g, 'src="../../script.js"');
 
             // Adjust blog-level links and assets (1 level up from /blogs/posts/)
@@ -286,11 +308,14 @@ async function run() {
         { loc: 'https://vyomarctech.com/whatsapp-business-automation.html', changefreq: 'weekly', priority: '0.9' },
         { loc: 'https://vyomarctech.com/brand-identity-design.html', changefreq: 'weekly', priority: '0.9' },
         { loc: 'https://vyomarctech.com/software-development-company-bihar.html', changefreq: 'weekly', priority: '0.9' },
-        { loc: 'https://vyomarctech.com/krishiai.html', changefreq: 'weekly', priority: '0.8' },
         { loc: 'https://vyomarctech.com/policies/privacy-policy.html', changefreq: 'weekly', priority: '0.8' },
         { loc: 'https://vyomarctech.com/policies/terms-of-service.html', changefreq: 'weekly', priority: '0.8' },
         { loc: 'https://vyomarctech.com/policies/refund-policy.html', changefreq: 'weekly', priority: '0.8' },
-        { loc: 'https://vyomarctech.com/learn.vyomarc.html', changefreq: 'weekly', priority: '0.8' },
+        { loc: 'https://vyomarctech.com/tools/index.html', changefreq: 'weekly', priority: '0.8' },
+        { loc: 'https://vyomarctech.com/tools/whatsapp-link-generator/index.html', changefreq: 'weekly', priority: '0.8' },
+        { loc: 'https://vyomarctech.com/tools/justdial-scanner/index.html', changefreq: 'weekly', priority: '0.8' },
+        { loc: 'https://vyomarctech.com/tools/commission-calculator/index.html', changefreq: 'weekly', priority: '0.8' },
+        { loc: 'https://vyomarctech.com/tools/cgpa-to-percentage-converter/index.html', changefreq: 'weekly', priority: '0.8' },
         { loc: 'https://vyomarctech.com/blogs/', changefreq: 'weekly', priority: '0.9' }
     ];
 

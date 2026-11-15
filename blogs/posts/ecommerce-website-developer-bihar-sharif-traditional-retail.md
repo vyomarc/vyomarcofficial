@@ -8,7 +8,7 @@
 
 A customer searching for **"best clothing store near me"** or **"kirana store in Bihar Sharif"** expects to see what you sell on their phone, usually in the evening. They don't have the patience to walk into three different shops to check availability. 
 
-The shop with a clear, fast, and searchable digital catalog wins the order. Traditional foot traffic is dropping as big aggregators step in, taking high commissions and eating local margins.
+The shop with a clear, fast, and searchable digital catalog wins the order. Traditional foot traffic is dropping as big aggregators step in, taking heavy 20% to 30% platform commissions and eating local retail margins — much like local eateries facing [heavy restaurant aggregator commissions](restaurant-website-design-bihar-sharif-30-percent-commission.html "How Bihar Sharif Restaurants Save 30% on Aggregator Commissions"). You can evaluate your exact margin loss using our free [Commission Calculator Tool](/tools/commission-calculator/index.html "Free Aggregator Commission Loss Calculator").
 
 > **This is a revenue problem, not a technology problem. One lost customer to an aggregator costs you repeat business for years.**
 

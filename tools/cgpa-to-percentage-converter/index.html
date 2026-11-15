@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CGPA to Percentage Converter &amp; Percentage to CGPA | VYOMARC</title>
+  <meta name="description" content="Free online CGPA to Percentage and Percentage to CGPA converter. Calculate your academic scores on 10-point and 7-point scales instantly with study abroad eligibility." />
+  <link rel="canonical" href="https://vyomarctech.com/tools/cgpa-to-percentage-converter/index.html" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vyomarctech.com/tools/cgpa-to-percentage-converter/index.html" />
+  <meta property="og:title" content="CGPA to Percentage Converter &amp; Percentage to CGPA | VYOMARC" />
+  <meta property="og:description" content="Free online CGPA to Percentage and Percentage to CGPA converter. Calculate your academic scores on 10-point and 7-point scales instantly with study abroad eligibility." />
+  <meta property="og:image" content="https://vyomarctech.com/images/og-image.webp" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://vyomarctech.com/tools/cgpa-to-percentage-converter/index.html" />
+  <meta name="twitter:title" content="CGPA to Percentage Converter &amp; Percentage to CGPA | VYOMARC" />
+  <meta name="twitter:description" content="Free online CGPA to Percentage and Percentage to CGPA converter. Calculate your academic scores on 10-point and 7-point scales instantly with study abroad eligibility." />
+  <meta name="twitter:image" content="https://vyomarctech.com/images/og-image.webp" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- WebApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "CGPA to Percentage Converter & Percentage to CGPA",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "All",
+    "url": "https://vyomarctech.com/tools/cgpa-to-percentage-converter/index.html",
+    "description": "Free online CGPA to Percentage and Percentage to CGPA converter. Calculate your academic scores on 10-point and 7-point scales instantly with study abroad eligibility.",
+    "creator": {
+      "@type": "Organization",
+      "name": "VYOMARC Technologies",
+      "url": "https://vyomarctech.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    }
+  }
+  </script>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is CGPA multiplied by 9.5 always accurate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For CBSE, AICTE, VTU, AKTU, and most central and state universities in India, multiplying by 9.5 is the official board-approved formula. However, select institutions like Mumbai University follow a 7-point scale with the formula (CGPA - 0.75) * 10, or specify custom conversion formulas on the back of their grade sheets."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I convert a 7-point CGPA to a 10-point CGPA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "First, convert your 7-point CGPA to an aggregate percentage using the formula Percentage = (CGPA - 0.75) * 10. Once you have the percentage, divide it by 9.5 to obtain the equivalent 10-point CGPA recognized by central universities and recruitment boards."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good CGPA for MS in the USA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most prestigious US universities look for an equivalent US GPA of 3.0 or higher on a 4.0 scale, which translates roughly to a 7.0 - 7.5 CGPA (or 65% - 70%) on an Indian 10-point grading system. Competitive programs like Stanford or MIT typically prefer 8.5+ CGPA."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this calculator work for engineering colleges?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, this calculator supports both the AICTE standard 10-point scale used by autonomous and affiliated B.Tech/B.E. engineering institutions (VTU, AKTU, Anna Univ, JNTU) as well as the 7-point scale used by Mumbai University and affiliated colleges."
+        }
+      }
+    ]
+  }
+  </script>
+    <link rel="icon" href="/images/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
+  </head>
+<body class="tool-page-wrapper">
+
+  <!-- Floating Pill Navigation (Copied from Homepage) -->
+  <header class="navbar-wrapper">
+    <nav class="nav-floating" aria-label="Main Navigation">
+      <div class="nav-brand-group">
+        <a href="../../index.html" class="nav-logo" aria-label="VYOMARC Home">
+          <img src="../../images/vyomarc-logo.png" alt="VYOMARC Logo - Enterprise Software Company" class="logo-img" width="38" height="38" fetchpriority="high" decoding="async" />
+          <span class="nav-logo-text">VYOMARC</span>
+        </a>
+        <span class="nav-brand-divider" aria-hidden="true"></span>
+      </div>
+
+      <button type="button" class="menu-toggle" id="mobile-menu" aria-label="Toggle Menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <div class="nav-links" id="nav-links">
+        <a href="../../index.html#home" class="nav-link-pill">Home</a>
+        <a href="../../about.html" class="nav-link-pill">About</a>
+        <div class="nav-dropdown">
+          <button type="button" class="dropdown-toggle nav-link-pill" aria-haspopup="true" aria-expanded="false">
+            Services
+            <svg class="dropdown-chevron-svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="../../website-development-services-bihar.html">Website Development</a>
+            <a href="../../software-development-company-bihar.html">Software Development</a>
+            <a href="../../index.html#services">View All Services</a>
+          </div>
+        </div>
+        <a href="../../index.html#work" class="nav-link-pill">Work</a>
+        <a href="../../blogs/" class="nav-link-pill">Article &amp; Blogs</a>
+        <a href="../../clients.html" class="nav-link-pill">Our Clients</a>
+        <a href="../index.html" class="nav-link-pill active">Tools</a>
+        <a href="../../contactus.html" class="nav-link-pill">Contact</a>
+        <a href="../../contactus.html" class="nav-cta-pill nav-cta-mobile">
+          <span>Get a Free Consultation</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <a href="../../contactus.html" class="nav-cta-pill nav-cta-desktop">
+        <span>Get a Free Consultation</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <header class="tool-hero">
+    <div class="tool-hero-content">
+      <div class="tool-hero-badge">
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+        <span>Academic Utility Tool</span>
+      </div>
+      <h1>CGPA to Percentage &amp; Percentage to CGPA Converter</h1>
+      <p class="tool-hero-lead">Instant conversion for CBSE, AICTE, VTU, AKTU, and Mumbai University grading systems. Calculate your aggregate percentage, US 4.0 GPA scale, academic division, and study abroad admission eligibility in real time.</p>
+      
+      <div class="tool-hero-highlights">
+        <div class="hero-pill">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>CBSE &amp; AICTE 10-Point Scale</span>
+        </div>
+        <div class="hero-pill">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>Mumbai Univ 7-Point Scale</span>
+        </div>
+        <div class="hero-pill">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>US 4.0 GPA Equivalent</span>
+        </div>
+        <div class="hero-pill">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>Study Abroad Evaluation</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Interactive Two-Column Calculator Section -->
+  <main class="calc-section">
+    <div class="calc-container">
+      <div class="calc-card-main">
+        <div class="calc-grid">
+          
+          <!-- Left Column: Controls & Inputs -->
+          <div class="calc-controls-col">
+            
+            <!-- Direction Toggle -->
+            <div>
+              <span class="calc-section-label">Conversion Mode</span>
+              <div class="segmented-control" role="tablist">
+                <button type="button" class="segment-btn active" data-dir="cgpa-to-percent" role="tab" aria-selected="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  <span>CGPA to Percentage</span>
+                </button>
+                <button type="button" class="segment-btn" data-dir="percent-to-cgpa" role="tab" aria-selected="false">
+                  <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                  <span>Percentage to CGPA</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Scale Toggle -->
+            <div id="scale-toggle-group">
+              <span class="calc-section-label">Grading Scale</span>
+              <div class="segmented-control" role="tablist">
+                <button type="button" class="segment-btn active" data-scale="10" role="tab" aria-selected="true">
+                  <span>10-Point Scale</span>
+                </button>
+                <button type="button" class="segment-btn" data-scale="7" role="tab" aria-selected="false">
+                  <span>7-Point Scale</span>
+                </button>
+              </div>
+              <p class="scale-desc" id="scale-helper-text">Standard for CBSE, AICTE, VTU, AKTU, Anna Univ, and most Indian colleges.</p>
+            </div>
+
+            <!-- Score Input & Slider Block -->
+            <div class="calc-input-block">
+              <div class="input-header-row">
+                <span class="input-header-title" id="input-title">Enter Your CGPA</span>
+                <span class="input-range-badge" id="input-unit-badge">Max: 10.0 CGPA</span>
+              </div>
+
+              <div class="calc-number-box">
+                <input type="number" id="score-input" class="calc-input-number" value="8.00" min="0" max="10" step="0.01" aria-label="Score Input Value" />
+                <span class="input-unit-symbol" id="unit-symbol">CGPA</span>
+              </div>
+
+              <div class="calc-slider-wrap">
+                <input type="range" id="score-slider" class="calc-slider" value="8.00" min="0" max="10" step="0.01" aria-label="Score Range Slider" />
+                <div class="slider-scale-ticks">
+                  <span id="slider-min-label">0.0</span>
+                  <span>50%</span>
+                  <span id="slider-max-label">10.0</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dynamic Active Formula Box -->
+            <div class="formula-box">
+              <div class="formula-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"></circle><path d="M8 12h8"></path><path d="M12 8v8"></path></svg>
+              </div>
+              <div class="formula-body">
+                <div class="formula-label">Active Calculation Formula</div>
+                <div class="formula-text" id="formula-display">Percentage (%) = CGPA × 9.5</div>
+                <div class="formula-note" id="formula-note">CBSE / AICTE standard multiplier of 9.5</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Results & Analytics -->
+          <div class="calc-results-col">
+            
+            <!-- Primary Result Card -->
+            <div class="res-card-primary">
+              <div class="res-primary-label" id="primary-result-label">Equivalent Percentage</div>
+              <div class="res-primary-val" id="primary-result-val">76.00%</div>
+              <div class="res-primary-sub" id="primary-result-sub">Based on a score of 8.00 on a 10-point scale</div>
+            </div>
+
+            <!-- Sub Cards: US GPA & Division -->
+            <div class="res-sub-grid">
+              <div class="res-sub-card">
+                <div class="res-sub-title">
+                  <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <span>US 4.0 GPA Scale</span>
+                </div>
+                <div class="res-sub-val" id="gpa-result-val">3.0 - 3.4 / 4.0 (B+)</div>
+                <div class="res-sub-note">WES / US Graduate Standard</div>
+              </div>
+
+              <div class="res-sub-card">
+                <div class="res-sub-title">
+                  <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                  <span>Division Rank</span>
+                </div>
+                <div class="res-sub-val" id="division-result-val">First Class with Distinction</div>
+                <div class="res-sub-note">Indian University Standard</div>
+              </div>
+            </div>
+
+            <!-- Academic Performance Band -->
+            <div class="perf-band-card">
+              <div class="perf-band-header">
+                <span class="perf-band-title">Academic Performance Band</span>
+                <span class="perf-band-badge" id="perf-badge">Distinction</span>
+              </div>
+              <div class="perf-bar-wrapper">
+                <div class="perf-bar-track">
+                  <div class="perf-bar-marker" id="perf-marker" style="left: 76%;"></div>
+                </div>
+              </div>
+              <div class="perf-ticks">
+                <span>0% Pass</span>
+                <span>50% 2nd</span>
+                <span>60% 1st</span>
+                <span>75% Dist</span>
+                <span>100% Top</span>
+              </div>
+            </div>
+
+            <!-- Study Abroad Eligibility Card -->
+            <div class="study-abroad-card">
+              <div class="study-abroad-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              </div>
+              <div class="study-abroad-body">
+                <div class="study-abroad-title">Global Master's &amp; Visa Eligibility</div>
+                <div class="study-abroad-text" id="study-abroad-text">Eligible for Tier-1 Global Universities in USA, UK, Canada, Germany &amp; Australia (Direct Master's / STEM Programs).</div>
+              </div>
+            </div>
+
+            <!-- Footer Attribution -->
+            <div class="calc-brand-footer">
+              ⚡ Engineered by <span>VYOMARC TECHNOLOGIES</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- SEO & Informational Content Section -->
+  <section class="info-section">
+    <div class="info-container">
+      
+      <!-- SEO Block 1: Formula Explanation -->
+      <div class="info-block">
+        <h2 class="info-heading">What is the Percentage to CGPA Formula for Indian Students?</h2>
+        <p class="info-lead-p">In the Indian academic system governed by CBSE, AICTE, and state technical universities, Cumulative Grade Point Average (CGPA) is converted into equivalent aggregate percentage by multiplying the CGPA by a standard factor of <strong>9.5</strong>. This factor was scientifically derived by analyzing the 5-year average percentage scores of the top 100 students across previous board examinations.</p>
+        
+        <div class="seo-formula-grid">
+          <div class="seo-formula-card">
+            <h4>10-Point Scale (CBSE, AICTE, VTU, AKTU)</h4>
+            <div class="code-math">Percentage (%) = CGPA × 9.5</div>
+            <p>Example: If your CGPA is 8.4, your equivalent percentage is 8.4 × 9.5 = <strong>79.80%</strong>. To convert back from percentage to CGPA, divide your percentage by 9.5.</p>
+          </div>
+
+          <div class="seo-formula-card">
+            <h4>7-Point Scale (Mumbai University &amp; UGC)</h4>
+            <div class="code-math">Percentage (%) = (CGPA - 0.75) × 10</div>
+            <p>Example: If your 7-point CGPA is 5.5, your equivalent percentage is (5.5 - 0.75) × 10 = <strong>47.50%</strong>. Standard for Mumbai University arts, commerce, and technology faculties.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEO Block 2: 6-Row Standard Conversion Table -->
+      <div class="info-block">
+        <h2 class="info-heading">Standard CGPA to Percentage Conversion Table</h2>
+        <p class="info-lead-p">Refer to this verified grading benchmark table used by international admissions councils, WES credential evaluators, and Indian public sector recruitment boards.</p>
+        
+        <div class="table-responsive-wrapper">
+          <table class="conversion-table">
+            <thead>
+              <tr>
+                <th>Percentage (%)</th>
+                <th>CGPA (10-pt)</th>
+                <th>GPA (4.0 Scale)</th>
+                <th>Grade Class</th>
+                <th>Study Abroad Eligibility</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>90% - 100%</strong></td>
+                <td>9.5 - 10.0</td>
+                <td>3.9 - 4.0</td>
+                <td><span class="badge-grade badge-distinction">Distinction / Top 1%</span></td>
+                <td>Ivy League, Stanford, Oxford, Top 20 Global Universities</td>
+              </tr>
+              <tr>
+                <td><strong>80% - 89%</strong></td>
+                <td>8.4 - 9.4</td>
+                <td>3.5 - 3.8</td>
+                <td><span class="badge-grade badge-distinction">First Class with Distinction</span></td>
+                <td>Tier-1 US, UK, Canadian &amp; Australian Universities</td>
+              </tr>
+              <tr>
+                <td><strong>70% - 79%</strong></td>
+                <td>7.4 - 8.3</td>
+                <td>3.0 - 3.4</td>
+                <td><span class="badge-grade badge-first">First Class</span></td>
+                <td>Direct Master's Admission across Germany, Ireland &amp; Australia</td>
+              </tr>
+              <tr>
+                <td><strong>60% - 69%</strong></td>
+                <td>6.3 - 7.3</td>
+                <td>2.5 - 2.9</td>
+                <td><span class="badge-grade badge-second">Second Class (Upper)</span></td>
+                <td>Eligible for Public Universities across UK &amp; European Union</td>
+              </tr>
+              <tr>
+                <td><strong>50% - 59%</strong></td>
+                <td>5.3 - 6.2</td>
+                <td>2.0 - 2.4</td>
+                <td><span class="badge-grade badge-second">Second Class (Lower)</span></td>
+                <td>Pathway Programs, Pre-Master's, &amp; Post-Grad Diplomas</td>
+              </tr>
+              <tr>
+                <td><strong>40% - 49%</strong></td>
+                <td>4.2 - 5.2</td>
+                <td>1.5 - 1.9</td>
+                <td><span class="badge-grade badge-pass">Pass Class</span></td>
+                <td>Conditional Admission &amp; Specialized Technical Diplomas</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- SEO Block 3: How to Use Guide -->
+      <div class="info-block">
+        <h2 class="info-heading">How to Use the CGPA &amp; Percentage Calculator</h2>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Choose Scale &amp; Mode</h3>
+            <p>Select your direction (CGPA to Percentage or vice versa) and toggle between the standard 10-point scale or Mumbai University 7-point scale.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Enter Your Score</h3>
+            <p>Type your score into the input field or drag the interactive slider. The formula and values synchronize smoothly in real-time.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Analyze Global Metrics</h3>
+            <p>Instantly review your equivalent aggregate percentage, US 4.0 GPA rating, university division class, and study abroad eligibility.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ Accordion Section -->
+  <section class="faq-section">
+    <div class="faq-container">
+      <div class="faq-header">
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about CGPA formulas, US GPA conversion, and study abroad requirements.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false" aria-controls="cgpa-faq-1">
+            <span>Is CGPA multiplied by 9.5 always accurate?</span>
+            <svg class="faq-icon-arrow" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer" id="cgpa-faq-1" aria-hidden="true">
+            <p>For CBSE, AICTE, VTU, AKTU, and most central and state universities in India, multiplying by 9.5 is the official board-approved formula. However, select institutions like Mumbai University follow a 7-point scale with the formula (CGPA - 0.75) * 10, or specify custom conversion formulas on the back of their grade sheets.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false" aria-controls="cgpa-faq-2">
+            <span>How do I convert a 7-point CGPA to a 10-point CGPA?</span>
+            <svg class="faq-icon-arrow" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer" id="cgpa-faq-2" aria-hidden="true">
+            <p>First, convert your 7-point CGPA to an aggregate percentage using the formula Percentage = (CGPA - 0.75) * 10. Once you have the percentage, divide it by 9.5 to obtain the equivalent 10-point CGPA recognized by central universities and recruitment boards.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false" aria-controls="cgpa-faq-3">
+            <span>What is a good CGPA for MS in the USA?</span>
+            <svg class="faq-icon-arrow" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer" id="cgpa-faq-3" aria-hidden="true">
+            <p>Most prestigious US universities look for an equivalent US GPA of 3.0 or higher on a 4.0 scale, which translates roughly to a 7.0 - 7.5 CGPA (or 65% - 70%) on an Indian 10-point grading system. Competitive programs like Stanford or MIT typically prefer 8.5+ CGPA.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false" aria-controls="cgpa-faq-4">
+            <span>Does this calculator work for engineering colleges?</span>
+            <svg class="faq-icon-arrow" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer" id="cgpa-faq-4" aria-hidden="true">
+            <p>Yes, this calculator supports both the AICTE standard 10-point scale used by autonomous and affiliated B.Tech/B.E. engineering institutions (VTU, AKTU, Anna Univ, JNTU) as well as the 7-point scale used by Mumbai University and affiliated colleges.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="tool-cta-section">
+    <div class="tool-cta-container">
+      <h2 class="tool-cta-title">Planning to Study Abroad or Build Your Academic Profile?</h2>
+      <p class="tool-cta-desc">Whether you need high-performance web applications, portfolio systems, or tech consultation, VYOMARC engineers future-ready digital solutions.</p>
+      <a href="../../contactus.html" class="tool-cta-btn">
+        <span>Talk to Our Experts</span>
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Global Footer (Copied from Homepage with Relative Paths) -->
+  <footer class="site-footer">
+    <div class="footer-cta-block">
+      <p class="footer-trust">Trusted by leading businesses in Bihar.</p>
+      <h3 class="footer-cta-title">Ready to scale your business?</h3>
+      <a href="../../contactus.html" class="footer-cta-btn">Start a Project <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" style="margin-left: 8px; vertical-align: middle;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-brand-col">
+        <div class="footer-brand-name">
+          <span class="brand-main">VYOMARC</span>
+          <span class="brand-sub">TECHNOLOGIES</span>
+        </div>
+        <p class="footer-tagline">Building scalable software, websites &amp; digital products.</p>
+      </div>
+      
+      <div class="footer-links-col">
+        <h4 class="footer-col-title">Links</h4>
+        <ul class="footer-list">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li><a href="../../index.html#services">Our Services</a></li>
+          <li><a href="../../blogs/index.html?cat=Case%20Study">Case Studies</a></li>
+          <li><a href="../../blogs/">Blog</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-contact-col">
+        <h4 class="footer-col-title">Contact</h4>
+        <ul class="footer-list">
+          <li>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <a href="mailto:vyomarctechnologies@gmail.com">vyomarctechnologies@gmail.com</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <a href="tel:+918252702699">+91 825 270 2699</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Mon to Sat, 10:00 AM to 4:00 AM</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <a href="https://maps.google.com/?q=Ramchandarpur,+Biharsharif,+Nalanda,+Bihar+803216" target="_blank" rel="noopener noreferrer">Ramchandarpur, Biharsharif, Nalanda, Bihar, 803216</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="footer-social-col">
+        <h4 class="footer-col-title">Social</h4>
+        <ul class="footer-list">
+          <li>
+            <a href="https://www.linkedin.com/company/vyomarc-technologies/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/vyomarc" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+              <span>Twitter / X</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/vyomarc.tech" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              <span>Instagram</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copyright">&copy; 2026 VYOMARC Technologies</div>
+      <div class="footer-legal">
+        <a href="../../policies/privacy-policy.html">Privacy Policy</a>
+        <span class="footer-legal-sep" aria-hidden="true" style="color: rgba(255, 255, 255, 0.4); margin: 0 4px;">•</span>
+        <a href="../../policies/terms-of-service.html">Terms of Service</a>
+        <span class="footer-legal-sep" aria-hidden="true" style="color: rgba(255, 255, 255, 0.4); margin: 0 4px;">•</span>
+        <a href="../../policies/refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../script.js" defer></script>
+  <script src="script.js" defer></script>
+
+  <!-- Mobile WhatsApp Floating Button -->
+  <a href="https://wa.me/918252702699?text=Hello%20VYOMARC%20Technologies,%20I%20am%20interested%20in%20your%20services." class="mobile-wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="#ffffff">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+  </svg>
+  </a>
+</body>
+</html>
+
