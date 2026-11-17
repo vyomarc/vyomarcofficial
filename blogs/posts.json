@@ -1,5 +1,32 @@
 [
   {
+    "slug": "google-ai-search-local-seo-2026",
+    "title": "Google's AI Search is Wiping Out Traditional Local SEO (Are You Ready?)",
+    "date": "2026-11-17",
+    "excerpt": "Google's AI Overviews have changed everything. If your local business relies on old SEO tactics, you are losing traffic overnight. Learn how Schema, Reviews, and Speed are the new ranking factors.",
+    "thumbnail": "../thumbnails/google-ai-search-seo.webp",
+    "author": "Team VYOMARC Technologies",
+    "category": "Trends"
+  },
+  {
+    "slug": "zero-ui-whatsapp-commerce-explosion",
+    "title": "The \"Zero-UI\" Explosion: Why WhatsApp is the New Operating System for Local Commerce",
+    "date": "2026-11-18",
+    "excerpt": "App fatigue is real. Users are ditching native apps for Zero-UI experiences on WhatsApp. Here is why D2C brands and local businesses are shifting to WhatsApp commerce.",
+    "thumbnail": "../thumbnails/whatsapp-commerce-trend.webp",
+    "author": "Team VYOMARC Technologies",
+    "category": "Trends"
+  },
+  {
+    "slug": "death-of-per-seat-saas-pricing",
+    "title": "The Death of \"Per-Seat\" SaaS Pricing: Why Local Businesses are Pushing Back",
+    "date": "2026-11-17",
+    "excerpt": "Business owners are tired of paying \"per-user\" SaaS fees. Discover why the market is shifting towards owned infrastructure and outcome-based pricing.",
+    "thumbnail": "../thumbnails/saas-pricing-backlash.webp",
+    "author": "Team VYOMARC Technologies",
+    "category": "Trends"
+  },
+  {
     "slug": "paging-vs-segmentation-memory-management",
     "title": "Paging vs Segmentation in Memory Management (Operating System)",
     "date": "2026-11-15",

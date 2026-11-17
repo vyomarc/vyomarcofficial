@@ -41,7 +41,13 @@ async function run() {
         }
 
         try {
-            const markdownText = fs.readFileSync(mdPath, 'utf-8');
+            let markdownText = fs.readFileSync(mdPath, 'utf-8');
+            if (markdownText.startsWith('---')) {
+                const endFront = markdownText.indexOf('---', 3);
+                if (endFront !== -1) {
+                    markdownText = markdownText.slice(endFront + 3).trim();
+                }
+            }
             let htmlContent = marked.parse(markdownText);
             
             // Translate code blocks with mermaid language into native <div class="mermaid">...code...</div>
@@ -287,6 +293,7 @@ async function run() {
             postHtml = postHtml.replace(/>Products<\/a>/g, '>Our Services</a>');
             postHtml = postHtml.replace(/>Portfolio<\/a>/g, '>Case Studies</a>');
             postHtml = postHtml.replace(/href="\.\.\/\.\.\/index\.html">Blog<\/a>/g, 'href="../index.html">Blog</a>');
+            postHtml = postHtml.replace(/href="\.\.\/\.\.\/index\.html" class="back-link"/g, 'href="../index.html" class="back-link"');
             postHtml = postHtml.replace(/href="\.\.\/policies\/privacy-policy(?:\.html)?"/g, 'href="../../policies/privacy-policy.html"');
             postHtml = postHtml.replace(/href="\.\.\/policies\/terms-of-service(?:\.html)?"/g, 'href="../../policies/terms-of-service.html"');
             postHtml = postHtml.replace(/href="\.\.\/policies\/refund-policy(?:\.html)?"/g, 'href="../../policies/refund-policy.html"');
