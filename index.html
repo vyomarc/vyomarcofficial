@@ -694,7 +694,42 @@ h1, h2, h3, h4,
     height: 220px;
   }
 }
-    </style>
+    /* Mobile Nav Color Protection */
+
+@media (max-width: 768px) {
+  .nav-floating,
+  .nav-floating .nav-links {
+    background-color: #ffffff !important;
+  }
+  .nav-floating .nav-logo-text {
+    color: #0a192f !important;
+  }
+  .menu-toggle svg {
+    stroke: #0a192f !important;
+  }
+  .menu-toggle .close-icon,
+  #mobile-menu .close-icon {
+    display: none !important;
+  }
+  .menu-toggle .hamburger-icon,
+  #mobile-menu .hamburger-icon {
+    display: block !important;
+  }
+  .menu-toggle[aria-expanded="true"] .hamburger-icon,
+  #mobile-menu[aria-expanded="true"] .hamburger-icon {
+    display: none !important;
+  }
+  .menu-toggle[aria-expanded="true"] .close-icon,
+  #mobile-menu[aria-expanded="true"] .close-icon {
+    display: block !important;
+  }
+  .menu-toggle svg ~ i,
+  #mobile-menu svg ~ i {
+    display: none !important;
+  }
+}
+
+</style>
 
     <!-- Main Stylesheet Asynchronous Non-Blocking Load -->
     <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'" />
@@ -889,7 +924,16 @@ h1, h2, h3, h4,
         </div>
 
         <button type="button" class="menu-toggle" id="mobile-menu" aria-label="Toggle Menu" aria-expanded="false">
-          <i class="fas fa-bars"></i>
+          <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0a192f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0a192f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          <i class="fas fa-bars" style="display:none;" aria-hidden="true"></i>
         </button>
 
         <div class="nav-links" id="nav-links">
