@@ -726,3 +726,43 @@
   padding: 4px 24px 20px;
   transition: max-height 0.35s ease, opacity 0.3s ease, padding 0.35s ease, visibility 0s 0s;
 }
+
+
+/* =========================================
+   MOBILE RESPONSIVENESS & STACKING FIX
+   ========================================= */
+@media (max-width: 768px) {
+  .calc-container,
+  .calc-card-main,
+  .calculator-section,
+  .calculator-card,
+  .generator-section,
+  .generator-card,
+  .results-wrapper,
+  .output-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .calc-inputs-grid,
+  .breakdown-grid,
+  .calc-grid,
+  .competitors-grid,
+  .steps-grid,
+  .why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
+
+  .input-card,
+  .breakdown-item,
+  .shock-card,
+  .result-card,
+  .competitor-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
