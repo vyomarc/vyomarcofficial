@@ -267,13 +267,13 @@ async function run() {
             postHtml = postHtml.replace(/href="\.\.\/tools(?:\/index\.html|\/)?"/g, 'href="../../tools/"');
             postHtml = postHtml.replace(/href="\.\.\/website-development-services-bihar(?:\.html)?"/g, 'href="../../website-development-services-bihar"');
             postHtml = postHtml.replace(/href="\.\.\/software-development-company-bihar(?:\.html)?"/g, 'href="../../software-development-company-bihar"');
-            postHtml = postHtml.replace(/href="\.\.\/css\/style\.css(?:\?v=[0-9]+)?"/g, 'href="../../css/style.css?v=8"');
+            postHtml = postHtml.replace(/href="\.\.\/css\/style\.css(?:\?v=[0-9]+)?"/g, 'href="../../css/style.css?v=9"');
             postHtml = postHtml.replace(/src="\.\.\/images\/vyomarc-logo\.png"/g, 'src="../../images/vyomarc-logo.png"');
             postHtml = postHtml.replace(/src="\.\.\/vlogo\.png"/g, 'src="../../images/vyomarc-logo.png"');
             postHtml = postHtml.replace(/src="\.\.\/script\.js"/g, 'src="../../script.js"');
 
             // Adjust blog-level links and assets (1 level up from /blogs/posts/)
-            postHtml = postHtml.replace(/href="style\.css(?:\?v=[0-9]+)?"/g, 'href="../style.css?v=8"');
+            postHtml = postHtml.replace(/href="style\.css(?:\?v=[0-9]+)?"/g, 'href="../style.css?v=9"');
             postHtml = postHtml.replace(/src="post-script\.js"/g, 'src="../post-script.js"');
             postHtml = postHtml.replace(/href="index(?:\.html)?"/g, 'href="../../"');
             postHtml = postHtml.replace(/href="\/blogs\/"/g, 'href="/blogs/"');
@@ -293,7 +293,7 @@ async function run() {
             postHtml = postHtml.replace(/>Privacy Policy & Terms<\/a>/g, '>Privacy Policy</a>');
 
                         // Conditional Mermaid.js loading: only include script if post has mermaid diagrams
-            if (markdownText.includes('```mermaid')) {
+            if (markdownText.includes('mermaid')) {
                 postHtml = postHtml.replace('</head>', '    <!-- Mermaid CDN (Conditional) -->\n    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" defer></script>\n</head>');
             }
 
