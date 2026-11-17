@@ -192,7 +192,7 @@ async function run() {
             let containerHtml =
                 thumbnailHTML +
                 '<div class="post-meta">' +
-                (postMeta.category ? `<a href="../?cat=${encodeURIComponent(postMeta.category)}" class="category-tag">${postMeta.category}</a><br>` : '') +
+                (postMeta.category ? `<a href="/blogs/?cat=${encodeURIComponent(postMeta.category)}" class="category-tag">${postMeta.category}</a><br>` : '') +
                 '<span>' + formatDate(postMeta.date) + '</span>' +
                 '<span class="separator">·</span>' +
                 '<span>By ' + (postMeta.author || 'VYOMARC') + '</span>' +
@@ -267,22 +267,22 @@ async function run() {
             postHtml = postHtml.replace(/href="\.\.\/tools(?:\/index\.html|\/)?"/g, 'href="../../tools/"');
             postHtml = postHtml.replace(/href="\.\.\/website-development-services-bihar(?:\.html)?"/g, 'href="../../website-development-services-bihar"');
             postHtml = postHtml.replace(/href="\.\.\/software-development-company-bihar(?:\.html)?"/g, 'href="../../software-development-company-bihar"');
-            postHtml = postHtml.replace(/href="\.\.\/css\/style\.css(?:\?v=[0-9]+)?"/g, 'href="../../css/style.css?v=5"');
+            postHtml = postHtml.replace(/href="\.\.\/css\/style\.css(?:\?v=[0-9]+)?"/g, 'href="../../css/style.css?v=8"');
             postHtml = postHtml.replace(/src="\.\.\/images\/vyomarc-logo\.png"/g, 'src="../../images/vyomarc-logo.png"');
             postHtml = postHtml.replace(/src="\.\.\/vlogo\.png"/g, 'src="../../images/vyomarc-logo.png"');
             postHtml = postHtml.replace(/src="\.\.\/script\.js"/g, 'src="../../script.js"');
 
             // Adjust blog-level links and assets (1 level up from /blogs/posts/)
-            postHtml = postHtml.replace(/href="style\.css(?:\?v=[0-9]+)?"/g, 'href="../style.css?v=5"');
+            postHtml = postHtml.replace(/href="style\.css(?:\?v=[0-9]+)?"/g, 'href="../style.css?v=8"');
             postHtml = postHtml.replace(/src="post-script\.js"/g, 'src="../post-script.js"');
             postHtml = postHtml.replace(/href="index(?:\.html)?"/g, 'href="../../"');
             postHtml = postHtml.replace(/href="\/blogs\/"/g, 'href="/blogs/"');
 
             // Adjust footer links and labels (for generated post pages)
             postHtml = postHtml.replace(/href="\.\.\/index\.html#services"/g, 'href="../../#services"');
-            postHtml = postHtml.replace(/href="index\.html\?cat=Case%20Study"/g, 'href="../blogs/?cat=Case%20Study"');
+            postHtml = postHtml.replace(/href="index\.html\?cat=Case%20Study"/g, 'href="/blogs/?cat=Case%20Study"');
             postHtml = postHtml.replace(/href="\.\.\/index\.html#products"/g, 'href="../../#services"');
-            postHtml = postHtml.replace(/href="\.\.\/index\.html#work"/g, 'href="../blogs/?cat=Case%20Study"');
+            postHtml = postHtml.replace(/href="\.\.\/index\.html#work"/g, 'href="/blogs/?cat=Case%20Study"');
             postHtml = postHtml.replace(/>Products<\/a>/g, '>Our Services</a>');
             postHtml = postHtml.replace(/>Portfolio<\/a>/g, '>Case Studies</a>');
             postHtml = postHtml.replace(/href="\.\.\/\.\.\/index\.html">Blog<\/a>/g, 'href="../../">Blog</a>');
@@ -357,7 +357,7 @@ async function run() {
 
     for (const postMeta of allPostsData) {
         sitemapXml += '  <url>\n';
-        sitemapXml += `    <loc>https://vyomarctech.com/blogs/posts/${postMeta.slug}.html</loc>\n`;
+        sitemapXml += `    <loc>https://vyomarctech.com/blogs/posts/${postMeta.slug}</loc>\n`;
         sitemapXml += `    <lastmod>${postMeta.date}</lastmod>\n`;
         sitemapXml += '    <changefreq>monthly</changefreq>\n';
         sitemapXml += '    <priority>0.8</priority>\n';
