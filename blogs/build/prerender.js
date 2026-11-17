@@ -266,13 +266,13 @@ async function run() {
             postHtml = postHtml.replace(/href="\.\.\/tools(?:\/index\.html|\/)?"/g, 'href="../../tools/index.html"');
             postHtml = postHtml.replace(/href="\.\.\/website-development-services-bihar(?:\.html)?"/g, 'href="../../website-development-services-bihar.html"');
             postHtml = postHtml.replace(/href="\.\.\/software-development-company-bihar(?:\.html)?"/g, 'href="../../software-development-company-bihar.html"');
-            postHtml = postHtml.replace(/href="\.\.\/css\/style\.css(?:\?v=[0-9]+)?"/g, 'href="../../css/style.css?v=10"');
+            postHtml = postHtml.replace(/href="(?:\.\.\/|\/)?css\/style\.css(?:\?v=[0-9]+)?"/g, 'href="/css/style.css?v=11"');
             postHtml = postHtml.replace(/src="\.\.\/images\/vyomarc-logo\.png"/g, 'src="../../images/vyomarc-logo.png"');
             postHtml = postHtml.replace(/src="\.\.\/vlogo\.png"/g, 'src="../../images/vyomarc-logo.png"');
             postHtml = postHtml.replace(/src="\.\.\/script\.js"/g, 'src="../../script.js"');
 
             // Adjust blog-level links and assets (1 level up from /blogs/posts/)
-            postHtml = postHtml.replace(/href="style\.css(?:\?v=[0-9]+)?"/g, 'href="../style.css?v=10"');
+            postHtml = postHtml.replace(/href="style\.css(?:\?v=[0-9]+)?"/g, 'href="../style.css?v=11"');
             postHtml = postHtml.replace(/src="post-script\.js"/g, 'src="../post-script.js"');
             postHtml = postHtml.replace(/href="index(?:\.html)?"/g, 'href="../../index.html"');
             postHtml = postHtml.replace(/href="\/blogs\/"/g, 'href="../index.html"');
