@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saurabh M. Kumar | Founder &amp; Software Engineer - VYOMARC</title>
+  
+  <!-- Basic SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Saurabh M. Kumar, Founder of VYOMARC Technologies. Engineering Graduate (2025), Author of 'A Star Beyond My Reach', and having successfully delivered 10+ B2B web projects across Bihar and India.">
+  <meta name="keywords" content="Saurabh M. Kumar, Software Engineer Patna, Custom Web Development Bihar Sharif, B2B IT Services, VYOMARC Founder">
+  <meta name="author" content="Saurabh M. Kumar">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://vyomarctech.com/founder/index.html">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Saurabh M. Kumar | Founder &amp; Software Engineer - VYOMARC">
+  <meta property="og:description" content="Portfolio of Saurabh M. Kumar, Founder of VYOMARC Technologies. Engineering Graduate (2025), Author of 'A Star Beyond My Reach', and having successfully delivered 10+ B2B web projects across Bihar and India.">
+  <meta property="og:url" content="https://vyomarctech.com/founder/index.html">
+  <meta property="og:image" content="https://vyomarctech.com/images/saurabh-m-kumar-vyomarc.png">
+  <meta property="profile:first_name" content="Saurabh">
+  <meta property="profile:last_name" content="Kumar">
+  <meta property="profile:username" content="mrsaurabh009">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Saurabh M. Kumar | Founder &amp; Software Engineer - VYOMARC">
+  <meta name="twitter:description" content="Portfolio of Saurabh M. Kumar, Founder of VYOMARC Technologies. Engineering Graduate (2025), Author of 'A Star Beyond My Reach', and having successfully delivered 10+ B2B web projects across Bihar and India.">
+  <meta name="twitter:image" content="https://vyomarctech.com/images/saurabh-m-kumar-vyomarc.png">
+
+  <!-- Advanced JSON-LD Schema (Master Schema) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": "https://vyomarctech.com/founder/index.html",
+        "mainEntity": {
+          "@type": "Person",
+          "@id": "https://vyomarctech.com/founder/index.html#person",
+          "name": "Saurabh M. Kumar",
+          "jobTitle": "Founder & Software Engineer",
+          "description": "Founder & Software Engineer with a track record of delivering over 10 successful B2B web projects across Bihar and India.",
+          "url": "https://vyomarctech.com/founder/index.html",
+          "image": "https://vyomarctech.com/images/saurabh-m-kumar-vyomarc.png",
+          "sameAs": [
+            "https://www.linkedin.com/in/mrsaurabh009/",
+            "https://x.com/mrsaurabh009",
+            "https://medium.com/@mrsaurabh009",
+            "https://www.goodreads.com/author/show/69333822.Saurabh_Kumar"
+          ],
+          "knowsAbout": [
+            "Software Engineering",
+            "Web Development",
+            "React",
+            "Supabase",
+            "Digital Automation"
+          ],
+          "worksFor": {
+            "@type": "Organization",
+            "@id": "https://vyomarctech.com/#organization",
+            "name": "VYOMARC Technologies",
+            "url": "https://vyomarctech.com"
+          },
+          "alumniOf": [
+            {
+              "@type": "EducationalOrganization",
+              "name": "DY Patil University, Ambi, Pune",
+              "department": "Computer Engineering"
+            },
+            {
+              "@type": "EducationalOrganization",
+              "name": "RAJ RAJESHWAR HIGH SCHOOL BARBIGHA, SHEIKHPURA"
+            }
+          ],
+          "author": {
+            "@type": "Book",
+            "name": "A Star Beyond My Reach",
+            "url": "https://store.pothi.com/book/saurabh-kumar-star-beyond-my-reach/",
+            "bookFormat": "https://schema.org/EBook",
+            "inLanguage": "hi",
+            "numberOfPages": "115"
+          }
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts: Inter & Playfair Display / Dancing Script -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .nav-right {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-about-pill {
+      color: var(--cyan);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(0, 229, 255, 0.06);
+      border: 1px solid rgba(0, 229, 255, 0.28);
+      backdrop-filter: blur(12px);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.3s ease;
+    }
+    .nav-about-pill:hover {
+      background: rgba(0, 229, 255, 0.16);
+      border-color: var(--cyan);
+      box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+    .footer-nav-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .footer-nav-link {
+      color: #A1A1AA;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+    .footer-nav-link:hover {
+      color: var(--cyan);
+    }
+    @media (max-width: 640px) {
+      .nav-right {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       Hero Section
+       ======================================================================== -->
+  <section class="hero-section">
+    <!-- Ambient Cinematic Lighting -->
+    <div class="ambient-glow"></div>
+    <div class="vignette-overlay"></div>
+
+    <!-- Top Navbar -->
+    <header class="navbar">
+      <div class="nav-left">
+        <a href="../index.html" class="nav-logo" title="Back to VYOMARC Home">
+          <svg class="nav-back-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          VYOMARC
+        </a>
+      </div>
+
+      <div class="nav-center">
+        <div class="status-pill">
+          <span class="status-dot-wrap">
+            <svg class="status-dot-svg" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="5" cy="5" r="4" fill="var(--cyan)"/>
+              <circle cx="5" cy="5" r="4.5" stroke="var(--cyan)" stroke-width="1" opacity="0.8"/>
+            </svg>
+          </span>
+          <span class="status-text">Accepting B2B Projects</span>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <a href="../about.html" class="nav-about-pill">
+          About Agency
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </a>
+        <span class="location-tag">
+          <svg class="location-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Lives in Bihar Sharif, Bihar
+        </span>
+      </div>
+    </header>
+
+    <!-- 3D Background Floating Projects Arc -->
+    <div class="bg-projects-3d" id="bgProjects">
+      <div class="project-card card-1">
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='640' height='400' viewBox='0 0 640 400'><rect width='640' height='400' rx='16' fill='%23080e1e'/><rect x='24' y='24' width='160' height='20' rx='6' fill='%2300E5FF' opacity='0.7'/><circle cx='590' cy='34' r='8' fill='%2300E5FF' opacity='0.4'/><circle cx='565' cy='34' r='8' fill='%230A1F44'/><rect x='24' y='70' width='180' height='120' rx='10' fill='%230d1a33'/><rect x='220' y='70' width='396' height='120' rx='10' fill='%230d1a33'/><path d='M240 160 Q 320 100, 400 130 T 580 90' fill='none' stroke='%2300E5FF' stroke-width='4'/><rect x='24' y='210' width='592' height='160' rx='10' fill='%230d1a33'/><rect x='48' y='240' width='320' height='14' rx='4' fill='%2319325f'/><rect x='48' y='270' width='440' height='14' rx='4' fill='%2319325f'/><rect x='48' y='300' width='260' height='14' rx='4' fill='%2319325f'/></svg>" alt="Micro-SaaS Analytics Dashboard" class="project-img" loading="lazy">
+      </div>
+
+      <div class="project-card card-2">
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='640' height='400' viewBox='0 0 640 400'><rect width='640' height='400' rx='16' fill='%23091326'/><rect x='24' y='24' width='200' height='24' rx='6' fill='%2300E5FF' opacity='0.8'/><rect x='24' y='70' width='120' height='300' rx='10' fill='%230e1d3b'/><rect x='160' y='70' width='456' height='90' rx='10' fill='%230e1d3b'/><circle cx='570' cy='115' r='18' fill='%2300E5FF' opacity='0.3'/><rect x='160' y='180' width='218' height='190' rx='10' fill='%230e1d3b'/><rect x='398' y='180' width='218' height='190' rx='10' fill='%230e1d3b'/><rect x='180' y='210' width='140' height='16' rx='4' fill='%2300E5FF' opacity='0.6'/><rect x='418' y='210' width='140' height='16' rx='4' fill='%231e3d74'/></svg>" alt="Automation Pipeline Workflow" class="project-img" loading="lazy">
+      </div>
+
+      <div class="project-card card-3">
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='640' height='400' viewBox='0 0 640 400'><rect width='640' height='400' rx='16' fill='%23071020'/><circle cx='48' cy='40' r='8' fill='%23ff5f56'/><circle cx='70' cy='40' r='8' fill='%23ffbd2e'/><circle cx='92' cy='40' r='8' fill='%2327c93f'/><rect x='130' y='32' width='380' height='18' rx='9' fill='%230d1d3a'/><rect x='24' y='80' width='280' height='290' rx='10' fill='%230d1e3c'/><rect x='324' y='80' width='292' height='290' rx='10' fill='%230d1e3c'/><circle cx='470' cy='200' r='60' fill='none' stroke='%2300E5FF' stroke-width='8'/><path d='M470 140 A 60 60 0 0 1 530 200' fill='none' stroke='%2338bdf8' stroke-width='8'/></svg>" alt="B2B Operations Engine" class="project-img" loading="lazy">
+      </div>
+
+      <div class="project-card card-4">
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='640' height='400' viewBox='0 0 640 400'><rect width='640' height='400' rx='16' fill='%23081122'/><rect x='24' y='24' width='140' height='18' rx='5' fill='%2300E5FF' opacity='0.7'/><rect x='24' y='64' width='592' height='70' rx='10' fill='%230e1f3d'/><rect x='24' y='150' width='592' height='220' rx='10' fill='%230e1f3d'/><line x1='60' y1='260' x2='580' y2='260' stroke='%231e3d74' stroke-width='2'/><path d='M60 260 C 140 220, 220 300, 300 240 S 440 180, 580 200' fill='none' stroke='%2300E5FF' stroke-width='4'/></svg>" alt="Digital Platform Architecture" class="project-img" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Center Founder Image -->
+    <div class="hero-center-stage">
+      <div class="founder-glow"></div>
+      <img src="../images/saurabh-m-kumar-vyomarc.png" onerror="this.onerror=null; this.src='images/saurabh-m-kumar-vyomarc.png';" alt="Saurabh M. Kumar - Founder of VYOMARC Technologies, Bihar Sharif" class="hero-center-img" id="founderImg" fetchpriority="high" loading="eager">
+    </div>
+
+    <!-- Bottom Left (Introduction) -->
+    <div class="hero-bottom-left">
+      <p class="greeting" id="greetingText">HI, I'M SAURABH M. KUMAR</p>
+      <h1 class="hero-title" id="heroTitle">Founder &amp; Software Engineer</h1>
+      <p class="hero-at-vyomarc">At VYOMARC</p>
+      <div class="cta-wrap">
+        <a href="#contact" class="btn-cta">
+          <span class="btn-text">Discuss a Project</span>
+          <span class="btn-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom Right (Philosophy) -->
+    <div class="hero-bottom-right">
+      <p class="philosophy" id="philosophyText">"I build digital systems and micro-SaaS that automate local businesses, so founders can sleep better."</p>
+      <div class="signature-wrap">
+        <span class="signature">Saurabh</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       About Engine Section
+       ======================================================================== -->
+  <section id="about" class="about-engine-section">
+    <div class="about-container">
+      
+      <!-- Left Column (The Story) -->
+      <div class="about-story-col reveal-fade-right">
+        <span class="section-label">
+          <svg class="label-star-icon" width="13" height="13" viewBox="0 0 24 24" fill="var(--cyan)" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          THE STORY
+        </span>
+
+        <h2 class="about-title">The Engine Behind VYOMARC.</h2>
+
+        <p class="about-paragraph">
+          I am Saurabh Manoj Kumar Singh, an Engineering Graduate and the solo founder of VYOMARC Technologies. My journey began with a vision to digitally empower businesses in smaller cities. Through dedicated <strong>Custom Web Development Bihar Sharif</strong> and specialized expertise as a <strong>Software Engineer Patna</strong>, I engineer high-conversion platforms designed for real-world reliability.
+        </p>
+
+        <p class="about-paragraph">
+          I believe that businesses in Tier-2 and Tier-3 cities (like Bihar Sharif, Barbigha, and Patna) don't just need websites—they need robust systems that simplify their work and increase revenue through premier <strong>B2B IT Services</strong>.
+        </p>
+      </div>
+
+      <!-- Right Column (Tools Hub Card) -->
+      <div class="about-card-col">
+        <div class="tools-hub-card reveal-fade-left">
+          <div class="tools-card-top">
+            <div class="tools-card-badge">
+              <svg class="tools-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                <line x1="8" y1="6" x2="16" y2="6"></line>
+                <line x1="16" y1="14" x2="16" y2="14.01"></line>
+                <line x1="12" y1="14" x2="12" y2="14.01"></line>
+                <line x1="8" y1="14" x2="8" y2="14.01"></line>
+                <line x1="16" y1="18" x2="16" y2="18.01"></line>
+                <line x1="12" y1="18" x2="12" y2="18.01"></line>
+                <line x1="8" y1="18" x2="8" y2="18.01"></line>
+              </svg>
+              <span>INTERACTIVE PLATFORM</span>
+            </div>
+            <span class="tools-status-pulse"></span>
+          </div>
+
+          <h3 class="tools-card-title">Free Business Tools</h3>
+
+          <p class="tools-card-text">
+            Explore our suite of interactive calculators designed to help local businesses audit their losses and optimize their digital growth.
+          </p>
+
+          <a href="../tools/index.html" class="tools-card-link">
+            <span>View All Tools</span>
+            <svg class="link-arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- The Founder's Journey -->
+    <div class="founder-journey-wrapper">
+      <div class="journey-header">
+        <span class="section-label">
+          <svg class="label-star-icon" width="13" height="13" viewBox="0 0 24 24" fill="var(--cyan)" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          EXECUTION MINDSET
+        </span>
+        <h2 class="journey-title">The Founder's Journey</h2>
+      </div>
+      <div class="journey-card">
+        <p class="journey-text">
+          "I was an average student in school. There were no national-level ranks or olympiad medals. But I had an obsession with building things. That obsession led me to found VYOMARC Technologies, close my first B2B project, and write a 115-page novel. I believe average students with an execution mindset can outbuild anyone."
+        </p>
+      </div>
+
+      <!-- Journey Milestones Timeline -->
+      <div class="journey-timeline">
+        <div class="timeline-item reveal-fade-up stagger-1">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2022 &ndash; 2025</span>
+            <h3 class="timeline-title">Graduated in Computer Engineering from DY Patil University (2022 - 2025)</h3>
+            <p class="timeline-desc">Graduated in 2025 with an engineering foundation centered on software engineering rigor, systems architecture, and scalable full-stack development.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-fade-up stagger-2">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">Milestone</span>
+            <h3 class="timeline-title">Wrote &amp; Published my first Novel: A Star Beyond My Reach</h3>
+            <p class="timeline-desc">Penned and published a 115-page literary romance novel exploring unspoken devotion and human restraint in small-town India.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-fade-up stagger-3">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">Milestone</span>
+            <h3 class="timeline-title">Launched VYOMARC Technologies as a solo founder</h3>
+            <p class="timeline-desc">Founded VYOMARC Technologies to engineer high-performance web applications, automation pipelines, and custom software systems for expanding businesses.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-fade-up stagger-4">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">Milestone</span>
+            <h3 class="timeline-title">Delivered first major B2B project</h3>
+            <p class="timeline-desc">Architected and closed the first custom production B2B platform, proving that lean engineering and direct founder access deliver superior business outcomes.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-fade-up stagger-5">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">Milestone</span>
+            <h3 class="timeline-title">Successfully Delivered 10+ Projects</h3>
+            <p class="timeline-desc">Engineered and shipped over 10 digital solutions for local businesses and educational institutions across Bihar and India, ranging from custom web platforms to automated WhatsApp systems.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education Section -->
+    <div class="founder-education-wrapper">
+      <div class="education-header">
+        <span class="section-label">
+          <svg class="label-star-icon" width="13" height="13" viewBox="0 0 24 24" fill="var(--cyan)" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+          </svg>
+          ACADEMIC FOUNDATION
+        </span>
+        <h2 class="education-title">Education &amp; Background</h2>
+      </div>
+
+      <div class="education-grid">
+        <!-- University Card -->
+        <div class="education-card reveal-fade-up stagger-1">
+          <div class="education-badge-strip">
+            <span class="edu-badge-tag">ENGINEERING BASE</span>
+            <span class="edu-year-tag">2022 &ndash; 2025</span>
+          </div>
+          <h3 class="education-institution">DY Patil University, Ambi, Pune</h3>
+          <p class="education-degree">Computer Engineering (Graduated in 2025)</p>
+          <p class="education-desc">
+            Graduated in Computer Engineering from DY Patil University, Ambi, Pune (2022 - 2025), serving as the core technical base where modern systems design, software engineering rigor, and scalable product architecture were developed.
+          </p>
+        </div>
+
+        <!-- School Card -->
+        <div class="education-card reveal-fade-up stagger-2">
+          <div class="education-badge-strip">
+            <span class="edu-badge-tag">FOUNDATIONAL ROOTS</span>
+            <span class="edu-year-tag">Class of 2018–19</span>
+          </div>
+          <h3 class="education-institution">RAJ RAJESHWAR HIGH SCHOOL BARBIGHA, SHEIKHPURA</h3>
+          <p class="education-degree">Secondary Education (2014 to 2019)</p>
+          <p class="education-desc">
+            My foundation was built at RAJ RAJESHWAR HIGH SCHOOL BARBIGHA, SHEIKHPURA [Class of 2018-19], where I learned that consistency and discipline matter more than just raw talent. (2014 to 2019)
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Services Ecosystem (Bento Grid)
+       ======================================================================== -->
+  <section id="ecosystem" class="ecosystem-section">
+    <div class="ecosystem-container">
+      <div class="section-header-center">
+        <span class="section-label">
+          <svg class="label-star-icon" width="13" height="13" viewBox="0 0 24 24" fill="var(--cyan)" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          WHAT I BUILD
+        </span>
+        <h2 class="ecosystem-title">The VYOMARC Ecosystem</h2>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Card 1 (Large - Services) -->
+        <div class="bento-card bento-card-large reveal-fade-up stagger-1">
+          <div class="bento-card-header">
+            <span class="bento-tag">Frontend Architecture</span>
+            <div class="bento-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+          </div>
+          <h3 class="bento-title">Web &amp; App Development</h3>
+          <p class="bento-desc">Custom, high-performance websites and mobile applications built with React, HTML/CSS, and modern frameworks.</p>
+        </div>
+
+        <!-- Card 2: WhatsApp Automation -->
+        <div class="bento-card reveal-fade-up stagger-2">
+          <div class="bento-card-header">
+            <span class="bento-tag">Automation</span>
+            <div class="bento-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+            </div>
+          </div>
+          <h3 class="bento-title">WhatsApp Automation</h3>
+          <p class="bento-desc">Zero-commission ordering systems and automated booking flows for local businesses.</p>
+        </div>
+
+        <!-- Card 3: Brand Identity -->
+        <div class="bento-card reveal-fade-up stagger-3">
+          <div class="bento-card-header">
+            <span class="bento-tag">Design</span>
+            <div class="bento-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+              </svg>
+            </div>
+          </div>
+          <h3 class="bento-title">Brand Identity</h3>
+          <p class="bento-desc">Premium logos, visual guidelines, and digital assets that build instant trust.</p>
+        </div>
+
+        <!-- Card 4 (Tech Stack Strip) -->
+        <div class="bento-card bento-card-arsenal reveal-fade-up stagger-4">
+          <div class="bento-card-header">
+            <span class="bento-tag">Tech Arsenal</span>
+            <div class="bento-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+          </div>
+          <h3 class="bento-title">My Tech Arsenal</h3>
+          <div class="tech-badge-container">
+            <span class="tech-badge">HTML5</span>
+            <span class="tech-badge">CSS3</span>
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">React</span>
+            <span class="tech-badge">Supabase</span>
+            <span class="tech-badge">Vercel</span>
+            <span class="tech-badge">Cloudflare</span>
+            <span class="tech-badge">Docker</span>
+            <span class="tech-badge">CI/CD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       How I Engineer Solutions (The Approach)
+       ======================================================================== -->
+  <section id="approach" class="approach-section">
+    <div class="approach-container">
+      <!-- Left Column: Philosophy & Features -->
+      <div class="approach-text-col">
+        <span class="section-label">
+          <svg class="label-star-icon" width="13" height="13" viewBox="0 0 24 24" fill="var(--cyan)" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          ENGINEERING PHILOSOPHY
+        </span>
+
+        <h2 class="approach-title">How I Engineer <span class="highlight-cyan">Solutions<svg class="swoosh-underline" viewBox="0 0 100 12" preserveAspectRatio="none"><path d="M0,9 Q50,1 100,7" fill="none" stroke="var(--cyan)" stroke-width="3" stroke-linecap="round"/></svg></span></h2>
+
+        <p class="approach-lead">
+          I build custom, lightweight digital architectures tailored for growth. By avoiding unnecessary heavy frameworks, I ensure every website and application I deliver is optimized for speed, security, and long-term scalability.
+        </p>
+
+        <div class="approach-features">
+          <!-- Feature 1: Performance & Speed -->
+          <div class="feature-row">
+            <div class="feature-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <div class="feature-content">
+              <h4 class="feature-title">Performance &amp; Speed</h4>
+              <p class="feature-desc">Lightning-fast loading speeds and flawless user experiences that convert visitors into paying clients.</p>
+            </div>
+          </div>
+
+          <!-- Feature 2: Data Security & Ownership -->
+          <div class="feature-row">
+            <div class="feature-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="feature-content">
+              <h4 class="feature-title">Data Security &amp; Ownership</h4>
+              <p class="feature-desc">You own 100% of your database and code. No vendor lock-in, built on secure, self-hosted architectures.</p>
+            </div>
+          </div>
+
+          <!-- Feature 3: Scalable Architecture -->
+          <div class="feature-row">
+            <div class="feature-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <div class="feature-content">
+              <h4 class="feature-title">Scalable Architecture</h4>
+              <p class="feature-desc">Clean, modular code built to seamlessly integrate future features without breaking the core UI.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: 2D "3D" Isometric Graphic -->
+      <div class="approach-visual-col">
+        <div class="stacked-layers-graphic">
+          <div class="isometric-stack">
+            <!-- Layer 4: Raw Performance -->
+            <div class="iso-layer layer-4">
+              <div class="iso-content">
+                <svg class="iso-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+                <span class="iso-subtext">Performance</span>
+              </div>
+            </div>
+
+            <!-- Layer 3: Data Security -->
+            <div class="iso-layer layer-3">
+              <div class="iso-content">
+                <svg class="iso-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span class="iso-subtext">Security</span>
+              </div>
+            </div>
+
+            <!-- Layer 2: Scalable Architecture -->
+            <div class="iso-layer layer-2">
+              <div class="iso-content">
+                <svg class="iso-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+                <span class="iso-subtext">Scalability</span>
+              </div>
+            </div>
+
+            <!-- Layer 1: Core Engine with VYOMARC Logo (V) -->
+            <div class="iso-layer layer-1">
+              <div class="iso-content">
+                <span class="iso-logo-v">V</span>
+                <span class="iso-subtext">VYOMARC CORE</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Label Badges -->
+          <div class="floating-badge badge-performance">Performance</div>
+          <div class="floating-badge badge-security">Security</div>
+          <div class="floating-badge badge-scalability">Scalability</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Why Work With Me? (Trust Section — Premium Editorial Style)
+       ======================================================================== -->
+  <section id="trust" class="trust-section">
+    <div class="trust-container">
+      <div class="trust-header">
+        <span class="section-label">
+          <svg class="label-star-icon" width="13" height="13" viewBox="0 0 24 24" fill="var(--cyan)" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          DIRECT ADVANTAGE
+        </span>
+        <h2 class="trust-title">Why Work With Me?</h2>
+        <p class="trust-subtext">As a solo founder, you get a direct line to the engineer, not a sales team.</p>
+      </div>
+
+      <div class="trust-editorial-list">
+        <!-- Point 1: Direct Founder Access -->
+        <div class="trust-item">
+          <div class="trust-icon-wrap">
+            <svg class="trust-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+              <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+            </svg>
+          </div>
+          <div class="trust-text-wrap">
+            <h3 class="trust-item-title">Direct Founder Access</h3>
+            <p class="trust-item-text">No sales agents or middlemen. You communicate directly with the architect building your system.</p>
+          </div>
+        </div>
+
+        <!-- Point 2: Transparent Pricing -->
+        <div class="trust-item">
+          <div class="trust-icon-wrap">
+            <svg class="trust-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <path d="M9 15l2 2 4-4"></path>
+            </svg>
+          </div>
+          <div class="trust-text-wrap">
+            <h3 class="trust-item-title">Transparent Pricing</h3>
+            <p class="trust-item-text">Fixed, itemized quotes with zero hidden costs. You pay for engineering, not agency overheads.</p>
+          </div>
+        </div>
+
+        <!-- Point 3: Speed & Agility -->
+        <div class="trust-item">
+          <div class="trust-icon-wrap">
+            <svg class="trust-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <div class="trust-text-wrap">
+            <h3 class="trust-item-title">Speed &amp; Agility</h3>
+            <p class="trust-item-text">Solo founder means faster decisions, quick turnarounds, and agile development without corporate delays.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       When I'm Not Coding (The Author / Passion)
+       ======================================================================== -->
+  <section id="author" class="author-section">
+    <div class="author-container">
+      <!-- Left Column: Story -->
+      <div class="author-text-col">
+        <span class="section-label author-label">
+          <svg class="label-star-icon" width="13" height="13" viewBox="0 0 24 24" fill="var(--cyan)" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+          THE AUTHOR &amp; CREATIVE
+        </span>
+
+        <h2 class="author-title">When I'm Not Coding...</h2>
+
+        <p class="author-paragraph">
+          Coding is my career, but writing is my passion. I spend my evenings crafting stories that explore the quiet complexities of love, loss, and human restraint.
+        </p>
+
+        <p class="author-paragraph">
+          My debut novel, <strong>A Star Beyond My Reach</strong>, is a 115-page literary romance set in the small towns of Bihar. It explores the beauty of unspoken love and the silent strength of letting go.
+        </p>
+
+        <p class="author-paragraph">
+          Beyond writing, I also do voiceover recording and video editing. Storytelling helps me understand user journeys better, making me a more empathetic UI/UX designer.
+        </p>
+
+        <div class="author-action">
+          <a href="https://store.pothi.com/book/saurabh-kumar-star-beyond-my-reach/" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+            <span>View the Book</span>
+            <svg class="btn-secondary-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: CSS 3D Floating Book Mockup -->
+      <div class="author-book-col">
+        <div class="book-stage">
+          <div class="book-3d-wrapper">
+            <div class="book-3d-item">
+              <!-- Book Front Cover -->
+              <div class="book-front-cover">
+                <div class="book-cover-stars"></div>
+                <div class="book-cover-inner">
+                  <div class="book-star-accent">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFD700" stroke="#FFD700" stroke-width="1">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                  </div>
+                  <span class="book-genre">A LITERARY ROMANCE</span>
+                  <h3 class="book-title-cover">A Star Beyond My Reach</h3>
+                  <div class="book-divider"></div>
+                  <p class="book-synopsis">A journey through silent affection, longing, and quiet restraint.</p>
+                  <span class="book-author-cover">Saurabh Kumar</span>
+                </div>
+              </div>
+              <!-- Book Spine -->
+              <div class="book-spine">
+                <span class="spine-text">A STAR BEYOND MY REACH • SAURABH KUMAR</span>
+              </div>
+              <!-- Book Pages Effect -->
+              <div class="book-pages-side"></div>
+            </div>
+            <!-- Bottom Floor Shadow -->
+            <div class="book-floor-shadow"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       The Big CTA Section
+       ======================================================================== -->
+  <section id="contact" class="founder-cta-section">
+    <div class="founder-cta-container">
+      <h2 class="founder-cta-title">Have a complex problem? Let's engineer a simple solution.</h2>
+      <div class="founder-cta-action">
+        <a href="https://wa.me/918252702699?text=Hello%20Saurabh%20M.%20Kumar,%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" class="btn-cta btn-cta-large">
+          <span class="btn-text">Discuss a Project</span>
+          <span class="btn-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       The Footer
+       ======================================================================== -->
+  <footer class="founder-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <!-- Left Column: Brand & Trust -->
+        <div class="footer-col footer-col-brand">
+          <h3 class="footer-brand-title"><a href="../index.html" style="color: inherit; text-decoration: none;">VYOMARC Technologies</a></h3>
+          <div class="footer-trust-line">
+            <span class="footer-status-dot">
+              <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+                <circle cx="4" cy="4" r="3.5" fill="var(--cyan)"/>
+              </svg>
+            </span>
+            <span>Available for B2B Projects</span>
+          </div>
+          <p class="footer-brand-text">Building scalable software and digital systems from Bihar Sharif, India.</p>
+        </div>
+
+        <!-- Center Column: Contact Info -->
+        <div class="footer-col footer-col-contact">
+          <h4 class="footer-heading">Contact</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <a href="mailto:vyomarctechnologies@gmail.com" class="footer-contact-link">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>vyomarctechnologies@gmail.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+918252702699" class="footer-contact-link">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span>+91 825 270 2699</span>
+              </a>
+            </li>
+            <li>
+              <a href="../contactus.html" class="footer-contact-link">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>Agency Contact Page</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Column: Social Links -->
+        <div class="footer-col footer-col-social">
+          <h4 class="footer-heading">Connect</h4>
+          <div class="footer-social-links">
+            <a href="https://www.linkedin.com/in/mrsaurabh009/" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+            <a href="https://x.com/mrsaurabh009" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="X (Twitter)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="https://medium.com/@mrsaurabh009" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Medium">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+              </svg>
+            </a>
+            <a href="https://www.goodreads.com/author/show/69333822.Saurabh_Kumar" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Goodreads">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.83 14.5c-.5.71-1.12 1.24-1.85 1.59-.73.35-1.56.52-2.49.52-1.14 0-2.14-.26-3.01-.78-.87-.52-1.55-1.26-2.04-2.2-.49-.95-.73-2.09-.73-3.41 0-1.36.25-2.52.76-3.48.51-.96 1.2-1.7 2.09-2.22.89-.52 1.91-.78 3.08-.78.9 0 1.71.17 2.42.5.71.33 1.31.83 1.8 1.49V4.1h2.23v11.33c0 1.23-.15 2.27-.45 3.13-.3.85-.75 1.57-1.33 2.15-.58.58-1.3.99-2.16 1.23-.86.24-1.84.36-2.95.36-.6 0-1.17-.04-1.71-.12-.54-.08-1-.19-1.4-.33v-1.75c.43.17.91.31 1.45.4.54.1 1.08.14 1.64.14.9 0 1.68-.12 2.32-.36.65-.24 1.16-.58 1.54-1.02.38-.44.63-.98.76-1.61.13-.63.19-1.34.19-2.13v-.61zm-4.34-.14c.81 0 1.48-.28 2.02-.83.54-.55.81-1.37.81-2.44 0-1.09-.27-1.9-.81-2.44-.54-.54-1.21-.81-2.02-.81-.82 0-1.5.27-2.02.81-.52.54-.78 1.35-.78 2.44 0 1.07.26 1.89.78 2.44.52.55 1.2.83 2.02.83z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar (Copyright) -->
+      <div class="footer-bottom-bar">
+        <div class="footer-nav-bar">
+          <a href="../index.html" class="footer-nav-link">Main Home</a>
+          <a href="../about.html" class="footer-nav-link">About Agency</a>
+          <a href="../tools/index.html" class="footer-nav-link">Free Tools</a>
+          <a href="../contactus.html" class="footer-nav-link">Contact</a>
+        </div>
+        <p class="footer-copyright">&copy; 2026 Saurabh M. Kumar | VYOMARC Technologies.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+  </button>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>

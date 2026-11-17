@@ -208,6 +208,10 @@ Ramchandarpur, Bihar Sharif, Nalanda, Bihar 803216
 **📩 Count how many patients left your waiting room today. Then send us a message on WhatsApp.**
 
 
+
+
+*Note: While our primary focus and success stories are based in Bihar, VYOMARC Technologies provides remote engineering and digital services to businesses all across India.*
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

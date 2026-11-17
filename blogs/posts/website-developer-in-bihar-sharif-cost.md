@@ -173,6 +173,10 @@ VYOMARC Technologies delivers world-class web development, custom software engin
 
 ---
 
+
+
+*Note: While our primary focus and success stories are based in Bihar, VYOMARC Technologies provides remote engineering and digital services to businesses all across India.*
+
 ## 🏢 About VYOMARC Technologies
 
 **VYOMARC Technologies** is Bihar's premier web development and software engineering company, headquartered at Ramchandarpur, Bihar Sharif, Nalanda, Bihar, 803216. 

@@ -193,6 +193,9 @@ async function run() {
                 '</div>' +
                 '<h1 class="post-page-title">' + postMeta.title + '</h1>' +
                 '<div class="post-content">' + htmlContent + '</div>' +
+                '<div class="post-author-bio" style="margin: 36px 0 20px 0; padding: 18px 22px; background: rgba(0, 229, 255, 0.04); border-left: 3px solid #00E5FF; border-radius: 0 10px 10px 0;">' +
+                '<p style="margin: 0; font-size: 0.95rem; color: #cbd5e1; line-height: 1.6;">Written by <a href="../../founder/index.html" style="color: #00E5FF; text-decoration: underline; font-weight: 600;">Saurabh M. Kumar</a>, Founder of VYOMARC Technologies.</p>' +
+                '</div>' +
                 '<div class="share-bar">' +
                 '<span class="share-label">Share this article:</span>' +
                 '<div class="share-buttons">' +
@@ -304,6 +307,7 @@ async function run() {
         { loc: 'https://vyomarctech.com/about.html', changefreq: 'monthly', priority: '0.8' },
         { loc: 'https://vyomarctech.com/contactus.html', changefreq: 'monthly', priority: '0.8' },
         { loc: 'https://vyomarctech.com/clients.html', changefreq: 'monthly', priority: '0.8' },
+        { loc: 'https://vyomarctech.com/founder/index.html', changefreq: 'monthly', priority: '0.8' },
 
         // Group 2: Service Pages (Priority 0.9)
         { loc: 'https://vyomarctech.com/website-development-services-bihar.html', changefreq: 'weekly', priority: '0.9' },

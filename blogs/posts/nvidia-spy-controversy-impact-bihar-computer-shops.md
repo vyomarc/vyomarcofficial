@@ -99,6 +99,10 @@ VYOMARC Technologies provides technical infrastructure, custom software engineer
 
 ---
 
+
+
+*Note: While our primary focus and success stories are based in Bihar, VYOMARC Technologies provides remote engineering and digital services to businesses all across India.*
+
 ## 🏢 About VYOMARC Technologies
 
 **VYOMARC Technologies** is an engineering-first software and digital technology company based in Ramchandarpur, Bihar Sharif, Nalanda, Bihar (PIN 803216). We engineer high-performance web platforms, CBT examination portals, and retail inventory management solutions for commercial enterprises and tech hardware retailers across Bihar.

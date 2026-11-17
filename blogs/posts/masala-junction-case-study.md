@@ -125,5 +125,9 @@ Masala Junction now operates as a conversion-optimized digital flagship that mir
 
 ---
 
+
+
+*Note: While our primary focus and success stories are based in Bihar, VYOMARC Technologies provides remote engineering and digital services to businesses all across India.*
+
 **Prepared By:** Team VYOMARC Technologies
 

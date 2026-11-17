@@ -162,6 +162,10 @@ VYOMARC Technologies serves ambitious local businesses across **Bihar Sharif, Pa
 * **Gaya & Rajgir**: Travel agency booking systems and premium real estate web design.
 * **Muzaffarpur & Bhagalpur**: Zero-commission e-commerce and local retail WhatsApp automation.
 
+
+
+*Note: While our primary focus and success stories are based in Bihar, VYOMARC Technologies provides remote engineering and digital services to businesses all across India.*
+
 ## 🏢 About VYOMARC Technologies
 
 **VYOMARC Technologies** is a premium software engineering company and website developer located in Ramchandarpur, Biharsharif, Nalanda, Bihar, 803216. We specialize in building secure NTA-grade CBT platforms, local SEO, and zero-commission WhatsApp ordering systems to help local businesses scale without technical overhead. Proudly serving Bihar Sharif, Patna, Gaya, Muzaffarpur, Bhagalpur, Nalanda, and Rajgir. 

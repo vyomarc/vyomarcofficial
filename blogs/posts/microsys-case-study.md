@@ -107,3 +107,5 @@ A professional agency is defined by how it handles technical roadblocks and last
 
 🌐 vyomarctech.com | Logic Without Limits.
 
+*Note: While our primary focus and success stories are based in Bihar, VYOMARC Technologies provides remote engineering and digital services to businesses all across India.*
+
