@@ -69,7 +69,7 @@ async function run() {
             // Update OG tags
             postHtml = postHtml.replace(/<meta property="og:title" content=".*?">/s, `<meta property="og:title" content="${postMeta.title}">`);
             postHtml = postHtml.replace(/<meta property="og:description" content=".*?">/s, `<meta property="og:description" content="${postMeta.excerpt}">`);
-            postHtml = postHtml.replace(/<meta property="og:url" content=".*?">/s, `<meta property="og:url" content="https://vyomarctech.com/blogs/posts/${postMeta.slug}">`);
+            postHtml = postHtml.replace(/<meta property="og:url" content=".*?">/s, `<meta property="og:url" content="https://vyomarctech.com/blogs/posts/${postMeta.slug}.html">`);
             if (postMeta.thumbnail) {
                 const fullThumb = new URL(postMeta.thumbnail, 'https://vyomarctech.com/blogs/').href;
                 postHtml = postHtml.replace(/<meta property="og:image" content=".*?">/s, `<meta property="og:image" content="${fullThumb}">`);
@@ -83,7 +83,7 @@ async function run() {
             // Canonical URL
             postHtml = postHtml.replace(
                 /<link rel="canonical" href=".*?">/s,
-                `<link rel="canonical" href="https://vyomarctech.com/blogs/posts/${postMeta.slug}">`
+                `<link rel="canonical" href="https://vyomarctech.com/blogs/posts/${postMeta.slug}.html">`
             );
 
             // JSON-LD
@@ -97,7 +97,7 @@ async function run() {
                     "@type": "Person",
                     "name": "Saurabh M. Kumar",
                     "jobTitle": "Founder & Lead System Architect",
-                    "url": "https://vyomarctech.com/about",
+                    "url": "https://vyomarctech.com/about.html",
                     "sameAs": [
                         "https://www.linkedin.com/in/mrsaurabh009/",
                         "https://x.com/mrsaurabh009"
@@ -119,7 +119,7 @@ async function run() {
                 "about": [postMeta.category || "Technology", "Local Business", "Software Engineering"],
                 "mainEntityOfPage": {
                     "@type": "WebPage",
-                    "@id": `https://vyomarctech.com/blogs/posts/${postMeta.slug}`
+                    "@id": `https://vyomarctech.com/blogs/posts/${postMeta.slug}.html`
                 }
             };
 
@@ -131,19 +131,19 @@ async function run() {
                         "@type": "ListItem",
                         "position": 1,
                         "name": "Home",
-                        "item": "https://vyomarctech.com/"
+                        "item": "https://vyomarctech.com/index.html"
                     },
                     {
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Article & Blogs",
-                        "item": "https://vyomarctech.com/blogs/"
+                        "item": "https://vyomarctech.com/blogs/index.html"
                     },
                     {
                         "@type": "ListItem",
                         "position": 3,
                         "name": postMeta.title,
-                        "item": `https://vyomarctech.com/blogs/posts/${postMeta.slug}`
+                        "item": `https://vyomarctech.com/blogs/posts/${postMeta.slug}.html`
                     }
                 ]
             };
@@ -155,11 +155,10 @@ async function run() {
             // Add data-prerendered-slug to body
             postHtml = postHtml.replace(/<body>/, `<body data-prerendered-slug="${postMeta.slug}">`);
 
-            
-            // Clean internal links from markdown content (remove .html and index.html)
-            htmlContent = htmlContent.replace(/href="\/tools\/([a-z0-9-]+)\/index\.html"/gi, 'href="/tools/$1/"');
-            htmlContent = htmlContent.replace(/href="\/blogs\/posts\/([a-z0-9-]+)\.html"/gi, 'href="/blogs/posts/$1"');
-            htmlContent = htmlContent.replace(/href="([a-z0-9-]+)\.html"/gi, 'href="$1"');
+            // Ensure relative internal links within markdown have .html
+            htmlContent = htmlContent.replace(/href="\/tools\/([a-z0-9-]+)(?:\/index\.html|\/)?"/gi, 'href="../../tools/$1/index.html"');
+            htmlContent = htmlContent.replace(/href="\/blogs\/posts\/([a-z0-9-]+)(?:\.html)?"/gi, 'href="$1.html"');
+            htmlContent = htmlContent.replace(/href="\/blogs\/\?cat=([^"]+)"/gi, 'href="../index.html?cat=$1"');
 
             // Generate Post Container HTML
             const isAbsolute = postMeta.thumbnail && (postMeta.thumbnail.startsWith('http://') || postMeta.thumbnail.startsWith('https://'));
@@ -192,7 +191,7 @@ async function run() {
             let containerHtml =
                 thumbnailHTML +
                 '<div class="post-meta">' +
-                (postMeta.category ? `<a href="/blogs/?cat=${encodeURIComponent(postMeta.category)}" class="category-tag">${postMeta.category}</a><br>` : '') +
+                (postMeta.category ? `<a href="../index.html?cat=${encodeURIComponent(postMeta.category)}" class="category-tag">${postMeta.category}</a><br>` : '') +
                 '<span>' + formatDate(postMeta.date) + '</span>' +
                 '<span class="separator">·</span>' +
                 '<span>By ' + (postMeta.author || 'VYOMARC') + '</span>' +
@@ -200,7 +199,7 @@ async function run() {
                 '<h1 class="post-page-title">' + postMeta.title + '</h1>' +
                 '<div class="post-content">' + htmlContent + '</div>' +
                 '<div class="post-author-bio" style="margin: 36px 0 20px 0; padding: 18px 22px; background: rgba(0, 229, 255, 0.04); border-left: 3px solid #00E5FF; border-radius: 0 10px 10px 0;">' +
-                '<p style="margin: 0; font-size: 0.95rem; color: #cbd5e1; line-height: 1.6;">Written by <a href="../../founder/" style="color: #00E5FF; text-decoration: underline; font-weight: 600;">Saurabh M. Kumar</a>, Founder of VYOMARC Technologies.</p>' +
+                '<p style="margin: 0; font-size: 0.95rem; color: #cbd5e1; line-height: 1.6;">Written by <a href="../../founder/index.html" style="color: #00E5FF; text-decoration: underline; font-weight: 600;">Saurabh M. Kumar</a>, Founder of VYOMARC Technologies.</p>' +
                 '</div>' +
                 '<div class="share-bar">' +
                 '<span class="share-label">Share this article:</span>' +
@@ -242,8 +241,8 @@ async function run() {
                         : `<div class="related-card-fallback"><svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></div>`;
                     const catTag = post.category ? `<span class="related-card-cat">${post.category}</span>` : '';
                     
-                    // Link to clean url!
-                    relatedHTML += `<a href="${post.slug}" class="related-card">` +
+                    // Link to .html url!
+                    relatedHTML += `<a href="${post.slug}.html" class="related-card">` +
                         `<div class="related-card-img-wrapper">${thumb}${catTag}</div>` +
                         `<div class="related-card-content"><h3 class="related-card-title">${post.title}</h3></div>` +
                         `</a>`;
@@ -260,39 +259,40 @@ async function run() {
             
             // Adjust paths in template (so they resolve properly from /blogs/posts/)
             // Adjust root-level navbar links and assets (2 levels up from /blogs/posts/)
-            postHtml = postHtml.replace(/href="\.\.\/index(?:\.html)?"/g, 'href="../../"');
-            postHtml = postHtml.replace(/href="\.\.\/about(?:\.html)?"/g, 'href="../../about"');
-            postHtml = postHtml.replace(/href="\.\.\/contactus(?:\.html)?"/g, 'href="../../contactus"');
-            postHtml = postHtml.replace(/href="\.\.\/clients(?:\.html)?"/g, 'href="../../clients"');
-            postHtml = postHtml.replace(/href="\.\.\/tools(?:\/index\.html|\/)?"/g, 'href="../../tools/"');
-            postHtml = postHtml.replace(/href="\.\.\/website-development-services-bihar(?:\.html)?"/g, 'href="../../website-development-services-bihar"');
-            postHtml = postHtml.replace(/href="\.\.\/software-development-company-bihar(?:\.html)?"/g, 'href="../../software-development-company-bihar"');
-            postHtml = postHtml.replace(/href="\.\.\/css\/style\.css(?:\?v=[0-9]+)?"/g, 'href="../../css/style.css?v=9"');
+            postHtml = postHtml.replace(/href="\.\.\/index(?:\.html)?"/g, 'href="../../index.html"');
+            postHtml = postHtml.replace(/href="\.\.\/about(?:\.html)?"/g, 'href="../../about.html"');
+            postHtml = postHtml.replace(/href="\.\.\/contactus(?:\.html)?"/g, 'href="../../contactus.html"');
+            postHtml = postHtml.replace(/href="\.\.\/clients(?:\.html)?"/g, 'href="../../clients.html"');
+            postHtml = postHtml.replace(/href="\.\.\/tools(?:\/index\.html|\/)?"/g, 'href="../../tools/index.html"');
+            postHtml = postHtml.replace(/href="\.\.\/website-development-services-bihar(?:\.html)?"/g, 'href="../../website-development-services-bihar.html"');
+            postHtml = postHtml.replace(/href="\.\.\/software-development-company-bihar(?:\.html)?"/g, 'href="../../software-development-company-bihar.html"');
+            postHtml = postHtml.replace(/href="\.\.\/css\/style\.css(?:\?v=[0-9]+)?"/g, 'href="../../css/style.css?v=10"');
             postHtml = postHtml.replace(/src="\.\.\/images\/vyomarc-logo\.png"/g, 'src="../../images/vyomarc-logo.png"');
             postHtml = postHtml.replace(/src="\.\.\/vlogo\.png"/g, 'src="../../images/vyomarc-logo.png"');
             postHtml = postHtml.replace(/src="\.\.\/script\.js"/g, 'src="../../script.js"');
 
             // Adjust blog-level links and assets (1 level up from /blogs/posts/)
-            postHtml = postHtml.replace(/href="style\.css(?:\?v=[0-9]+)?"/g, 'href="../style.css?v=9"');
+            postHtml = postHtml.replace(/href="style\.css(?:\?v=[0-9]+)?"/g, 'href="../style.css?v=10"');
             postHtml = postHtml.replace(/src="post-script\.js"/g, 'src="../post-script.js"');
-            postHtml = postHtml.replace(/href="index(?:\.html)?"/g, 'href="../../"');
-            postHtml = postHtml.replace(/href="\/blogs\/"/g, 'href="/blogs/"');
+            postHtml = postHtml.replace(/href="index(?:\.html)?"/g, 'href="../../index.html"');
+            postHtml = postHtml.replace(/href="\/blogs\/"/g, 'href="../index.html"');
 
             // Adjust footer links and labels (for generated post pages)
-            postHtml = postHtml.replace(/href="\.\.\/index\.html#services"/g, 'href="../../#services"');
-            postHtml = postHtml.replace(/href="index\.html\?cat=Case%20Study"/g, 'href="/blogs/?cat=Case%20Study"');
-            postHtml = postHtml.replace(/href="\.\.\/index\.html#products"/g, 'href="../../#services"');
-            postHtml = postHtml.replace(/href="\.\.\/index\.html#work"/g, 'href="/blogs/?cat=Case%20Study"');
+            postHtml = postHtml.replace(/href="\.\.\/index\.html#services"/g, 'href="../../index.html#services"');
+            postHtml = postHtml.replace(/href="\/blogs\/\?cat=Case%20Study"/g, 'href="../index.html?cat=Case%20Study"');
+            postHtml = postHtml.replace(/href="index\.html\?cat=Case%20Study"/g, 'href="../index.html?cat=Case%20Study"');
+            postHtml = postHtml.replace(/href="\.\.\/index\.html#products"/g, 'href="../../index.html#services"');
+            postHtml = postHtml.replace(/href="\.\.\/index\.html#work"/g, 'href="../index.html?cat=Case%20Study"');
             postHtml = postHtml.replace(/>Products<\/a>/g, '>Our Services</a>');
             postHtml = postHtml.replace(/>Portfolio<\/a>/g, '>Case Studies</a>');
-            postHtml = postHtml.replace(/href="\.\.\/\.\.\/index\.html">Blog<\/a>/g, 'href="../../">Blog</a>');
-            postHtml = postHtml.replace(/href="\.\.\/policies\/privacy-policy(?:\.html)?"/g, 'href="../../policies/privacy-policy"');
-            postHtml = postHtml.replace(/href="\.\.\/policies\/terms-of-service(?:\.html)?"/g, 'href="../../policies/terms-of-service"');
-            postHtml = postHtml.replace(/href="\.\.\/policies\/refund-policy(?:\.html)?"/g, 'href="../../policies/refund-policy"');
+            postHtml = postHtml.replace(/href="\.\.\/\.\.\/index\.html">Blog<\/a>/g, 'href="../index.html">Blog</a>');
+            postHtml = postHtml.replace(/href="\.\.\/policies\/privacy-policy(?:\.html)?"/g, 'href="../../policies/privacy-policy.html"');
+            postHtml = postHtml.replace(/href="\.\.\/policies\/terms-of-service(?:\.html)?"/g, 'href="../../policies/terms-of-service.html"');
+            postHtml = postHtml.replace(/href="\.\.\/policies\/refund-policy(?:\.html)?"/g, 'href="../../policies/refund-policy.html"');
             postHtml = postHtml.replace(/>Privacy Policy &amp; Terms<\/a>/g, '>Privacy Policy</a>');
             postHtml = postHtml.replace(/>Privacy Policy & Terms<\/a>/g, '>Privacy Policy</a>');
 
-                        // Conditional Mermaid.js loading: only include script if post has mermaid diagrams
+            // Conditional Mermaid.js loading: only include script if post has mermaid diagrams
             if (markdownText.includes('mermaid')) {
                 postHtml = postHtml.replace('</head>', '    <!-- Mermaid CDN (Conditional) -->\n    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" defer></script>\n</head>');
             }
@@ -335,7 +335,7 @@ async function run() {
         { loc: 'https://vyomarctech.com/tools/cgpa-to-percentage-converter/index.html', changefreq: 'weekly', priority: '0.9' },
 
         // Group 4: Blog Hub (Priority 0.8)
-        { loc: 'https://vyomarctech.com/blogs/', changefreq: 'weekly', priority: '0.8' },
+        { loc: 'https://vyomarctech.com/blogs/index.html', changefreq: 'weekly', priority: '0.8' },
 
         // Group 5: Policies (Priority 0.5)
         { loc: 'https://vyomarctech.com/policies/privacy-policy.html', changefreq: 'monthly', priority: '0.5' },
@@ -357,7 +357,7 @@ async function run() {
 
     for (const postMeta of allPostsData) {
         sitemapXml += '  <url>\n';
-        sitemapXml += `    <loc>https://vyomarctech.com/blogs/posts/${postMeta.slug}</loc>\n`;
+        sitemapXml += `    <loc>https://vyomarctech.com/blogs/posts/${postMeta.slug}.html</loc>\n`;
         sitemapXml += `    <lastmod>${postMeta.date}</lastmod>\n`;
         sitemapXml += '    <changefreq>monthly</changefreq>\n';
         sitemapXml += '    <priority>0.8</priority>\n';
