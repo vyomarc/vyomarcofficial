@@ -192,14 +192,15 @@ async function run() {
                 thumbnailHTML +
                 '<div class="post-meta">' +
                 (postMeta.category ? `<a href="../index.html?cat=${encodeURIComponent(postMeta.category)}" class="category-tag">${postMeta.category}</a><br>` : '') +
-                '<span>' + formatDate(postMeta.date) + '</span>' +
+                '<span class="post-date">Published: ' + formatDate(postMeta.date) + '</span>' +
                 '<span class="separator">·</span>' +
                 '<span>By ' + (postMeta.author || 'VYOMARC') + '</span>' +
                 '</div>' +
                 '<h1 class="post-page-title">' + postMeta.title + '</h1>' +
                 '<div class="post-content">' + htmlContent + '</div>' +
-                '<div class="post-author-bio" style="margin: 36px 0 20px 0; padding: 18px 22px; background: rgba(0, 229, 255, 0.04); border-left: 3px solid #00E5FF; border-radius: 0 10px 10px 0;">' +
-                '<p style="margin: 0; font-size: 0.95rem; color: #cbd5e1; line-height: 1.6;">Written by <a href="../../founder/index.html" style="color: #00E5FF; text-decoration: underline; font-weight: 600;">Saurabh M. Kumar</a>, Founder of VYOMARC Technologies.</p>' +
+                '<div class="author-bio">' +
+                '<h3>About the Author</h3>' +
+                '<p>Written by <a href="../../founder/index.html">Saurabh M. Kumar</a>, Founder & Software Engineer at VYOMARC Technologies. He specializes in custom web architectures, B2B IT services, and digital automation.</p>' +
                 '</div>' +
                 '<div class="share-bar">' +
                 '<span class="share-label">Share this article:</span>' +
