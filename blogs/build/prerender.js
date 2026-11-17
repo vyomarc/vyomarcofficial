@@ -286,6 +286,11 @@ async function run() {
             postHtml = postHtml.replace(/>Privacy Policy &amp; Terms<\/a>/g, '>Privacy Policy</a>');
             postHtml = postHtml.replace(/>Privacy Policy & Terms<\/a>/g, '>Privacy Policy</a>');
 
+                        // Conditional Mermaid.js loading: only include script if post has mermaid diagrams
+            if (markdownText.includes('```mermaid')) {
+                postHtml = postHtml.replace('</head>', '    <!-- Mermaid CDN (Conditional) -->\n    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" defer></script>\n</head>');
+            }
+
             const outPath = path.join(blogsDir, 'posts', postMeta.slug + '.html');
             fs.writeFileSync(outPath, postHtml, 'utf-8');
             generated++;

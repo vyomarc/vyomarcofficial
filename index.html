@@ -45,9 +45,9 @@
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" /></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700;800&display=swap"></noscript>
+    <noscript></noscript>
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
     
     <!-- Critical CSS Injection (Above-the-Fold Navbar & Hero) -->
@@ -935,7 +935,7 @@ h1, h2, h3, h4,
     <main>
       <!-- Hero Section Redesign -->
       <section id="home" class="hero-redesign">
-        <div class="hero-bg-art" aria-hidden="true"><img src="images/hero-vyomarc.webp" alt="Software Development Company in Bihar - VYOMARC Technologies" class="hero-art-img" fetchpriority="high" loading="eager" decoding="async" /></div>
+        <div class="hero-bg-art" aria-hidden="true"><img src="images/hero-vyomarc.webp" alt="Software Development Company in Bihar - VYOMARC Technologies" class="hero-art-img" width="800" height="450" fetchpriority="high" loading="eager" decoding="async" /></div>
         <div class="hero-container hero-content">
           <div class="hero-grid">
             <div class="hero-left-content">
@@ -1029,7 +1029,7 @@ h1, h2, h3, h4,
 
             <!-- Right Column with Mobile Image & Based in Bihar Badge -->
             <div class="hero-right-content">
-              <div class="hero-mobile-image-card" aria-hidden="true"><img src="images/hero-vyomarc.webp" alt="Software Development Company Bihar" class="hero-mobile-img" fetchpriority="high" loading="eager" decoding="async" /></div>
+              <div class="hero-mobile-image-card" aria-hidden="true"><img src="images/hero-vyomarc.webp" alt="Software Development Company Bihar" class="hero-mobile-img" width="800" height="450" fetchpriority="high" loading="eager" decoding="async" /></div>
               <div class="bihar-floating-badge" title="VYOMARC Technologies - Proudly Rooted in Bihar">
                 <svg class="location-pin-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
@@ -1335,7 +1335,7 @@ h1, h2, h3, h4,
             <!-- Card 1: Website Development -->
             <div class="wwd-card scroll-fade-up" style="transition-delay: 0s;">
               <div class="wwd-card-img-wrap">
-                <img src="images/web-development-card-bihar.jpg" alt="Website development services in Bihar Sharif by VYOMARC Technologies" width="400" height="250" loading="lazy" decoding="async" class="wwd-card-img" />
+                <img src="images/web-development-card-bihar.webp" alt="Website development services in Bihar Sharif by VYOMARC Technologies" width="400" height="250" loading="lazy" decoding="async" class="wwd-card-img" />
               </div>
               <div class="wwd-card-body">
                 <div class="wwd-title-group">
@@ -1358,7 +1358,7 @@ h1, h2, h3, h4,
             <!-- Card 2: App Development -->
             <div class="wwd-card scroll-fade-up" style="transition-delay: 0.15s;">
               <div class="wwd-card-img-wrap">
-                <img src="images/application-development-card-bihar.jpg" alt="Mobile app development services in Bihar Sharif by VYOMARC Technologies" width="400" height="250" loading="lazy" decoding="async" class="wwd-card-img" />
+                <img src="images/application-development-card-bihar.webp" alt="Mobile app development services in Bihar Sharif by VYOMARC Technologies" width="400" height="250" loading="lazy" decoding="async" class="wwd-card-img" />
               </div>
               <div class="wwd-card-body">
                 <div class="wwd-title-group">
@@ -1380,7 +1380,7 @@ h1, h2, h3, h4,
             <!-- Card 3: WhatsApp Business Automation -->
             <div class="wwd-card wwd-card-accent-gold scroll-fade-up" style="transition-delay: 0.3s;">
               <div class="wwd-card-img-wrap">
-                <img src="images/WhatsApp-Automation-bihar.jpg" alt="WhatsApp business automation and ordering systems in Bihar Sharif by VYOMARC Technologies" width="400" height="250" loading="lazy" decoding="async" class="wwd-card-img" />
+                <img src="images/WhatsApp-Automation-bihar.webp" alt="WhatsApp business automation and ordering systems in Bihar Sharif by VYOMARC Technologies" width="400" height="250" loading="lazy" decoding="async" class="wwd-card-img" />
               </div>
               <div class="wwd-card-body">
                 <div class="wwd-title-group">
@@ -1401,7 +1401,7 @@ h1, h2, h3, h4,
             <!-- Card 4: Brand Identity -->
             <div class="wwd-card scroll-fade-up" style="transition-delay: 0.45s;">
               <div class="wwd-card-img-wrap">
-                <img src="images/brand-identity-digital-marketing-bihar.png" alt="Brand identity and digital marketing design services in Bihar Sharif by VYOMARC Technologies" width="400" height="250" loading="lazy" decoding="async" class="wwd-card-img" />
+                <img src="images/brand-identity-digital-marketing-bihar.webp" alt="Brand identity and digital marketing design services in Bihar Sharif by VYOMARC Technologies" width="400" height="250" loading="lazy" decoding="async" class="wwd-card-img" />
               </div>
               <div class="wwd-card-body">
                 <div class="wwd-title-group">
@@ -2594,7 +2594,7 @@ h1, h2, h3, h4,
       <button id="close-founder-popup" class="fp-close" aria-label="Close popup">&times;</button>
       <div class="fp-content">
         <div class="fp-avatar">
-          <img src="images/saurabh-m-kumar.jpeg" alt="Saurabh M. Kumar" loading="lazy">
+          <img src="images/saurabh-m-kumar.webp" alt="Saurabh M. Kumar" width="56" height="56" loading="lazy">
         </div>
         <div class="fp-text">
           <h4>Saurabh M. Kumar</h4>
