@@ -4,7 +4,7 @@
 **Industry:** Computer Retail & B2B Hardware Services (Tier-2 City, Bihar)  
 **Agency:** VYOMARC Technologies  
 **Date:** November 14, 2026  
-**Project Timeline:** 4 Weeks (August – November 2026)  
+**Project Timeline:** 4 Weeks (October – November 2026)  
 **Deliverable:** High-Performance Frontend Architecture + Admin UI + 100% PHP-Ready Handover Kit  
 
 ---

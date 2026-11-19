@@ -1,5 +1,68 @@
 [
   {
+    "slug": "website-kaise-banaye-step-by-step-guide",
+    "title": "वेबसाइट कैसे बनवाएं? 2026 में बिज़नेस के लिए 5 ज़रूरी स्टेप्स",
+    "date": "2026-11-19",
+    "excerpt": "2026 में अपने बिज़नेस के लिए वेबसाइट बनवाने की सोच रहे हैं? डोमेन, होस्टिंग, स्पीड, SEO और WhatsApp इंटीग्रेशन के 5 प्रैक्टिकल स्टेप्स समझें।",
+    "thumbnail": "../thumbnails/website-kaise-banaye-step-by-step-guide.webp",
+    "author": "Team VYOMARC Technologies",
+    "category": "Web Development"
+  },
+  {
+    "slug": "google-par-business-kaise-dalen-google-my-business",
+    "title": "गूगल पर अपना बिज़नेस कैसे दर्ज करें? (Google My Business Guide 2026)",
+    "date": "2026-11-19",
+    "excerpt": "गूगल मैप्स और सर्च पर अपनी दुकान या कंपनी को फ्री में कैसे जोड़ें? NAP कंसिस्टेंसी, कैटेगरी सेलेक्शन, फोटो अपलोड और कस्टमर रिव्यू मैनेज करने की स्टेप-बाय-स्टेप गाइड।",
+    "thumbnail": "../thumbnails/google-par-business-kaise-dalen-google-my-business.webp",
+    "author": "Team VYOMARC Technologies",
+    "category": "SEO"
+  },
+  {
+    "slug": "whatsapp-se-order-kaise-len-business-guide",
+    "title": "WhatsApp से ऑर्डर कैसे लें? ज़ीरो कमीशन ऑर्डर सिस्टम",
+    "date": "2026-11-19",
+    "excerpt": "बिना किसी ऐप और 30% कमीशन दिए सीधे WhatsApp पर कस्टमर से ऑर्डर लेने का पूरा सिस्टम समझें। कैटलॉग, QR कोड और पेमेंट ऑटोमेशन की प्रैक्टिकल गाइड।",
+    "thumbnail": "../thumbnails/whatsapp-se-order-kaise-len-business-guide.webp",
+    "author": "Team VYOMARC Technologies",
+    "category": "Local Businesses"
+  },
+  {
+    "slug": "website-banane-ka-kharcha-kitna-hai-2026",
+    "title": "वेबसाइट बनवाने का खर्चा कितना आता है? (2026 Price Guide)",
+    "date": "2026-11-19",
+    "excerpt": "2026 में वेबसाइट बनवाने में कितना खर्च आता है? बेसिक 5-पेज, ई-कॉमर्स और डायनामिक वेब ऐप के सही रेट, AMC और सस्ते डेवलपर के छिपे हुए नुकसान की निष्पक्ष गाइड।",
+    "thumbnail": "../thumbnails/website-banane-ka-kharcha-kitna-hai-2026.webp",
+    "author": "Team VYOMARC Technologies",
+    "category": "Web Development"
+  },
+  {
+    "slug": "online-order-system-chhoti-dukan-kaise-setup-kare",
+    "title": "छोटी दुकान के लिए ऑनलाइन ऑर्डर सिस्टम कैसे सेट करें?",
+    "date": "2026-11-19",
+    "excerpt": "किराना, बेकरी, कपड़े या स्टेशनरी की छोटी दुकान को बिना लाखों खर्च किए ऑनलाइन ऑर्डरिंग सिस्टम से कैसे जोड़ें? डिजिटल कैटलॉग, QR कोड और पेमेंट मैनेजमेंट की आसान गाइड।",
+    "thumbnail": "../thumbnails/online-order-system-chhoti-dukan-kaise-setup-kare.webp",
+    "author": "Team VYOMARC Technologies",
+    "category": "Local Businesses"
+  },
+  {
+    "slug": "apna-business-online-kaise-kare-bihar",
+    "title": "बिहार में अपने बिज़नेस को ऑनलाइन कैसे लाएं? (2026 Complete Guide)",
+    "date": "2026-11-19",
+    "excerpt": "बिहार के छोटे और मंझोले व्यापारियों के लिए 2026 की संपूर्ण गाइड। Google My Business, वेबसाइट, WhatsApp ऑटोमेशन और ऑनलाइन पेमेंट से अपने बिज़नेस को 10 गुना बड़ा कैसे करें।",
+    "thumbnail": "../thumbnails/apna-business-online-kaise-kare-bihar.webp",
+    "author": "Team VYOMARC Technologies",
+    "category": "Articles"
+  },
+  {
+    "slug": "restaurant-whatsapp-ordering-bihar-sharif",
+    "title": "Why Your Restaurant in Bihar Sharif Needs a WhatsApp Ordering System",
+    "date": "2026-11-18",
+    "excerpt": "Bihar Sharif ke restaurant owners Zomato/Swiggy ko 30% commission de kar pareshan hain. Janiye kaise WhatsApp Ordering System aapko 100% profit aur direct customers de sakta hai.",
+    "thumbnail": "../thumbnails/restaurant-whatsapp-ordering.webp",
+    "author": "Team VYOMARC Technologies",
+    "category": "Local Businesses"
+  },
+  {
     "slug": "google-ai-search-local-seo-2026",
     "title": "Google's AI Search is Wiping Out Traditional Local SEO (Are You Ready?)",
     "date": "2026-11-17",

@@ -2400,14 +2400,14 @@ a,
   text-align: center;
   margin-top: 2.5rem;
   padding: 2rem;
-  background: #fff;
-  border: 1px solid #eef2f6;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
 }
 
 .faq-cta p {
   font-size: 1rem;
-  color: #353535;
+  color: #64748b;
   margin: 0 0 1rem;
 }
 
@@ -2426,16 +2426,6 @@ a,
 .faq-cta-btn:hover {
   background: #128C7E;
 }
-
-/* ---- Dark mode ---- */
-[data-theme="dark"] .faq-section { background: #040d1a; }
-[data-theme="dark"] .faq-title { color: #ffffff; }
-[data-theme="dark"] .faq-question { color: #ffffff; }
-[data-theme="dark"] .faq-question::after { color: #ffffff; }
-[data-theme="dark"] .faq-item { border-color: #353535; }
-[data-theme="dark"] .faq-answer { color: #cbd5e1; }
-[data-theme="dark"] .faq-answer strong { color: #ffffff; }
-[data-theme="dark"] .faq-cta { background: #0b2c4a; border-color: #353535; }
 
 /* =========================================
    TRUST & GOVERNMENT VERIFICATION BADGE
@@ -7987,4 +7977,198 @@ a,
   color: #0284c7;
   text-decoration: underline;
   font-weight: 600;
+}
+
+/* =========================================
+   FREE AUDIT BANNER & THE VYOMARC GUARANTEE
+   ========================================= */
+.audit-banner {
+  width: 100%;
+  background: linear-gradient(135deg, #0b2c4a 0%, #040d1a 100%);
+  padding: 12px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  border-top: 1px solid rgba(0, 168, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 168, 255, 0.2);
+  position: relative;
+  z-index: 5;
+  box-shadow: 0 4px 15px rgba(4, 13, 26, 0.15);
+}
+
+.audit-text {
+  color: #f8fafc;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.audit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #00a8ff 0%, #0077b6 100%);
+  color: #ffffff !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 7px 18px;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: 0 0 16px rgba(0, 168, 255, 0.45);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.audit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 22px rgba(0, 168, 255, 0.7);
+  background: linear-gradient(135deg, #38bdf8 0%, #00a8ff 100%);
+}
+
+/* =========================================
+   METALLIC SILVER TYPOGRAPHY
+   ========================================= */
+.silver-text {
+  background: linear-gradient(135deg, #e2e8f0 0%, #ffffff 50%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+}
+
+/* The VYOMARC Guarantee Section */
+.guarantee-section {
+  position: relative;
+  overflow: hidden;
+  padding: 95px 0 100px;
+  background-color: #040d1a;
+}
+
+/* Glowing orb behind the cards (Parallax & Ambient Glow) */
+.guarantee-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.08) 0%, rgba(11, 44, 74, 0.15) 45%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.guarantee-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.guarantee-section .section-sub {
+  color: #94a3b8;
+  max-width: 620px;
+  margin: 0 auto 52px;
+}
+
+.stagger-1 { transition-delay: 0s !important; }
+.stagger-2 { transition-delay: 0.12s !important; }
+.stagger-3 { transition-delay: 0.24s !important; }
+.stagger-4 { transition-delay: 0.36s !important; }
+
+.guarantee-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.guarantee-card {
+  background: rgba(255, 255, 255, 0.03); /* Subtle transparent white */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 30px 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+}
+
+.guarantee-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 229, 255, 0.12);
+  border-color: rgba(0, 229, 255, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.guarantee-card.scroll-fade-up.is-visible:hover {
+  transform: translateY(-5px);
+}
+
+.guarantee-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(0, 229, 255, 0.08);
+  color: #00e5ff;
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.guarantee-card:hover .guarantee-icon {
+  background: #00e5ff;
+  color: #040d1a;
+  border-color: #00e5ff;
+  box-shadow: 0 0 18px rgba(0, 229, 255, 0.5);
+}
+
+.guarantee-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  line-height: 1.35;
+}
+
+.guarantee-desc {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .guarantee-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .audit-banner {
+    flex-direction: column;
+    padding: 12px 16px;
+    gap: 10px;
+    text-align: center;
+  }
+  .audit-text {
+    font-size: 0.88rem;
+  }
+  .audit-btn {
+    font-size: 0.82rem;
+    padding: 6px 16px;
+  }
+  .guarantee-section {
+    padding: 65px 0;
+  }
+  .guarantee-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
