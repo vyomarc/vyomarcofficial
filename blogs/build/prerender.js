@@ -60,6 +60,14 @@ async function run() {
                     .replace(/&#39;/g, "'");
                 return `<div class="mermaid">\n${unescaped.trim()}\n</div>`;
             });
+
+            // Add dimensions to shields.io badge images to eliminate layout shift (CLS)
+            htmlContent = htmlContent.replace(/<img([^>]+src=["']https:\/\/img\.shields\.io\/[^"']+["'][^>]*)>/gi, (match, p1) => {
+                if (!/width=/i.test(p1) && !/height=/i.test(p1)) {
+                    return `<img${p1} width="160" height="28" style="height:28px;width:auto;">`;
+                }
+                return match;
+            });
             
             let postHtml = templateHtml;
 
@@ -274,9 +282,12 @@ async function run() {
             postHtml = postHtml.replace(/href="\.\.\/website-development-services-bihar(?:\.html)?"/g, 'href="../../website-development-services-bihar.html"');
             postHtml = postHtml.replace(/href="\.\.\/software-development-company-bihar(?:\.html)?"/g, 'href="../../software-development-company-bihar.html"');
             postHtml = postHtml.replace(/href="(?:\.\.\/|\/)?css\/style\.css(?:\?v=[0-9]+)?"/g, 'href="/css/style.css?v=11"');
-            postHtml = postHtml.replace(/src="\.\.\/images\/vyomarc-logo\.png"/g, 'src="../../images/vyomarc-logo.png"');
-            postHtml = postHtml.replace(/src="\.\.\/vlogo\.png"/g, 'src="../../images/vyomarc-logo.png"');
+            postHtml = postHtml.replace(/src="\.\.\/images\/vyomarc-logo\.(?:png|webp)"/g, 'src="../../images/vyomarc-logo.webp"');
+            postHtml = postHtml.replace(/src="\.\.\/vlogo\.png"/g, 'src="../../images/vyomarc-logo.webp"');
             postHtml = postHtml.replace(/src="\.\.\/script\.js"/g, 'src="../../script.js"');
+
+            // Remove marked.umd.js from static pre-rendered posts (not needed client-side)
+            postHtml = postHtml.replace(/<script[^>]+marked\.umd\.js[^>]*><\/script>\s*/gi, '');
 
             // Adjust blog-level links and assets (1 level up from /blogs/posts/)
             postHtml = postHtml.replace(/href="style\.css(?:\?v=[0-9]+)?"/g, 'href="../style.css?v=11"');
