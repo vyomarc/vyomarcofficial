@@ -922,6 +922,7 @@ footer {
    NEW ABOUT PAGE ENHANCEMENTS
    ========================================= */
 .about-section {
+  padding-top: 70px;
   padding-bottom: 30px;
 }
 
@@ -2555,6 +2556,7 @@ a,
   pointer-events: auto;
   max-width: 1260px;
   margin: 0 auto;
+  background-color: #ffffff;
   background: #ffffff;
   border-radius: 999px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16), 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -3237,7 +3239,7 @@ a,
 
 .enterprise-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 28px;
 }
 .ent-card {
@@ -8170,5 +8172,239 @@ a,
   .guarantee-grid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+}
+
+
+/* ==========================================================================
+   CUSTOM E-COMMERCE SERVICE PAGE THEME & CONVERSION FUNNEL
+   Emerald Green (#059669), Royal Blue (#0284c7), Warm Orange (#f97316)
+   ========================================================================== */
+html body.ecommerce-page .ecommerce-hero,
+html body.ecommerce-page .enterprise-hero,
+body.ecommerce-page section.ecommerce-hero,
+.ecommerce-page .ecommerce-hero {
+  background: #ffffff !important;
+  padding-top: 125px !important;
+  padding-bottom: 40px !important;
+  margin-bottom: 0 !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.ecommerce-page .hero-bg-overlay {
+  display: none !important;
+}
+
+.ecommerce-hero .hero-grid {
+  min-height: auto;
+}
+
+.ecommerce-hero .hero-left-content {
+  max-width: 650px;
+}
+
+.ecommerce-hero .hero-right-content {
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 0;
+  height: auto;
+}
+
+.ecommerce-hero .conversion-funnel {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ecommerce-page .hero-badge {
+  background: #ecfdf5 !important;
+  color: #059669 !important;
+  border: 1px solid #a7f3d0 !important;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-size: 0.88rem;
+  margin-bottom: 20px;
+}
+
+.ecommerce-page .hero-badge svg {
+  stroke: #059669 !important;
+}
+
+.ecommerce-page .hero-title {
+  color: #0f172a !important;
+  font-size: clamp(2rem, 5vw, 3.2rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.18;
+}
+
+.ecommerce-page .highlight-ecommerce {
+  color: #059669 !important;
+  position: relative;
+  display: inline-block;
+}
+
+.ecommerce-page .hero-subtitle {
+  color: #334155 !important;
+  font-size: 1.15rem !important;
+  max-width: 620px !important;
+  margin: 16px 0 32px 0 !important;
+  line-height: 1.6;
+}
+
+.ecommerce-page .cta-group {
+  justify-content: flex-start;
+}
+
+.ecommerce-page .cta-orange,
+.ecommerce-page .hero-btn-primary {
+  background: #f97316 !important;
+  border-color: #ea580c !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.35);
+  transition: all 0.25s ease;
+}
+
+.ecommerce-page .cta-orange:hover,
+.ecommerce-page .hero-btn-primary:hover {
+  background: #ea580c !important;
+  border-color: #c2410c !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(249, 115, 22, 0.45);
+}
+
+.ecommerce-page .hero-btn-secondary {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0284c7 !important;
+  font-weight: 600;
+}
+
+.ecommerce-page .hero-btn-secondary:hover {
+  background: #f0f9ff !important;
+  border-color: #0284c7 !important;
+  color: #0369a1 !important;
+}
+
+/* Conversion Funnel */
+.conversion-funnel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 0;
+  padding: 24px 20px;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  width: 100%;
+}
+
+.funnel-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  z-index: 2;
+}
+
+.funnel-icon {
+  width: 50px;
+  height: 50px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border: 2px solid #059669;
+}
+
+.funnel-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+.funnel-line {
+  width: 60px;
+  height: 3px;
+  background: #e2e8f0;
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* The traveling glowing beam */
+.beam {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #059669, transparent);
+  animation: travelBeam 2s infinite linear;
+}
+
+@keyframes travelBeam {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  html body.ecommerce-page .ecommerce-hero,
+  html body.ecommerce-page .enterprise-hero,
+  body.ecommerce-page section.ecommerce-hero,
+  .ecommerce-page .ecommerce-hero {
+    padding-top: 80px !important;
+    padding-bottom: 25px !important;
+    margin-bottom: 0 !important;
+  }
+  .ecommerce-hero .hero-subtitle {
+    margin: 16px auto 28px auto !important;
+  }
+  .ecommerce-hero .cta-group {
+    justify-content: center;
+  }
+  .conversion-funnel {
+    flex-direction: column;
+    padding: 24px 20px;
+    gap: 16px;
+  }
+  .funnel-line {
+    width: 3px;
+    height: 40px;
+  }
+  .beam {
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(180deg, transparent, #059669, transparent);
+    animation: travelBeamVertical 2s infinite linear;
+  }
+  @keyframes travelBeamVertical {
+    0% { top: -100%; }
+    100% { top: 200%; }
+  }
+
+  /* About Page Mobile Gap Fix */
+  html body main.fade-in,
+  body main.fade-in,
+  main.fade-in {
+    padding-top: 50px !important;
+  }
+  .about-section {
+    padding-top: 15px !important;
   }
 }
