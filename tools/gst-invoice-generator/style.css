@@ -557,43 +557,276 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  /* Global overflow prevention */
+  .invoice-tool-wrapper {
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Hero adjustments */
   .invoice-hero {
-    padding-top: 90px;
+    padding: 95px 16px 25px;
   }
 
+  .invoice-hero h1 {
+    font-size: 1.6rem;
+    line-height: 1.25;
+  }
+
+  .invoice-hero-sub {
+    font-size: 0.95rem;
+  }
+
+  /* App section padding */
+  .invoice-app-section {
+    padding: 16px 10px 60px;
+  }
+
+  /* Main grid to single column */
+  .invoice-grid-container {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 20px;
+    overflow-x: hidden;
+  }
+
+  /* Form column full width */
+  .invoice-form-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 16px;
+  }
+
+  /* Form cards full width */
+  .inv-card {
+    padding: 16px 14px;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Form rows stack vertically */
   .inv-form-row {
-    grid-template-columns: 1fr;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px;
+    margin-bottom: 12px;
   }
 
+  .inv-form-row.single {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Form fields full width */
+  .inv-field {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* All inputs, selects, textareas full width with touch-friendly size */
+  .inv-input,
+  .inv-select,
+  .inv-field input,
+  .inv-field select,
+  .inv-field textarea,
+  textarea,
+  .item-desc,
+  .item-hsn,
+  .item-qty,
+  .item-rate,
+  .item-gst {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    font-size: 16px !important;
+    padding: 12px 14px !important;
+  }
+
+  /* Items form table: horizontal scroll container */
+  .items-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+  }
+
+  .items-form-table {
+    width: 100%;
+    min-width: 600px;
+  }
+
+  .items-form-table th,
+  .items-form-table td {
+    white-space: nowrap;
+    padding: 10px 8px;
+  }
+
+  .items-form-table td input,
+  .items-form-table td select {
+    min-width: 60px !important;
+  }
+
+  /* Add item and generate buttons full width */
+  .btn-add-item {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 16px;
+  }
+
+  .btn-generate-main {
+    width: 100% !important;
+    padding: 16px !important;
+    font-size: 1rem !important;
+  }
+
+  /* Preview column stacks below form */
+  .invoice-preview-col {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 30px;
+  }
+
+  /* Invoice preview paper */
   .invoice-preview-paper {
-    padding: 20px;
+    padding: 18px 12px;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    overflow-x: hidden;
   }
 
+  /* Invoice document header */
   .inv-doc-header {
     flex-direction: column;
+    align-items: flex-start;
     gap: 16px;
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+  }
+
+  .inv-seller-info h3 {
+    font-size: 1.15rem;
+  }
+
+  .inv-type-title {
+    font-size: 1.3rem;
   }
 
   .inv-doc-type-box {
     text-align: left;
   }
 
+  /* Bill details grid */
   .inv-bill-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 16px;
+    padding-bottom: 18px;
+    margin-bottom: 18px;
   }
 
+  .inv-bill-block[style*="text-align: right"],
+  .inv-bill-block:last-child {
+    text-align: left !important;
+  }
+
+  .inv-num-meta {
+    word-break: break-word;
+  }
+
+  /* Preview table horizontal scroll */
+  .inv-preview-table {
+    display: table;
+    width: 100%;
+    min-width: 600px;
+    margin-bottom: 20px;
+  }
+
+  .inv-preview-table th,
+  .inv-preview-table td {
+    white-space: nowrap;
+    font-size: 0.82rem;
+    padding: 8px 6px;
+  }
+
+  /* Wrap the preview table in a scrollable area via its parent */
+  .invoice-preview-paper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Summary container */
   .inv-summary-container {
     flex-direction: column;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .inv-words-wrap {
+    font-size: 0.82rem;
+    padding: 12px;
+    word-break: break-word;
   }
 
   .inv-calc-box {
     width: 100%;
   }
 
+  /* Signatory section */
+  .inv-sign-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .inv-terms-note {
+    max-width: 100%;
+    font-size: 0.78rem;
+  }
+
+  .inv-sign-box {
+    width: 100%;
+    text-align: left;
+  }
+
+  .sign-line {
+    width: 160px;
+  }
+
+  /* Action buttons full width with touch padding */
   .invoice-actions-bar {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .btn-inv-action {
+    width: 100% !important;
+    padding: 15px 18px !important;
+    font-size: 0.95rem;
+    justify-content: center;
+  }
+
+  /* SEO section padding */
+  .seo-content-section {
+    padding: 36px 16px;
+  }
+
+  .seo-article h2 {
+    font-size: 1.3rem;
+    margin: 28px 0 10px;
+  }
+
+  .seo-article p {
+    font-size: 0.95rem;
   }
 }
 
