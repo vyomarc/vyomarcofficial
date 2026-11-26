@@ -68,6 +68,17 @@
   ],
   "redirects": [
     {
+      "source": "/:path(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.vyomarctech.com"
+        }
+      ],
+      "destination": "https://vyomarctech.com/:path",
+      "permanent": true
+    },
+    {
       "source": "/blogs/post.html",
       "has": [
         {
