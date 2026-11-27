@@ -169,7 +169,7 @@ VYOMARC Technologies serves ambitious local businesses across **Bihar Sharif, Pa
 ## 🏢 About VYOMARC Technologies
 
 **VYOMARC Technologies** is a premium software engineering company and website developer located in Ramchandarpur, Biharsharif, Nalanda, Bihar, 803216. We specialize in building secure NTA-grade CBT platforms, local SEO, and zero-commission WhatsApp ordering systems to help local businesses scale without technical overhead. Proudly serving Bihar Sharif, Patna, Gaya, Muzaffarpur, Bhagalpur, Nalanda, and Rajgir. 
-**Contact**: vyomarctechnologies@gmail.com | **WhatsApp/Call**: +91 825 270 2699 | **Hours**: Mon–Sat, 10:00 AM to 4:00 AM.
+**Contact**: vyomarctechnologies@gmail.com | **WhatsApp/Call**: +91 825 270 2699 | **Hours**: Mon-Sat, 10:00 AM to 4:00 PM.
 
 ## 🚀 Next Step
 

@@ -110,7 +110,7 @@ VYOMARC Technologies provides technical infrastructure, custom software engineer
 * **Office Address:** Ramchandarpur, Bihar Sharif, Nalanda, Bihar — 803216
 * **Email:** vyomarctechnologies@gmail.com
 * **Call / WhatsApp:** +91 825 270 2699
-* **Operational Hours:** Monday to Saturday, 10:00 AM – 4:00 AM
+* **Operational Hours:** Monday to Saturday, 10:00 AM – 4:00 PM
 
 ---
 

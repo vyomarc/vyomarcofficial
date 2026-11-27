@@ -1,5 +1,41 @@
 [
   {
+    "slug": "ipv6-addressing-notation",
+    "title": "IPv6 Addressing and Notation: Simplified Guide for B.Tech",
+    "date": "2026-11-28",
+    "excerpt": "Learn IPv6 addressing, its structure, and how to simplify IPv6 address notation using omission and double colon rules with clear examples.",
+    "thumbnail": "../thumbnails/ipv6-addressing-notation.webp",
+    "author": "Team VYOMARC Technologies",
+    "category": "B.Tech Study Notes"
+  },
+  {
+    "slug": "ip-addressing-computer-networks",
+    "title": "IP Addressing in Computer Networks: IPv4 Classes, Types & Functions",
+    "date": "2026-11-28",
+    "excerpt": "Complete guide to IP Addressing in Computer Networks. Learn the definition, functions, IPv4 vs IPv6 basics, address classes, and types for B.Tech exams.",
+    "thumbnail": "../thumbnails/ip-addressing-computer-networks.webp",
+    "author": "Team VYOMARC Technologies",
+    "category": "B.Tech Study Notes"
+  },
+  {
+    "slug": "tcp-ip-model-explained",
+    "title": "TCP/IP Model in Computer Networks: Layers, Protocols & OSI Comparison",
+    "date": "2026-11-28",
+    "excerpt": "Complete guide to the TCP/IP Model for B.Tech students. Learn the 4 layers, protocols, functionalities, and how it compares to the OSI reference model.",
+    "thumbnail": "../thumbnails/tcp-ip-model.webp",
+    "author": "Team VYOMARC Technologies",
+    "category": "B.Tech Study Notes"
+  },
+  {
+    "slug": "osi-reference-model-computer-network",
+    "title": "OSI Reference Model in Computer Network: 7 Layers Explained",
+    "date": "2026-11-28",
+    "excerpt": "Complete B.Tech notes on the OSI Reference Model. Learn the 7 layers, protocols, sender/receiver architecture, and how data flows from the application to the physical layer.",
+    "thumbnail": "../thumbnails/osi-model-computer-network.webp",
+    "author": "Team VYOMARC Technologies",
+    "category": "B.Tech Study Notes"
+  },
+  {
     "slug": "website-cost-bihar-2027-real-price-guide",
     "title": "₹5,000 vs ₹15,000 vs ₹50,000 Website in Bihar (2027): Real Cost Breakdown",
     "date": "2026-11-26",

@@ -489,7 +489,7 @@ document.addEventListener("DOMContentLoaded", () => {
 - **Column 3 (Contact):**
   - Email (`vyomarctechnologies@gmail.com`) with mail envelope SVG icon
   - Phone (`+91 825 270 2699`) with phone handset SVG icon
-  - Operating Hours (`Mon to Sat, 10:00 AM to 4:00 AM`) with clock/time SVG icon
+  - Operating Hours (`Mon-Sat, 10:00 AM to 4:00 PM`) with clock/time SVG icon
   - Physical Address (`Ramchandarpur, Biharsharif, Nalanda, Bihar, 803216`) with map pin SVG icon linking to Google Maps
 - **Column 4 (Social):**
   - LinkedIn (`https://www.linkedin.com/company/vyomarc-technologies/`) with official LinkedIn SVG icon
@@ -543,7 +543,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <circle cx="12" cy="12" r="10"></circle>
             <polyline points="12 6 12 12 16 14"></polyline>
           </svg>
-          <span>Mon to Sat, 10:00 AM to 4:00 AM</span>
+          <span>Mon-Sat, 10:00 AM to 4:00 PM</span>
         </li>
         <li>
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
